@@ -1,0 +1,41 @@
+---
+layout: page
+---
+
+{% for post in paginator.posts %}
+<div class="blog-post-preview mdl-card mdl-shadow--2dp"   style="margin:3px auto;width:61.8%">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">{{ post.title }}</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+             {{ post.content | strip_html | truncate:200 }}
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+            Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+            <br>
+                <div style="text-align: right">
+                    <a id="{{ post.title }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ post.url | prepend: site.baseurl }}">Read More</a>
+                    {% if post.subtitle %}
+                    <div class="mdl-tooltip mdl-tooltip--bottom" style="z-index:1000" data-mdl-for="{{ post.title }}">{{ post.subtitle }}</div>
+                    {% endif %}                    
+                </div>
+            </div>
+
+        </div>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<div class="pager" style="margin:5px auto;width:100%">
+    {% if paginator.previous_page %}
+    <div class="previous" style="display: inline;float: left; margin-left: 26%">
+        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </div>
+    {% endif %}
+    {% if paginator.next_page %}
+    <div class="next" style="display: inline;float: right;margin-right: 26%">
+        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </div>
+    {% endif %}
+</div>
+{% endif %}

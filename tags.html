@@ -1,0 +1,47 @@
+---
+title: 标签
+layout: default
+---
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 标签云 -->
+			<div id='tag_cloud' class="tags" style="margin: 20px;">
+				{% for tag in site.tags %}
+                <a type="button" class="mdl-chip mdl-badge mdl-badge--overlap" href="#{{ tag[0] }}" title="{{ tag[0] }}" data-badge="{{ tag[1].size }}"><span class="mdl-chip__text">{{ tag[0] }}</span></a>
+				{% endfor %}
+			</div>
+
+            <!--<blockquote class="tag-comments">
+                标签命名规范：
+                    <li>行业观察、职位、公司优先使用中文</li>
+                    <li>外国产品、术语优先使用英文</li>
+            </blockquote>-->
+
+            <!-- 标签列表 -->
+			{% for tag in site.tags %}
+			<div class="mdl-list">
+                <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content" id="{{ tag[0] }}">
+                    <i class="material-icons  mdl-list__item-avatar">local_offer</i>{{ tag[0] }}
+                </span>
+                </li>
+				{% for post in tag[1] %}
+                <a class="post-preview mdl-list__item mdl-list__item--two-line" href="{{ post.url | prepend: site.baseurl }}">
+    <span class="mdl-list__item-primary-content">
+      <p class="post-title">{{ post.title }}</p>
+      {% if post.subtitle %}
+      <p class="mdl-list__item-sub-title post-subtitle">{{ post.subtitle }}</p>
+      {% endif %}
+    </span>
+            </a>
+            <hr>
+	{% endfor %}
+			</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</div>
