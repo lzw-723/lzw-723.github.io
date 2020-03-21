@@ -1,57 +1,42 @@
 ---
 layout: default
 ---
-
-<header class="intro-header" >
-    <div class="container">
-        <div class="row">
-            <div style="margin:10px;">
-                <div class="post-heading" style="text-align:center;">
-                    <div class="tags">
-                        {% for tag in page.tags %}
-<a type="button" class="mdl-chip" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">
-    <span class="mdl-chip__text">{{ tag }}</span>
-</a>
-                        {% endfor %}
-                    </div>
-                    <h1>{{ page.title }}</h1>
-                    {% comment %}
-                        always create a h2 for keeping the margin , Hux
-                    {% endcomment %}
-                    {% comment %} if page.subtitle {% endcomment %}
-                    <h2 class="subheading">{{ page.subtitle }}</h2>
-                    {% comment %} endif {% endcomment %}
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
-                </div>
-            </div>
+<!-- Post Content -->
+<div class="container">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--8-col">
+            <div class="post-content mdl-card mdl-shadow--4dp">{{ content }}</div>
         </div>
     </div>
-</header>
 
-<!-- Post Content -->
-<article>
-    <div class="container" style="margin:6px">
-    <!-- Post Container -->
-            <div class="post-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container" style="border-radius: 2px;padding: 80px 56px;margin-bottom: 80px;margin:0 auto;width: 61.8%;">
-       
-
-				{{ content }}
-
-                <hr style="visibility: hidden;">
-
-                <div class="pager" style="width: 100%">
-                    {% if page.previous.url %}
-                    <div class="previous">
-                        <a id="post-previous" style="display: inline;float: left; margin-left: 26%" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">Previous</a>
-                        <div class="mdl-tooltip" for="post-previous">{{page.previous.title}}</div>
-                    </div>
-                    {% endif %}
-                    {% if page.next.url %}
-                    <div class="next">
-                        <a id="post-next" style="display: inline;float: right;margin-right: 26%" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" title="{{page.next.title}}">Next</a>
-                        <div class="mdl-tooltip" for="post-next">{{page.next.title}}</div>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
+    <div class="mdl-grid mdl-grid--no-spacing">
+        {% if page.previous.url %}
+        <a id="post-previous"
+            class="previous-button mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone mdl-cell mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+            href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}">上一篇</a>
+        <div class="mdl-tooltip" for="post-previous">{{page.previous.title}}</div>
+        {% endif %}
+        <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone"></div>
+        {% if page.next.url %}
+        <a id="post-next"
+            class="next-button mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone mdl-cell mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+            href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}">下一篇</a>
+        <div class="mdl-tooltip" for="post-next">{{page.next.title}}</div>
+        {% endif %}
     </div>
+
+    <hr style="visibility: hidden;">
+
+    
+<div>
+    <div class="tags">
+        {% for tag in page.tags %}
+        <a type="button" class="mdl-chip" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">
+            <span class="mdl-chip__text">{{ tag }}</span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+</div>

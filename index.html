@@ -3,39 +3,36 @@ layout: page
 ---
 
 {% for post in paginator.posts %}
-<div class="blog-post-preview mdl-card mdl-shadow--2dp"   style="margin:3px auto;width:61.8%">
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">{{ post.title }}</h2>
-            </div>
-            <div class="mdl-card__supporting-text">
-             {{ post.content | strip_html | truncate:200 }}
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-            Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-            <br>
-                <div style="text-align: right">
-                    <a id="{{ post.title }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ post.url | prepend: site.baseurl }}">Read More</a>
-                    {% if post.subtitle %}
-                    <div class="mdl-tooltip mdl-tooltip--bottom" style="z-index:1000" data-mdl-for="{{ post.title }}">{{ post.subtitle }}</div>
-                    {% endif %}                    
-                </div>
-            </div>
-
+<hr style="visibility: hidden;">
+<div class="preview-card mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title" style="height: 176px;{% if post.img %}background: url('{{ post.img }}'){% else %}background: url('https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture'){% endif %} center / cover;">
+        <h2 class="mdl-card__title-text mdl-color-text--white">{{ post.title }}</h2>
+    </div>
+    <div class="mdl-card__supporting-text">{{ post.content | strip_html | truncate:200 }}</div>
+    <div class="mdl-card__actions mdl-card--border">
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <p class="mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone mdl-cell">
+                <a class="mdl-button">{% if post.author %}{{ post.author }}{% endif %} on
+                    {{ post.date | date: "%B %-d, %Y" }}</a>
+                </p>
+            <a class="read-button mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone mdl-cell mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ post.url | prepend: site.baseurl }}">阅读</a>
         </div>
+        
+    </div>
+</div>
 {% endfor %}
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
-<div class="pager" style="margin:5px auto;width:100%">
+<div class="pager mdl-grid mdl-grid--no-spacing">
     {% if paginator.previous_page %}
-    <div class="previous" style="display: inline;float: left; margin-left: 26%">
-        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </div>
+    <a class="previous-button mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone mdl-cell mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+        href="{{ post.url | prepend: site.baseurl }}">上一页</a>
     {% endif %}
+    <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone"></div>
     {% if paginator.next_page %}
-    <div class="next" style="display: inline;float: right;margin-right: 26%">
-        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </div>
-    {% endif %}
+    <a class="next-button mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone mdl-cell mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+        href="{{ post.url | prepend: site.baseurl }}">下一页</a>
+        {% endif %}
 </div>
 {% endif %}

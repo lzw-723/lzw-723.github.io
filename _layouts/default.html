@@ -1,72 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 {% include head.html %}
 
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
-<div class="blog-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    
-<!-- 标题 -->
-    <header class="mdl-layout__header au">
-        <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</span>
-            <div class="mdl-layout-spacer"></div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-left">
-                <label class="mdl-button mdl-js-button mdl-button--icon"
-                       for="search-input">
-                    <i class="material-icons">search</i>
-                </label>
-                <div class="mdl-textfield__expandable-holder">
-                    <input class="mdl-textfield__input" type="text" name="sample"
-                           id="search-input" placeholder="search">
-                           <ul class="mdl-shadow--2dp mdl-list" id="results-container" style="position:absolute;z-index:99999;"></ul>
-                </div>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+        <!-- 标题 -->
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span
+                    class="mdl-layout-title">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
             </div>
-        </div>
-    </header>
-
-    <!-- 抽屉柜 -->
-    </header>
-    <div class="blog-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50" style="border: none;">
-        <header class="blog-drawer-header" style="box-sizing: border-box;display: flex;flex-direction: column;justify-content: flex-end;padding: 16px;height: 151px;">
-            <img src="{{ site.baseurl }}/img/avatar.jpg" class="blog-avatar" style="width: 48px;height: 48px;border-radius: 24px;">
-                {% if site.email %}
-                    <span>{{site.email}}</span>
-                {% endif %}
         </header>
+
+        <!-- 抽屉柜 -->
         {% include nav.html %}
-    </div>
 
-    <!--内容主体-->
-    <main class="mdl-layout__content">
-        <div style="min-height:100%">
-        {{ content }}
+
+        <!--内容主体-->
+        <main class="mdl-layout__content">
+        <div class="content">
+            {{ content }}
         </div>
-        {% include footer.html %}
-    </main>
+            {% include footer.html %}
+        </main>
 
-</div>
-    <script src="{{ site.baseurl }}/js/jekyll-search.js"></script>
-    <script src="{{ site.baseurl }}/js/viewer.min.js"</script>
+    </div>
+    <script src="{{ "/js/viewer.min.js" | prepend: site.baseurl }}"></script>
+
     <script>
-      window.simpleJekyllSearch = new SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '{{ site.baseurl }}/search.json',
-        json: '{{ site.baseurl }}/search.json',
-        searchResultTemplate: '<li class="mdl-list__item"><a class="mdl-list__item-primary-content" href="{url}" title="{title}">{title}</a></li>',
-        noResultsText: 'No results found',
-        limit: 10,
-        fuzzy: false,
-        exclude: ['Welcome']
-      })
-    </script>
-    <script>
-        // viewer.js图片查看
-    if (document.getElementsByClassName('post-content').length > 0){
+            if (document.getElementsByClassName('post-content').length > 0){
                 var galley = document.getElementsByClassName('post-content')[0];
                 var viewer = new Viewer(galley, {toolbar: false});
-            }
+        }
     </script>
 </body>
+
 </html>

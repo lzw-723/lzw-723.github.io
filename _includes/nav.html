@@ -1,9 +1,10 @@
 <!-- Navigation -->
-<nav class="blog-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="{{ site.baseurl }}/">主页</a>
-            {% for page in site.pages %}{% if page.title %}
-                    <li>
-                        <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                    </li>
-            {% endif %}{% endfor %}
-        </nav>
+<div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">lzw-723's blog</span>
+    <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="{{ site.baseurl }}/">主页</a>
+        {% for page in site.pages %}{% if page.title %}
+        <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        {% endif %}{% endfor %}
+    </nav>
+</div>

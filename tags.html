@@ -5,14 +5,15 @@ layout: default
 
 <!-- Main Content -->
 <div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="row">
+        <div>
             <!-- 标签云 -->
-			<div id='tag_cloud' class="tags" style="margin: 20px;">
-				{% for tag in site.tags %}
-                <a type="button" class="mdl-chip mdl-badge mdl-badge--overlap" href="#{{ tag[0] }}" title="{{ tag[0] }}" data-badge="{{ tag[1].size }}"><span class="mdl-chip__text">{{ tag[0] }}</span></a>
-				{% endfor %}
-			</div>
+            <div id='tag_cloud' class="tags" style="margin: 20px;">
+                {% for tag in site.tags %}
+                <a type="button" class="mdl-chip mdl-badge mdl-badge--overlap" href="#{{ tag[0] }}" title="{{ tag[0] }}"
+                    data-badge="{{ tag[1].size }}"><span class="mdl-chip__text">{{ tag[0] }}</span></a>
+                {% endfor %}
+            </div>
 
             <!--<blockquote class="tag-comments">
                 标签命名规范：
@@ -21,27 +22,30 @@ layout: default
             </blockquote>-->
 
             <!-- 标签列表 -->
-			{% for tag in site.tags %}
-			<div class="mdl-list">
+            {% for tag in site.tags %}
+            <ul class="list-tags mdl-list">
                 <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content" id="{{ tag[0] }}">
-                    <i class="material-icons  mdl-list__item-avatar">local_offer</i>{{ tag[0] }}
-                </span>
+                    <span class="mdl-list__item-primary-content" id="{{ tag[0] }}">
+                        <i class="material-icons  mdl-list__item-avatar">local_offer</i>{{ tag[0] }}
+                    </span>
                 </li>
-				{% for post in tag[1] %}
-                <a class="post-preview mdl-list__item mdl-list__item--two-line" href="{{ post.url | prepend: site.baseurl }}">
-    <span class="mdl-list__item-primary-content">
-      <p class="post-title">{{ post.title }}</p>
-      {% if post.subtitle %}
-      <p class="mdl-list__item-sub-title post-subtitle">{{ post.subtitle }}</p>
-      {% endif %}
-    </span>
-            </a>
-            <hr>
-	{% endfor %}
-			</div>
-			{% endfor %}
+                {% for post in tag[1] %}
+                <li class="mdl-list__item mdl-list__item--three-line">
+                    <span class="mdl-list__item-primary-content">
+                        <span class="post-title">{{ post.title }}</span>
+                        {% if post.subtitle %}
+                        <span class="post-subtitle mdl-list__item-text-body">{{ post.subtitle }}</span>
+                        {% endif %}
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                        <a class="mdl-list__item-secondary-action mdl-button"
+                            href="{{ post.url | prepend: site.baseurl }}">阅读</a>
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
 
-		</div>
-	</div>
+        </div>
+    </div>
 </div>

@@ -4,8 +4,8 @@ title:      Java中@SuppressWarnings的用法             # 标题
 subtitle:   实用有趣的Java语法糖@SuppressWarnings #副标题
 date:       2019-7-12           # 时间
 author:     lzw-723                      # 作者
-header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
-catalog: true                       # 是否归档
+img:        https://s1.ax1x.com/2020/03/21/8fkBxf.jpg    #这篇文章标题背景图片
+catalog:    true                       # 是否归档
 tags:                               #标签
     - Java
 ---

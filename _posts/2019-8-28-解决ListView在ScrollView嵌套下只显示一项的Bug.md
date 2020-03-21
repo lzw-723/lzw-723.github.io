@@ -4,7 +4,8 @@ title : 解决ListView在ScrollView嵌套下只显示一项的Bug
 subtitle:   薛定谔的ListView
 date:       2019-8-28
 author:     lzw-723                    
-catalog: true                          
+catalog:    true
+img:        https://s1.ax1x.com/2020/03/21/8finL4.gif                        
 tags:                                  
     - Android
 ---

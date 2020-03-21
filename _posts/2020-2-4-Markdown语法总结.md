@@ -4,7 +4,8 @@ title:      Markdown语法总结              # 标题
 subtitle:   我们坚信写作写的是内容，所思所想，而不是花样格式 #副标题
 date:       2020-2-4           # 时间
 author:     lzw-723                      # 作者
-catalog: true                       # 是否归档
+catalog:    true                       # 是否归档
+img:        https://s1.ax1x.com/2020/03/21/8fCDHA.jpg
 tags:                               #标签
     - Markdown
     - 写作
