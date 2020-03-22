@@ -28,15 +28,23 @@ layout: default
 
     <hr style="visibility: hidden;">
 
-    
-<div>
-    <div class="tags">
-        {% for tag in page.tags %}
-        <a type="button" class="mdl-chip" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">
-            <span class="mdl-chip__text">{{ tag }}</span>
-        </a>
-        {% endfor %}
-    </div>
-</div>
+    <div id="aplayer"></div>
+
+    <script>
+        if (document.getElementsByClassName('post-content').length > 0) {
+            var galley = document.getElementsByClassName('post-content')[0];
+            var viewer = new Viewer(galley, { toolbar: false });
+        }
+        const ap = new APlayer({
+            container: document.getElementById('aplayer'),
+            mini: true,
+            audio: [{
+                name: 'Everyday World - 我的青春恋爱物语果然有问题 S2 ED',
+                artist: 'Animenz',
+                url: 'http://music.163.com/song/media/outer/url?id=526103253.mp3',
+                cover: 'https://s1.ax1x.com/2020/03/22/85SnMD.jpg',
+            }]
+        });
+    </script>
 
 </div>

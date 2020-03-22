@@ -1,0 +1,15 @@
+---
+title: 友链
+layout: page
+permalink: /friends.html
+---
+{% if site.friends %}
+<hr style="visibility: hidden;">
+<div class="friends">
+    {% for friend in site.friends %}
+    <a type="button" class="mdl-chip" href="{{friend.href}}" title="{{friend.title}}">
+        <span class="mdl-chip__text">{{friend.title}}</span>
+    </a>
+    {% endfor %}
+</div>
+{% endif %}

@@ -6,7 +6,7 @@ layout: page
 <hr style="visibility: hidden;">
 <div class="preview-card mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title" style="height: 176px;{% if post.img %}background: url('{{ post.img }}'){% else %}background: url('https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture'){% endif %} center / cover;">
-        <h2 class="mdl-card__title-text mdl-color-text--white">{{ post.title }}</h2>
+        <h2 class="card-title mdl-card__title-text mdl-color-text--white">{{ post.title }}</h2>
     </div>
     <div class="mdl-card__supporting-text">{{ post.content | strip_html | truncate:200 }}</div>
     <div class="mdl-card__actions mdl-card--border">
