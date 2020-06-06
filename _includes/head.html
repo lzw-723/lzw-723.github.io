@@ -20,13 +20,17 @@
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
     
-    <script>MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'] ],
+                displayMath: [ ['$$','$$'] ],
+                processEscapes: true
             }
-        };
+        });
     </script>
-    <script id="MathJax-script" async src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script>
 
     <link href="{{ "/css/style.css" | prepend: site.baseurl }}" rel="stylesheet">
 
