@@ -8,9 +8,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1613016677985">
+<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1613017658351">
 <link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -29,8 +35,9 @@
 
     <meta name="description" content="单例模式
 单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
-这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建..." />
-    <meta name="keywords" content="" />
+
+这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创..." />
+    <meta name="keywords" content="Java" />
   </head>
   <body>
     <div id="app" class="main">
@@ -39,7 +46,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://blog.lzw-723.xyz">
-        <img src="https://blog.lzw-723.xyz/images/avatar.png?v=1613016677985" class="site-logo">
+        <img src="https://blog.lzw-723.xyz/images/avatar.png?v=1613017658351" class="site-logo">
         <h1 class="site-title">lzw-723&#39;s blog</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -122,6 +129,7 @@
             <div class="post-content" v-pre>
               <h2 id="单例模式">单例模式</h2>
 <p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
+<!-- more -->
 <p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
 <p>注意：</p>
 <p>1、单例类只能有一个实例。<br>
@@ -211,6 +219,14 @@ getInstance() 的性能对应用程序不是很关键（该方法使用不太频
 
             </div>
             
+              <div class="tag-container">
+                
+                  <a href="https://blog.lzw-723.xyz/tag/Vnn1O5LMY/" class="tag">
+                    Java
+                  </a>
+                
+              </div>
+            
             
               <div class="next-post">
                 <div class="next">下一篇</div>
@@ -222,6 +238,12 @@ getInstance() 的性能对应用程序不是很关键（该方法使用不太频
               </div>
             
 
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
             
 
           </div>
@@ -250,6 +272,29 @@ var app = new Vue({
     hljs.initHighlightingOnLoad()
   </script>
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '399620a9c9195b7466cf',
+        clientSecret: '00893bb4d0569d3ccd4b718ab36d35a4a4be9f6d',
+        repo: 'gittalk',
+        owner: 'lzw-723',
+        admin: ['lzw-723'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

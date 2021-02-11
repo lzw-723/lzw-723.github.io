@@ -1,25 +1,134 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.lzw-723.xyz</id>
-    <title>lzw-723&apos;s blog</title>
-    <updated>2021-02-11T04:27:45.971Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.lzw-723.xyz"/>
-    <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
-    <subtitle>天地不仁，以万物为刍狗，&lt;br&gt;圣人不仁，以百姓为刍狗。</subtitle>
-    <logo>https://blog.lzw-723.xyz/images/avatar.png</logo>
-    <icon>https://blog.lzw-723.xyz/favicon.ico</icon>
-    <rights>All rights reserved 2021, lzw-723&apos;s blog</rights>
-    <entry>
-        <title type="html"><![CDATA[Markdown语法总结]]></title>
-        <id>https://blog.lzw-723.xyz/post/markdown-yu-fa-zong-jie/</id>
-        <link href="https://blog.lzw-723.xyz/post/markdown-yu-fa-zong-jie/">
-        </link>
-        <updated>2020-02-04T04:24:43.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="markdow简介">Markdow简介</h2>
-<p><strong>Markdown</strong> 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="markdow简介">Markdow简介</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Markdown语法总结 | lzw-723&#39;s blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1613017658351">
+<link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0XY0F595C2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0XY0F595C2');
+</script>
+
+
+    <meta name="description" content="Markdow简介
+Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。
+
+Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。
+Markdown 编写的文档可以导出 HT..." />
+    <meta name="keywords" content="写作,Markdown" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.lzw-723.xyz">
+        <img src="https://blog.lzw-723.xyz/images/avatar.png?v=1613017658351" class="site-logo">
+        <h1 class="site-title">lzw-723&#39;s blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/lzw-723" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/lzw723" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/lzw-723" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      天地不仁，以万物为刍狗，<br>圣人不仁，以百姓为刍狗。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://blog.lzw-723.xyz/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Markdown语法总结</h2>
+            <div class="post-date">2020-02-04</div>
+            
+              <div class="feature-container" style="background-image: url('https://s1.ax1x.com/2020/03/21/8fCDHA.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="markdow简介">Markdow简介</h2>
 <p><strong>Markdown</strong> 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
 <!-- more -->
 <p><strong>Markdown</strong> 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。</p>
@@ -228,138 +337,92 @@ $$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
 <h3 id="资料引用">资料引用</h3>
 <p><a href="https://www.runoob.com/markdown">菜鸟教程</a><br>
 <a href="https://www.mdeditor.com/">MdEditor</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java中单例模式笔记]]></title>
-        <id>https://blog.lzw-723.xyz/post/java-zhong-dan-li-mo-shi-bi-ji/</id>
-        <link href="https://blog.lzw-723.xyz/post/java-zhong-dan-li-mo-shi-bi-ji/">
-        </link>
-        <updated>2019-01-05T04:06:25.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="单例模式">单例模式</h2>
-<p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="单例模式">单例模式</h2>
-<p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
-<!-- more -->
-<p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
-<p>注意：</p>
-<p>1、单例类只能有一个实例。<br>
-2、单例类必须自己创建自己的唯一实例。<br>
-3、单例类必须给所有其他对象提供这一实例。<br>
-介绍<br>
-意图：保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
-<p>主要解决：一个全局使用的类频繁地创建与销毁。</p>
-<p>何时使用：当您想控制实例数目，节省系统资源的时候。</p>
-<p>如何解决：判断系统是否已经有这个单例，如果有则返回，如果没有则创建。</p>
-<p>关键代码：构造函数是私有的。</p>
-<p>应用实例：<br>
-1、一个党只能有一个书记。<br>
-2、Windows 是多进程多线程的，在操作一个文件的时候，就不可避免地出现多个进程或线程同时操作一个文件的现象，所以所有文件的处理必须通过唯一的实例来进行。<br>
-3、一些设备管理器常常设计为单例模式，比如一个电脑有两台打印机，在输出的时候就要处理不能两台打印机打印同一个文件。</p>
-<p>优点：<br>
-1、在内存里只有一个实例，减少了内存的开销，尤其是频繁的创建和销毁实例（比如管理学院首页页面缓存）。<br>
-2、避免对资源的多重占用（比如写文件操作）。</p>
-<p>缺点：<br>
-没有接口，不能继承，与单一职责原则冲突，一个类应该只关心内部逻辑，而不关心外面怎么样来实例化。</p>
-<p>使用场景：<br>
-1、要求生产唯一序列号。<br>
-2、WEB 中的计数器，不用每次刷新都在数据库里加一次，用单例先缓存起来。 3、创建的一个对象需要消耗的资源过多，比如 I/O 与数据库的连接等。</p>
-<p>注意事项：<br>
-getInstance() 方法中需要使用同步锁 synchronized (Singleton.class) 防止多线程同时进入造成 instance 被多次实例化。</p>
-<p>分为以下两种</p>
-<h4 id="懒汉模式">懒汉模式</h4>
-<h6 id="懒汉式线程不安全">懒汉式，线程不安全</h6>
-<p>是否 Lazy 初始化：是</p>
-<p>是否多线程安全：否</p>
-<p>实现难度：易</p>
-<p>描述：这种方式是最基本的实现方式，这种实现最大的问题就是不支持多线程。因为没有加锁 synchronized，所以严格意义上它并不算单例模式。<br>
-这种方式 lazy loading 很明显，不要求线程安全，在多线程不能正常工作。</p>
-<p>实例</p>
-<pre><code class="language-java">public class Singleton {  
-    private static Singleton instance;  
-    private Singleton (){}  
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://blog.lzw-723.xyz/tag/IOCiVO8tA/" class="tag">
+                    写作
+                  </a>
+                
+                  <a href="https://blog.lzw-723.xyz/tag/ofp6t5eIT4/" class="tag">
+                    Markdown
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.lzw-723.xyz/post/java-zhong-dan-li-mo-shi-bi-ji/">
+                  <h3 class="post-title">
+                    Java中单例模式笔记
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
   
-    public static Singleton getInstance() {  
-    if (instance == null) {  
-        instance = new Singleton();  
-    }  
-    return instance;  
-    }  
-}
-</code></pre>
-<p>接下来介绍的几种实现方式都支持多线程，但是在性能上有所差异。</p>
-<h5 id="2-懒汉式线程安全">2、懒汉式，线程安全</h5>
-<p>是否 Lazy 初始化：是</p>
-<p>是否多线程安全：是</p>
-<p>实现难度：易</p>
-<p>描述：这种方式具备很好的 lazy loading，能够在多线程中很好的工作，但是，效率很低，99% 情况下不需要同步。<br>
-优点：第一次调用才初始化，避免内存浪费。<br>
-缺点：必须加锁 synchronized 才能保证单例，但加锁会影响效率。<br>
-getInstance() 的性能对应用程序不是很关键（该方法使用不太频繁）。</p>
-<p>实例</p>
-<pre><code class="language-java">public class Singleton {  
-    private static Singleton instance;  
-    private Singleton (){}  
-    public static synchronized Singleton getInstance() {  
-    if (instance == null) {  
-        instance = new Singleton();  
-    }  
-    return instance;  
-    }  
-}
-</code></pre>
-<h4 id="饿汉模式">饿汉模式</h4>
-<p>是否 Lazy 初始化：否</p>
-<p>是否多线程安全：是</p>
-<p>实现难度：易</p>
-<p>描述：这种方式比较常用，但容易产生垃圾对象。<br>
-优点：没有加锁，执行效率会提高。<br>
-缺点：类加载时就初始化，浪费内存。<br>
-它基于 classloader 机制避免了多线程的同步问题，不过，instance 在类装载时就实例化，虽然导致类装载的原因有很多种，在单例模式中大多数都是调用 getInstance 方法， 但是也不能确定有其他的方式（或者其他的静态方法）导致类装载，这时候初始化 instance 显然没有达到 lazy loading 的效果。</p>
-<p>实例</p>
-<pre><code class="language-java">public class Singleton {  
-    private static Singleton instance = new Singleton();  
-    private Singleton (){}  
-    public static Singleton getInstance() {  
-    return instance;  
-    }  
-}
-</code></pre>
-<h3 id="资料引用">资料引用</h3>
-<p><a href="https://www.runoob.com/design-pattern/singleton-pattern.html">菜鸟教程</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://blog.lzw-723.xyz/post/hello-gridea/</id>
-        <link href="https://blog.lzw-723.xyz/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-</feed>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '399620a9c9195b7466cf',
+        clientSecret: '00893bb4d0569d3ccd4b718ab36d35a4a4be9f6d',
+        repo: 'gittalk',
+        owner: 'lzw-723',
+        admin: ['lzw-723'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
