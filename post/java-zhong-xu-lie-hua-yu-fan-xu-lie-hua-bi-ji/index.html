@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Java中序列化与反序列化笔记 | lzw-723&#39;s blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1613018279412">
+<link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0XY0F595C2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0XY0F595C2');
+</script>
+
+
+    <meta name="description" content="Java 提供了一种对象序列化的机制，该机制中，一个对象可以被表示为一个字节序列，该字节序列包括该对象的数据、有关对象的类型的信息和存储在对象中数据的类型。
+
+概念
+将序列化对象写入文件之后，可以从文件中读取出来，并且对它进行反序列化，也就..." />
+    <meta name="keywords" content="笔记,Java" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.lzw-723.xyz">
+        <img src="https://blog.lzw-723.xyz/images/avatar.png?v=1613018279412" class="site-logo">
+        <h1 class="site-title">lzw-723&#39;s blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/lzw-723" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/lzw723" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/lzw-723" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      天地不仁，以万物为刍狗，<br>圣人不仁，以百姓为刍狗。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://blog.lzw-723.xyz/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Java中序列化与反序列化笔记</h2>
+            <div class="post-date">2020-01-11</div>
+            
+              <div class="feature-container" style="background-image: url('https://s1.ax1x.com/2020/03/21/8fC91S.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p><code>Java</code> 提供了一种对象序列化的机制，该机制中，一个对象可以被表示为一个字节序列，该字节序列包括该对象的数据、有关对象的类型的信息和存储在对象中数据的类型。</p>
+<!-- more -->
+<h2 id="概念">概念</h2>
+<p>将序列化对象写入文件之后，可以从文件中读取出来，并且对它进行反序列化，也就是说，对象的类型信息、对象的数据，还有对象中的数据类型可以用来在内存中新建对象。</p>
+<p>整个过程都是 <code>Java</code> 虚拟机（<code>JVM</code>）独立的，也就是说，在一个平台上序列化的对象可以在另一个完全不同的平台上反序列化该对象。</p>
+<h2 id="实现">实现</h2>
+<h3 id="方法">方法</h3>
+<p>类 <code>ObjectInputStream</code> 和 <code>ObjectOutputStream</code> 是高层次的数据流，它们包含反序列化和序列化对象的方法。</p>
+<pre><code class="language-java">public final void writeObject(Object x) throws IOException
+</code></pre>
+<p><code>writeObject</code>方法序列化一个对象，并将它发送到输出流。</p>
+<p>相似的 <code>ObjectInputStream</code> 类包含如下反序列化一个对象的方法：</p>
+<pre><code class="language-java">public final Object readObject() throws IOException, ClassNotFoundException
+</code></pre>
+<p>readObject方法从流中取出下一个对象，并将对象反序列化。它的返回值为Object，因此，你需要将它转换成合适的数据类型。</p>
+<blockquote>
+<p>请注意，一个类的对象要想序列化成功，必须满足两个条件：</p>
+<blockquote>
+<ul>
+<li>该类必须实现 <code>java.io.Serializable</code> 接口。</li>
+<li>该类的所有属性必须是可序列化的。如果有一个属性不是可序列化的，则该属性必须注明是短暂的。</li>
+</ul>
+</blockquote>
+</blockquote>
+<p><code>如果你想知道一个 Java 标准类是否是可序列化的，请查看该类的文档。检验一个类的实例是否能序列化十分简单， 只需要查看该类有没有实现*java.io.Serializable*接口。</code></p>
+<p>当序列化一个对象到文件时， 按照 <code>Java</code> 的标准约定是给文件一个 <code>.ser</code> 扩展名。<br>
+对于一个实体类，不想将所有的属性都进行序列化，有专门的关键字 <em>transient</em>：</p>
+<pre><code class="language-java">private transient String name;
+</code></pre>
+<p>当对该类序列化时，会自动忽略被 <code>transient</code> 修饰的属性。</p>
+<h3 id="代码">代码</h3>
+<pre><code class="language-java">/**
+ * 序列化测试
+ *
+ */
+public class App {
+    /**
+     * Person
+     */
+    public static class Person implements Serializable {
+
+        private String name;
+        private int age;
+        private transient String info = &quot;nothing&quot;;
+
+        public Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        public Person setInfo(String info) {
+            this.info = info;
+            return this;
+        }
+        public void show(){
+            System.out.println(name + '-' + age + '-' + info);
+        }
+    }
+
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        writePerson();
+        readPerson();
+    }
+
+    // 从文件中读取Person对象
+    public static void readPerson() throws IOException, ClassNotFoundException {
+        // 创建反序列化流
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(&quot;\\dls.ser&quot;));
+        // 从文件中读取对象
+        Object obj = ois.readObject();
+        ((Person) obj).show();
+        // 释放资源
+        ois.close();
+    }
+
+    // 向文件中写Person对象
+    public static void writePerson() throws IOException {
+        // 创建序列化流
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(&quot;\\dls.ser&quot;));
+        // 向文件中写Person对象
+        oos.writeObject(new Person(&quot;大老师&quot;, 17).setInfo(&quot;没有期望就没有失望，没有羁绊就不会受伤。&quot;));
+        // 关流
+        oos.close();
+    }
+}
+
+</code></pre>
+<h3 id="输出">输出</h3>
+<p><code>大老师-17-null</code></p>
+<h2 id="参考资料">参考资料</h2>
+<blockquote>
+<p><a href="https://www.runoob.com/java/java-serialization.html">Java 序列化 | 菜鸟教程</a></p>
+</blockquote>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://blog.lzw-723.xyz/tag/ol7l837c1/" class="tag">
+                    笔记
+                  </a>
+                
+                  <a href="https://blog.lzw-723.xyz/tag/Vnn1O5LMY/" class="tag">
+                    Java
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.lzw-723.xyz/post/java-zhong-dan-li-mo-shi-bi-ji/">
+                  <h3 class="post-title">
+                    Java中单例模式笔记
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '399620a9c9195b7466cf',
+        clientSecret: '00893bb4d0569d3ccd4b718ab36d35a4a4be9f6d',
+        repo: 'gittalk',
+        owner: 'lzw-723',
+        admin: ['lzw-723'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

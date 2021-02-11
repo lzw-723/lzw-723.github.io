@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-02-11T04:27:45.971Z</updated>
+    <updated>2021-02-11T04:38:03.599Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -16,12 +16,11 @@
         <link href="https://blog.lzw-723.xyz/post/markdown-yu-fa-zong-jie/">
         </link>
         <updated>2020-02-04T04:24:43.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="markdow简介">Markdow简介</h2>
-<p><strong>Markdown</strong> 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
+        <summary type="html"><![CDATA[<p><strong>Markdown</strong> 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<h2 id="markdow简介">Markdow简介</h2>
-<p><strong>Markdown</strong> 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
+        <content type="html"><![CDATA[<p><strong>Markdown</strong> 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
 <!-- more -->
+<h2 id="markdow简介">Markdow简介</h2>
 <p><strong>Markdown</strong> 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。</p>
 <p><strong>Markdown</strong> 编写的文档可以导出 <code>HTML</code> 、<code>Word</code>、图像、<code>PDF</code>、<code>Epub</code> 等多种格式的文档。</p>
 <p><strong>Markdown</strong> 编写的文档后缀为 <code>.md</code>, <code>.markdown</code></p>
@@ -108,22 +107,22 @@ ___粗斜体文本___
   * [ ] task list 4-2
 </code></pre>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-256187"><label class="task-list-item-label" for="task-item-256187"> task list 1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4212911"><label class="task-list-item-label" for="task-item-4212911"> task list 2</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9125947"><label class="task-list-item-label" for="task-item-9125947"> task list 3</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5016611"><label class="task-list-item-label" for="task-item-5016611"> task list 1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6757923"><label class="task-list-item-label" for="task-item-6757923"> task list 2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3341335"><label class="task-list-item-label" for="task-item-3341335"> task list 3</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1863958"><label class="task-list-item-label" for="task-item-1863958"> task list 3-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-665524"><label class="task-list-item-label" for="task-item-665524"> task list 3-2</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3820639"><label class="task-list-item-label" for="task-item-3820639"> task list 3-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-69931"><label class="task-list-item-label" for="task-item-69931"> task list 3-2</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8159854"><label class="task-list-item-label" for="task-item-8159854"> task list 3-2-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5109494"><label class="task-list-item-label" for="task-item-5109494"> task list 3-2-1</label></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8671766"><label class="task-list-item-label" for="task-item-8671766"> task list 4</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8880282"><label class="task-list-item-label" for="task-item-8880282"> task list 4</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1838439"><label class="task-list-item-label" for="task-item-1838439"> task list 4-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3300131"><label class="task-list-item-label" for="task-item-3300131"> task list 4-2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4308430"><label class="task-list-item-label" for="task-item-4308430"> task list 4-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2071357"><label class="task-list-item-label" for="task-item-2071357"> task list 4-2</label></li>
 </ul>
 </li>
 </ul>
@@ -231,22 +230,123 @@ $$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Java中序列化与反序列化笔记]]></title>
+        <id>https://blog.lzw-723.xyz/post/java-zhong-xu-lie-hua-yu-fan-xu-lie-hua-bi-ji/</id>
+        <link href="https://blog.lzw-723.xyz/post/java-zhong-xu-lie-hua-yu-fan-xu-lie-hua-bi-ji/">
+        </link>
+        <updated>2020-01-11T04:33:32.000Z</updated>
+        <summary type="html"><![CDATA[<p><code>Java</code> 提供了一种对象序列化的机制，该机制中，一个对象可以被表示为一个字节序列，该字节序列包括该对象的数据、有关对象的类型的信息和存储在对象中数据的类型。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><code>Java</code> 提供了一种对象序列化的机制，该机制中，一个对象可以被表示为一个字节序列，该字节序列包括该对象的数据、有关对象的类型的信息和存储在对象中数据的类型。</p>
+<!-- more -->
+<h2 id="概念">概念</h2>
+<p>将序列化对象写入文件之后，可以从文件中读取出来，并且对它进行反序列化，也就是说，对象的类型信息、对象的数据，还有对象中的数据类型可以用来在内存中新建对象。</p>
+<p>整个过程都是 <code>Java</code> 虚拟机（<code>JVM</code>）独立的，也就是说，在一个平台上序列化的对象可以在另一个完全不同的平台上反序列化该对象。</p>
+<h2 id="实现">实现</h2>
+<h3 id="方法">方法</h3>
+<p>类 <code>ObjectInputStream</code> 和 <code>ObjectOutputStream</code> 是高层次的数据流，它们包含反序列化和序列化对象的方法。</p>
+<pre><code class="language-java">public final void writeObject(Object x) throws IOException
+</code></pre>
+<p><code>writeObject</code>方法序列化一个对象，并将它发送到输出流。</p>
+<p>相似的 <code>ObjectInputStream</code> 类包含如下反序列化一个对象的方法：</p>
+<pre><code class="language-java">public final Object readObject() throws IOException, ClassNotFoundException
+</code></pre>
+<p>readObject方法从流中取出下一个对象，并将对象反序列化。它的返回值为Object，因此，你需要将它转换成合适的数据类型。</p>
+<blockquote>
+<p>请注意，一个类的对象要想序列化成功，必须满足两个条件：</p>
+<blockquote>
+<ul>
+<li>该类必须实现 <code>java.io.Serializable</code> 接口。</li>
+<li>该类的所有属性必须是可序列化的。如果有一个属性不是可序列化的，则该属性必须注明是短暂的。</li>
+</ul>
+</blockquote>
+</blockquote>
+<p><code>如果你想知道一个 Java 标准类是否是可序列化的，请查看该类的文档。检验一个类的实例是否能序列化十分简单， 只需要查看该类有没有实现*java.io.Serializable*接口。</code></p>
+<p>当序列化一个对象到文件时， 按照 <code>Java</code> 的标准约定是给文件一个 <code>.ser</code> 扩展名。<br>
+对于一个实体类，不想将所有的属性都进行序列化，有专门的关键字 <em>transient</em>：</p>
+<pre><code class="language-java">private transient String name;
+</code></pre>
+<p>当对该类序列化时，会自动忽略被 <code>transient</code> 修饰的属性。</p>
+<h3 id="代码">代码</h3>
+<pre><code class="language-java">/**
+ * 序列化测试
+ *
+ */
+public class App {
+    /**
+     * Person
+     */
+    public static class Person implements Serializable {
+
+        private String name;
+        private int age;
+        private transient String info = &quot;nothing&quot;;
+
+        public Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        public Person setInfo(String info) {
+            this.info = info;
+            return this;
+        }
+        public void show(){
+            System.out.println(name + '-' + age + '-' + info);
+        }
+    }
+
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        writePerson();
+        readPerson();
+    }
+
+    // 从文件中读取Person对象
+    public static void readPerson() throws IOException, ClassNotFoundException {
+        // 创建反序列化流
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(&quot;\\dls.ser&quot;));
+        // 从文件中读取对象
+        Object obj = ois.readObject();
+        ((Person) obj).show();
+        // 释放资源
+        ois.close();
+    }
+
+    // 向文件中写Person对象
+    public static void writePerson() throws IOException {
+        // 创建序列化流
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(&quot;\\dls.ser&quot;));
+        // 向文件中写Person对象
+        oos.writeObject(new Person(&quot;大老师&quot;, 17).setInfo(&quot;没有期望就没有失望，没有羁绊就不会受伤。&quot;));
+        // 关流
+        oos.close();
+    }
+}
+
+</code></pre>
+<h3 id="输出">输出</h3>
+<p><code>大老师-17-null</code></p>
+<h2 id="参考资料">参考资料</h2>
+<blockquote>
+<p><a href="https://www.runoob.com/java/java-serialization.html">Java 序列化 | 菜鸟教程</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Java中单例模式笔记]]></title>
         <id>https://blog.lzw-723.xyz/post/java-zhong-dan-li-mo-shi-bi-ji/</id>
         <link href="https://blog.lzw-723.xyz/post/java-zhong-dan-li-mo-shi-bi-ji/">
         </link>
         <updated>2019-01-05T04:06:25.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="单例模式">单例模式</h2>
-<p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
+        <summary type="html"><![CDATA[<p>单例模式（<code>Singleton Pattern</code>）是 <code>Java</code> 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<h2 id="单例模式">单例模式</h2>
-<p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
+        <content type="html"><![CDATA[<p>单例模式（<code>Singleton Pattern</code>）是 <code>Java</code> 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
 <!-- more -->
 <p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
 <p>注意：</p>
-<p>1、单例类只能有一个实例。<br>
-2、单例类必须自己创建自己的唯一实例。<br>
-3、单例类必须给所有其他对象提供这一实例。<br>
+<p>1.单例类只能有一个实例。<br>
+2.单例类必须自己创建自己的唯一实例。<br>
+3.单例类必须给所有其他对象提供这一实例。<br>
 介绍<br>
 意图：保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
 <p>主要解决：一个全局使用的类频繁地创建与销毁。</p>
@@ -254,26 +354,26 @@ $$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
 <p>如何解决：判断系统是否已经有这个单例，如果有则返回，如果没有则创建。</p>
 <p>关键代码：构造函数是私有的。</p>
 <p>应用实例：<br>
-1、一个党只能有一个书记。<br>
-2、Windows 是多进程多线程的，在操作一个文件的时候，就不可避免地出现多个进程或线程同时操作一个文件的现象，所以所有文件的处理必须通过唯一的实例来进行。<br>
-3、一些设备管理器常常设计为单例模式，比如一个电脑有两台打印机，在输出的时候就要处理不能两台打印机打印同一个文件。</p>
+1.一个党只能有一个书记。<br>
+2.Windows 是多进程多线程的，在操作一个文件的时候，就不可避免地出现多个进程或线程同时操作一个文件的现象，所以所有文件的处理必须通过唯一的实例来进行。<br>
+3.一些设备管理器常常设计为单例模式，比如一个电脑有两台打印机，在输出的时候就要处理不能两台打印机打印同一个文件。</p>
 <p>优点：<br>
-1、在内存里只有一个实例，减少了内存的开销，尤其是频繁的创建和销毁实例（比如管理学院首页页面缓存）。<br>
-2、避免对资源的多重占用（比如写文件操作）。</p>
+1.在内存里只有一个实例，减少了内存的开销，尤其是频繁的创建和销毁实例（比如管理学院首页页面缓存）。<br>
+2.避免对资源的多重占用（比如写文件操作）。</p>
 <p>缺点：<br>
 没有接口，不能继承，与单一职责原则冲突，一个类应该只关心内部逻辑，而不关心外面怎么样来实例化。</p>
 <p>使用场景：<br>
-1、要求生产唯一序列号。<br>
-2、WEB 中的计数器，不用每次刷新都在数据库里加一次，用单例先缓存起来。 3、创建的一个对象需要消耗的资源过多，比如 I/O 与数据库的连接等。</p>
+1.要求生产唯一序列号。<br>
+2.WEB 中的计数器，不用每次刷新都在数据库里加一次，用单例先缓存起来。 3、创建的一个对象需要消耗的资源过多，比如 I/O 与数据库的连接等。</p>
 <p>注意事项：<br>
-getInstance() 方法中需要使用同步锁 synchronized (Singleton.class) 防止多线程同时进入造成 instance 被多次实例化。</p>
+<code>getInstance()</code> 方法中需要使用同步锁 <code>synchronized (Singleton.class)</code> 防止多线程同时进入造成 <code>instance</code> 被多次实例化。</p>
 <p>分为以下两种</p>
 <h4 id="懒汉模式">懒汉模式</h4>
 <h6 id="懒汉式线程不安全">懒汉式，线程不安全</h6>
 <p>是否 Lazy 初始化：是</p>
 <p>是否多线程安全：否</p>
 <p>实现难度：易</p>
-<p>描述：这种方式是最基本的实现方式，这种实现最大的问题就是不支持多线程。因为没有加锁 synchronized，所以严格意义上它并不算单例模式。<br>
+<p>描述：这种方式是最基本的实现方式，这种实现最大的问题就是不支持多线程。因为没有加锁 <code>synchronized</code>，所以严格意义上它并不算单例模式。<br>
 这种方式 lazy loading 很明显，不要求线程安全，在多线程不能正常工作。</p>
 <p>实例</p>
 <pre><code class="language-java">public class Singleton {  
@@ -295,8 +395,8 @@ getInstance() 方法中需要使用同步锁 synchronized (Singleton.class) 防�
 <p>实现难度：易</p>
 <p>描述：这种方式具备很好的 lazy loading，能够在多线程中很好的工作，但是，效率很低，99% 情况下不需要同步。<br>
 优点：第一次调用才初始化，避免内存浪费。<br>
-缺点：必须加锁 synchronized 才能保证单例，但加锁会影响效率。<br>
-getInstance() 的性能对应用程序不是很关键（该方法使用不太频繁）。</p>
+缺点：必须加锁 <code>synchronized</code> 才能保证单例，但加锁会影响效率。<br>
+<code>getInstance()</code> 的性能对应用程序不是很关键（该方法使用不太频繁）。</p>
 <p>实例</p>
 <pre><code class="language-java">public class Singleton {  
     private static Singleton instance;  
@@ -316,7 +416,7 @@ getInstance() 的性能对应用程序不是很关键（该方法使用不太频
 <p>描述：这种方式比较常用，但容易产生垃圾对象。<br>
 优点：没有加锁，执行效率会提高。<br>
 缺点：类加载时就初始化，浪费内存。<br>
-它基于 classloader 机制避免了多线程的同步问题，不过，instance 在类装载时就实例化，虽然导致类装载的原因有很多种，在单例模式中大多数都是调用 getInstance 方法， 但是也不能确定有其他的方式（或者其他的静态方法）导致类装载，这时候初始化 instance 显然没有达到 lazy loading 的效果。</p>
+它基于 <code>classloader</code> 机制避免了多线程的同步问题，不过，<code>instance</code> 在类装载时就实例化，虽然导致类装载的原因有很多种，在单例模式中大多数都是调用 <code>getInstance</code> 方法， 但是也不能确定有其他的方式（或者其他的静态方法）导致类装载，这时候初始化 <code>instance</code> 显然没有达到 lazy loading 的效果。</p>
 <p>实例</p>
 <pre><code class="language-java">public class Singleton {  
     private static Singleton instance = new Singleton();  
