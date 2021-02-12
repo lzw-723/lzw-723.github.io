@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-02-11T04:38:03.599Z</updated>
+    <updated>2021-02-12T10:36:31.472Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -10,6 +10,59 @@
     <logo>https://blog.lzw-723.xyz/images/avatar.png</logo>
     <icon>https://blog.lzw-723.xyz/favicon.ico</icon>
     <rights>All rights reserved 2021, lzw-723&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Vue初体验]]></title>
+        <id>https://blog.lzw-723.xyz/post/vue-chu-ti-yan/</id>
+        <link href="https://blog.lzw-723.xyz/post/vue-chu-ti-yan/">
+        </link>
+        <updated>2021-02-12T09:29:59.000Z</updated>
+        <summary type="html"><![CDATA[<p><code>Vue</code> (读音 <em>/vjuː/</em>，类似于 <strong>view</strong>) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，<code>Vue</code> 被设计为可以自底向上逐层应用。<code>Vue</code> 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，<code>Vue</code> 也完全能够为复杂的单页应用提供驱动。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><code>Vue</code> (读音 <em>/vjuː/</em>，类似于 <strong>view</strong>) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，<code>Vue</code> 被设计为可以自底向上逐层应用。<code>Vue</code> 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，<code>Vue</code> 也完全能够为复杂的单页应用提供驱动。</p>
+<!-- more -->
+<h2 id="准备工作">准备工作</h2>
+<h3 id="1配置nodejs">1.配置<code>nodejs</code></h3>
+<p>到<a href="https://nodejs.org/en/download/">Nodejs官网</a>或<a href="http://nodejs.cn/download/">Nodejs中文网</a>直接下载对应操作系统的安装包，一路Next完成。</p>
+<blockquote>
+<p>建议选择<code>LTS</code>(长期支持)版本</p>
+</blockquote>
+<h3 id="2配置pnpm">2.配置pnpm</h3>
+<blockquote>
+<p>这一步可选，但如果不选择，后文<code>pnpm</code>需替换为<code>npm</code></p>
+</blockquote>
+<p>pnpm像npm一样也是一个包管理器，用法几乎一样。<br>
+它的优点是<strong>快、节省磁盘占用</strong><br>
+<img src="https://s3.ax1x.com/2021/02/12/yDb8zj.png" alt="pnpm与npm与yarn对比" title="pnpm与npm与yarn对比" loading="lazy"><br>
+在window下它会在项目所在驱动器中一个隐藏目录下保存所有包，这个驱动器中的所有工程都是引用这里的文件，所以，只有一份文件在磁盘中，大大减少了空间占用。<br>
+<img src="https://s3.ax1x.com/2021/02/12/yDbvtS.png" alt="我的例子" loading="lazy"></p>
+<h4 id="下载安装">下载安装</h4>
+<blockquote>
+<p>详细情况见<a href="https://pnpm.js.org/en/installation">pnpm官网安装介绍</a></p>
+</blockquote>
+<p>执行下面命令：</p>
+<pre><code class="language-shell">npm install -g pnpm
+</code></pre>
+<h4 id="注意">注意</h4>
+<p>虽然<code>pnpm</code>可以配置储存路径，但会使其他盘的包引用失效。</p>
+<h3 id="安装vuecli">安装<code>@vue/cli</code></h3>
+<p>直接</p>
+<pre><code class="language-shell">npm install -g @vue/cli
+</code></pre>
+<h2 id="新建项目">新建项目</h2>
+<p>在想要创建的工程的父目录下执行</p>
+<pre><code class="language-shell">vue create hello-world
+</code></pre>
+<p>选择<code>vue3</code><br>
+<img src="https://s3.ax1x.com/2021/02/12/yDLoqI.png" alt="vue3" loading="lazy"></p>
+<p>出现下图则新建成功<br>
+<img src="https://s3.ax1x.com/2021/02/12/yDLHdP.png" alt="成功" loading="lazy"></p>
+<h2 id="运行">运行</h2>
+<p>根据提示在浏览器打开地址<br>
+<img src="https://s3.ax1x.com/2021/02/12/yDL7Zt.png" alt="提示" loading="lazy"><br>
+<img src="https://s3.ax1x.com/2021/02/12/yDLbIf.png" alt="浏览器" loading="lazy"><br>
+<strong>成功！！！</strong></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Markdown语法总结]]></title>
         <id>https://blog.lzw-723.xyz/post/markdown-yu-fa-zong-jie/</id>
@@ -107,22 +160,22 @@ ___粗斜体文本___
   * [ ] task list 4-2
 </code></pre>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5016611"><label class="task-list-item-label" for="task-item-5016611"> task list 1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6757923"><label class="task-list-item-label" for="task-item-6757923"> task list 2</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3341335"><label class="task-list-item-label" for="task-item-3341335"> task list 3</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5389260"><label class="task-list-item-label" for="task-item-5389260"> task list 1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9602108"><label class="task-list-item-label" for="task-item-9602108"> task list 2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4298600"><label class="task-list-item-label" for="task-item-4298600"> task list 3</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3820639"><label class="task-list-item-label" for="task-item-3820639"> task list 3-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-69931"><label class="task-list-item-label" for="task-item-69931"> task list 3-2</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9081290"><label class="task-list-item-label" for="task-item-9081290"> task list 3-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6753176"><label class="task-list-item-label" for="task-item-6753176"> task list 3-2</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5109494"><label class="task-list-item-label" for="task-item-5109494"> task list 3-2-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7692500"><label class="task-list-item-label" for="task-item-7692500"> task list 3-2-1</label></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8880282"><label class="task-list-item-label" for="task-item-8880282"> task list 4</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3432531"><label class="task-list-item-label" for="task-item-3432531"> task list 4</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4308430"><label class="task-list-item-label" for="task-item-4308430"> task list 4-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2071357"><label class="task-list-item-label" for="task-item-2071357"> task list 4-2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-207964"><label class="task-list-item-label" for="task-item-207964"> task list 4-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7806074"><label class="task-list-item-label" for="task-item-7806074"> task list 4-2</label></li>
 </ul>
 </li>
 </ul>
