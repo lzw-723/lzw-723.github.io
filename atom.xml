@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-07-02T10:22:29.343Z</updated>
+    <updated>2021-07-02T10:22:41.260Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -10,6 +10,151 @@
     <logo>https://blog.lzw-723.xyz/images/avatar.png</logo>
     <icon>https://blog.lzw-723.xyz/favicon.ico</icon>
     <rights>All rights reserved 2021, lzw-723&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Java日志学习]]></title>
+        <id>https://blog.lzw-723.xyz/post/java-ri-zhi-xue-xi/</id>
+        <link href="https://blog.lzw-723.xyz/post/java-ri-zhi-xue-xi/">
+        </link>
+        <updated>2021-07-01T04:32:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>不要再滥用<code>System.out.println()</code>了</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>不要再滥用<code>System.out.println()</code>了</p>
+<!-- more -->
+<hr>
+<h2 id="日志概念">日志概念</h2>
+<h3 id="日志是什么">日志是什么</h3>
+<blockquote>
+<p>生活中的日志是记录你生活的点点滴滴，让它把你内心的世界表露出来，更好的诠释自己的内心世界，而电脑里的日志可以是有价值的信息宝库，也可以是毫无价值的数据泥潭。</p>
+</blockquote>
+<p>网络设备、系统及服务程序等，在运作时都会产生一个叫<code>log</code>的事件记录；每一行日志都记载着日期、时间、使用者及动作等相关操作的描述。</p>
+<h3 id="日志有什么优点">日志有什么优点</h3>
+<p>输出日志，而不是用<code>System.out.println()</code>，有以下几个好处：</p>
+<ol>
+<li>可以设置输出样式，避免自己每次都写<code>&quot;ERROR: &quot; + var</code>；</li>
+<li>可以设置输出级别，禁止某些级别输出。例如，只输出错误日志；</li>
+<li>可以被重定向到文件，这样可以在程序运行结束后查看日志；</li>
+<li>可以按包名控制日志级别，只输出某些包打的日志；</li>
+<li>……</li>
+</ol>
+<p>总之就是十分友好。</p>
+<hr>
+<h2 id="java中的日志">Java中的日志</h2>
+<h3 id="常见的日志工具">常见的日志工具</h3>
+<ul>
+<li>[日志实现]<code>Java</code>标准库内置的日志包<code>java.util.logging</code></li>
+<li>[<strong>日志接口</strong>][不活跃]<code>Apache</code>软件基金会的<a href="https://commons.apache.org/proper/commons-logging/"><code>Commons Logging</code></a></li>
+<li>[<strong>日志接口</strong>][<strong>活跃</strong>]<code>QOS.ch</code>的日志抽象<a href="http://www.slf4j.org/"><code>SLF4J</code></a></li>
+<li>[日志实现][不活跃]<code>Apache</code>软件基金会的<a href="https://logging.apache.org/log4j/"><code>log4j</code></a></li>
+<li>[日志实现][<strong>活跃</strong>]<code>QOS.ch</code>的<a href="https://logback.qos.ch/"><code>Logback</code></a></li>
+</ul>
+<h3 id="我的选择">我的选择</h3>
+<p>截止当前(<em>2021年7月1日</em>)以上只有<code>SLF4J</code>和<code>Logback</code>近期(<strong>一个月内</strong>)还有<code>commit</code><br>
+所以笔者做以下选择</p>
+<ul>
+<li><code>SLF4J</code> + <code>Logback</code></li>
+</ul>
+<h3 id="准备工作">准备工作</h3>
+<h4 id="新建示例工程">新建示例工程</h4>
+<p>笔者选择使用更为简单的<code>Maven</code>工程<br>
+目录结构如下（已删去无关文件）</p>
+<pre><code class="language-shell">│   pom.xml
+│
+├───src
+    └───main
+        └───java
+            └───com
+                └───example
+                        App.java
+</code></pre>
+<p>唯一源代码文件<code>App.java</code></p>
+<pre><code class="language-java">package com.example;
+
+/**
+ * Hello world!
+ *
+ */
+public class App
+{
+    public static void main( String[] args )
+    {
+        System.out.println( &quot;Hello World!&quot; );
+    }
+}
+</code></pre>
+<h3 id="配置工程依赖">配置工程依赖</h3>
+<pre><code class="language-xml">  &lt;dependencies&gt;
+    &lt;!-- slf4j-api --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+      &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+      &lt;version&gt;1.7.31&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- logback --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;
+      &lt;artifactId&gt;logback-core&lt;/artifactId&gt;
+      &lt;version&gt;1.2.3&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- logback-classic（已含有对slf4j的集成包） --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;
+      &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;
+      &lt;version&gt;1.2.3&lt;/version&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+</code></pre>
+<h2 id="上手">上手</h2>
+<h3 id="小试牛刀">小试牛刀</h3>
+<p>最基本的用法</p>
+<pre><code class="language-java">    public static void main(String[] args) {
+        System.out.println(&quot;Hello World!&quot;);
+        helloSLF4J();
+    }
+
+    public static void helloSLF4J() {
+        Logger logger = LoggerFactory.getLogger(App.class);
+        logger.info(&quot;Hello SLF4J!&quot;);
+    }
+</code></pre>
+<p>控制台输出</p>
+<pre><code class="language-shell">Hello World!
+16:38:54.863 [main] INFO com.example.App - Hello SLF4J!
+</code></pre>
+<p>看到没，<code>时间 [线程] 日志等级 所在类 - 信息</code>的友善格式完胜直接<code>System.out.println()</code></p>
+<h3 id="分级打印">分级打印</h3>
+<h4 id="slf4j日志等级">SLF4J日志等级</h4>
+<p>优先级由低到高：</p>
+<ol>
+<li>trace - 一般用来追踪详细的程序运行流</li>
+<li>debug - 这类日志往往用在调试场景</li>
+<li>info - 用来记录程序运行的一些关键信息</li>
+<li>warn - 用来记录一些警告信息</li>
+<li>error - 用来记录运行时的错误信息</li>
+</ol>
+<p>代码实例</p>
+<pre><code class="language-java">        Logger logger = LoggerFactory.getLogger(App.class);
+        logger.trace(&quot;Hello trace!&quot;);
+        logger.debug(&quot;Hello debug!&quot;);
+        logger.info(&quot;Hello info!&quot;);
+        logger.warn(&quot;Hello warn!&quot;);
+        logger.error(&quot;Hello error!&quot;);
+</code></pre>
+<p>控制台输出</p>
+<pre><code class="language-shell">16:56:14.662 [main] DEBUG com.example.App - Hello debug!
+16:56:14.669 [main] INFO com.example.App - Hello info!
+16:56:14.669 [main] WARN com.example.App - Hello warn!
+16:56:14.669 [main] ERROR com.example.App - Hello error!
+</code></pre>
+<p>可以看到除了trace其余等级的日志都打印了出来，为什么trace那么可怜？</p>
+<h2 id="参考资料">参考资料</h2>
+<p>[1] <a href="https://baike.baidu.com/item/%E6%97%A5%E5%BF%97/2769135?fr=aladdin">百度百科 日志</a><br>
+[2] <a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的官方网站 Java教程</a><br>
+[3] <a href="http://www.slf4j.org/">SLF4J官网</a><br>
+[4] <a href="https://logback.qos.ch/">Logback官网</a><br>
+[5] <a href="https://juejin.cn/post/6844903949598736391#heading-5">Java日志框架：SLF4J详解</a><br>
+[6] <a href="https://www.jianshu.com/p/ec3bd614dcb0">SLF4J日志级别以及使用场景</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Vue初体验]]></title>
         <id>https://blog.lzw-723.xyz/post/vue-chu-ti-yan/</id>
@@ -179,22 +324,22 @@ ___粗斜体文本___
   * [ ] task list 4-2
 </code></pre>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4931294"><label class="task-list-item-label" for="task-item-4931294"> task list 1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1005988"><label class="task-list-item-label" for="task-item-1005988"> task list 2</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7394898"><label class="task-list-item-label" for="task-item-7394898"> task list 3</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6581720"><label class="task-list-item-label" for="task-item-6581720"> task list 1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5421995"><label class="task-list-item-label" for="task-item-5421995"> task list 2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-561634"><label class="task-list-item-label" for="task-item-561634"> task list 3</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5190225"><label class="task-list-item-label" for="task-item-5190225"> task list 3-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9735157"><label class="task-list-item-label" for="task-item-9735157"> task list 3-2</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4335609"><label class="task-list-item-label" for="task-item-4335609"> task list 3-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2290014"><label class="task-list-item-label" for="task-item-2290014"> task list 3-2</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7804060"><label class="task-list-item-label" for="task-item-7804060"> task list 3-2-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6892081"><label class="task-list-item-label" for="task-item-6892081"> task list 3-2-1</label></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7696285"><label class="task-list-item-label" for="task-item-7696285"> task list 4</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7309178"><label class="task-list-item-label" for="task-item-7309178"> task list 4</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1785310"><label class="task-list-item-label" for="task-item-1785310"> task list 4-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9835727"><label class="task-list-item-label" for="task-item-9835727"> task list 4-2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1406895"><label class="task-list-item-label" for="task-item-1406895"> task list 4-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1341836"><label class="task-list-item-label" for="task-item-1341836"> task list 4-2</label></li>
 </ul>
 </li>
 </ul>

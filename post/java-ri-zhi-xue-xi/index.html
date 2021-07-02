@@ -1,0 +1,393 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java日志学习 | lzw-723&#39;s blog</title>
+<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1625221358972">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Java日志学习 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="不要再滥用System.out.println()了
+
+
+日志概念
+日志是什么
+
+生活中的日志是记录你生活的点点滴滴，让它把你内心的世界表露出来，更好的诠释自己的内心世界，而电脑里的日志可以是有价值的信息宝库，也可以是毫无价值的数据泥潭。
+..." />
+    <meta name="keywords" content="日志,笔记,Java" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://blog.lzw-723.xyz">
+  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1625221358972" alt="">
+  </a>
+  <h1 class="site-title">
+    lzw-723&#39;s blog
+  </h1>
+  <p class="site-description">
+    要玩就玩得开心，这不代表我放弃
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/anime" class="menu">
+          动画
+        </a>
+      
+    
+      
+        <a href="/post/friends" class="menu">
+          友链
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Java日志学习
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-07-01
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+                <a href="https://blog.lzw-723.xyz/tag/Jbaals4qL/" class="post-tag">
+                  # 日志
+                </a>
+              
+                <a href="https://blog.lzw-723.xyz/tag/ol7l837c1/" class="post-tag">
+                  # 笔记
+                </a>
+              
+                <a href="https://blog.lzw-723.xyz/tag/Vnn1O5LMY/" class="post-tag">
+                  # Java
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://z3.ax1x.com/2021/07/01/Rsk2Bn.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>不要再滥用<code>System.out.println()</code>了</p>
+<!-- more -->
+<hr>
+<h2 id="日志概念">日志概念</h2>
+<h3 id="日志是什么">日志是什么</h3>
+<blockquote>
+<p>生活中的日志是记录你生活的点点滴滴，让它把你内心的世界表露出来，更好的诠释自己的内心世界，而电脑里的日志可以是有价值的信息宝库，也可以是毫无价值的数据泥潭。</p>
+</blockquote>
+<p>网络设备、系统及服务程序等，在运作时都会产生一个叫<code>log</code>的事件记录；每一行日志都记载着日期、时间、使用者及动作等相关操作的描述。</p>
+<h3 id="日志有什么优点">日志有什么优点</h3>
+<p>输出日志，而不是用<code>System.out.println()</code>，有以下几个好处：</p>
+<ol>
+<li>可以设置输出样式，避免自己每次都写<code>&quot;ERROR: &quot; + var</code>；</li>
+<li>可以设置输出级别，禁止某些级别输出。例如，只输出错误日志；</li>
+<li>可以被重定向到文件，这样可以在程序运行结束后查看日志；</li>
+<li>可以按包名控制日志级别，只输出某些包打的日志；</li>
+<li>……</li>
+</ol>
+<p>总之就是十分友好。</p>
+<hr>
+<h2 id="java中的日志">Java中的日志</h2>
+<h3 id="常见的日志工具">常见的日志工具</h3>
+<ul>
+<li>[日志实现]<code>Java</code>标准库内置的日志包<code>java.util.logging</code></li>
+<li>[<strong>日志接口</strong>][不活跃]<code>Apache</code>软件基金会的<a href="https://commons.apache.org/proper/commons-logging/"><code>Commons Logging</code></a></li>
+<li>[<strong>日志接口</strong>][<strong>活跃</strong>]<code>QOS.ch</code>的日志抽象<a href="http://www.slf4j.org/"><code>SLF4J</code></a></li>
+<li>[日志实现][不活跃]<code>Apache</code>软件基金会的<a href="https://logging.apache.org/log4j/"><code>log4j</code></a></li>
+<li>[日志实现][<strong>活跃</strong>]<code>QOS.ch</code>的<a href="https://logback.qos.ch/"><code>Logback</code></a></li>
+</ul>
+<h3 id="我的选择">我的选择</h3>
+<p>截止当前(<em>2021年7月1日</em>)以上只有<code>SLF4J</code>和<code>Logback</code>近期(<strong>一个月内</strong>)还有<code>commit</code><br>
+所以笔者做以下选择</p>
+<ul>
+<li><code>SLF4J</code> + <code>Logback</code></li>
+</ul>
+<h3 id="准备工作">准备工作</h3>
+<h4 id="新建示例工程">新建示例工程</h4>
+<p>笔者选择使用更为简单的<code>Maven</code>工程<br>
+目录结构如下（已删去无关文件）</p>
+<pre><code class="language-shell">│   pom.xml
+│
+├───src
+    └───main
+        └───java
+            └───com
+                └───example
+                        App.java
+</code></pre>
+<p>唯一源代码文件<code>App.java</code></p>
+<pre><code class="language-java">package com.example;
+
+/**
+ * Hello world!
+ *
+ */
+public class App
+{
+    public static void main( String[] args )
+    {
+        System.out.println( &quot;Hello World!&quot; );
+    }
+}
+</code></pre>
+<h3 id="配置工程依赖">配置工程依赖</h3>
+<pre><code class="language-xml">  &lt;dependencies&gt;
+    &lt;!-- slf4j-api --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+      &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+      &lt;version&gt;1.7.31&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- logback --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;
+      &lt;artifactId&gt;logback-core&lt;/artifactId&gt;
+      &lt;version&gt;1.2.3&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- logback-classic（已含有对slf4j的集成包） --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;
+      &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;
+      &lt;version&gt;1.2.3&lt;/version&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+</code></pre>
+<h2 id="上手">上手</h2>
+<h3 id="小试牛刀">小试牛刀</h3>
+<p>最基本的用法</p>
+<pre><code class="language-java">    public static void main(String[] args) {
+        System.out.println(&quot;Hello World!&quot;);
+        helloSLF4J();
+    }
+
+    public static void helloSLF4J() {
+        Logger logger = LoggerFactory.getLogger(App.class);
+        logger.info(&quot;Hello SLF4J!&quot;);
+    }
+</code></pre>
+<p>控制台输出</p>
+<pre><code class="language-shell">Hello World!
+16:38:54.863 [main] INFO com.example.App - Hello SLF4J!
+</code></pre>
+<p>看到没，<code>时间 [线程] 日志等级 所在类 - 信息</code>的友善格式完胜直接<code>System.out.println()</code></p>
+<h3 id="分级打印">分级打印</h3>
+<h4 id="slf4j日志等级">SLF4J日志等级</h4>
+<p>优先级由低到高：</p>
+<ol>
+<li>trace - 一般用来追踪详细的程序运行流</li>
+<li>debug - 这类日志往往用在调试场景</li>
+<li>info - 用来记录程序运行的一些关键信息</li>
+<li>warn - 用来记录一些警告信息</li>
+<li>error - 用来记录运行时的错误信息</li>
+</ol>
+<p>代码实例</p>
+<pre><code class="language-java">        Logger logger = LoggerFactory.getLogger(App.class);
+        logger.trace(&quot;Hello trace!&quot;);
+        logger.debug(&quot;Hello debug!&quot;);
+        logger.info(&quot;Hello info!&quot;);
+        logger.warn(&quot;Hello warn!&quot;);
+        logger.error(&quot;Hello error!&quot;);
+</code></pre>
+<p>控制台输出</p>
+<pre><code class="language-shell">16:56:14.662 [main] DEBUG com.example.App - Hello debug!
+16:56:14.669 [main] INFO com.example.App - Hello info!
+16:56:14.669 [main] WARN com.example.App - Hello warn!
+16:56:14.669 [main] ERROR com.example.App - Hello error!
+</code></pre>
+<p>可以看到除了trace其余等级的日志都打印了出来，为什么trace那么可怜？</p>
+<h2 id="参考资料">参考资料</h2>
+<p>[1] <a href="https://baike.baidu.com/item/%E6%97%A5%E5%BF%97/2769135?fr=aladdin">百度百科 日志</a><br>
+[2] <a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的官方网站 Java教程</a><br>
+[3] <a href="http://www.slf4j.org/">SLF4J官网</a><br>
+[4] <a href="https://logback.qos.ch/">Logback官网</a><br>
+[5] <a href="https://juejin.cn/post/6844903949598736391#heading-5">Java日志框架：SLF4J详解</a><br>
+[6] <a href="https://www.jianshu.com/p/ec3bd614dcb0">SLF4J日志级别以及使用场景</a></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%97%A5%E5%BF%97%E6%A6%82%E5%BF%B5">日志概念</a>
+<ul>
+<li><a href="#%E6%97%A5%E5%BF%97%E6%98%AF%E4%BB%80%E4%B9%88">日志是什么</a></li>
+<li><a href="#%E6%97%A5%E5%BF%97%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%82%B9">日志有什么优点</a></li>
+</ul>
+</li>
+<li><a href="#java%E4%B8%AD%E7%9A%84%E6%97%A5%E5%BF%97">Java中的日志</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%97%A5%E5%BF%97%E5%B7%A5%E5%85%B7">常见的日志工具</a></li>
+<li><a href="#%E6%88%91%E7%9A%84%E9%80%89%E6%8B%A9">我的选择</a></li>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a>
+<ul>
+<li><a href="#%E6%96%B0%E5%BB%BA%E7%A4%BA%E4%BE%8B%E5%B7%A5%E7%A8%8B">新建示例工程</a></li>
+</ul>
+</li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E5%B7%A5%E7%A8%8B%E4%BE%9D%E8%B5%96">配置工程依赖</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8A%E6%89%8B">上手</a>
+<ul>
+<li><a href="#%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80">小试牛刀</a></li>
+<li><a href="#%E5%88%86%E7%BA%A7%E6%89%93%E5%8D%B0">分级打印</a>
+<ul>
+<li><a href="#slf4j%E6%97%A5%E5%BF%97%E7%AD%89%E7%BA%A7">SLF4J日志等级</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://blog.lzw-723.xyz/post/vue-chu-ti-yan/">
+              <h3 class="post-title">
+                Vue初体验
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '399620a9c9195b7466cf',
+    clientSecret: '00893bb4d0569d3ccd4b718ab36d35a4a4be9f6d',
+    repo: 'mytalk',
+    owner: 'lzw-723',
+    admin: ['lzw-723'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://blog.lzw-723.xyz/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
