@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Java日志学习 | lzw-723&#39;s blog</title>
-<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1625563499986">
+<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1625651119978">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Java日志学习 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
@@ -28,7 +28,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://blog.lzw-723.xyz">
-  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1625563499986" alt="">
+  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1625651119978" alt="">
   </a>
   <h1 class="site-title">
     lzw-723&#39;s blog
@@ -100,7 +100,7 @@
                 2021-07-01
               </span>
               <span>
-                5 min read
+                7 min read
               </span>
               
                 <a href="https://blog.lzw-723.xyz/tag/Jbaals4qL/" class="post-tag">
@@ -248,14 +248,133 @@ public class App
 16:56:14.669 [main] WARN com.example.App - Hello warn!
 16:56:14.669 [main] ERROR com.example.App - Hello error!
 </code></pre>
-<p>可以看到除了trace其余等级的日志都打印了出来，为什么trace那么可怜？</p>
+<p>可以看到除了trace其余等级的日志都打印了出来，为什么trace那么可怜？答案下节揭晓。</p>
+<h4 id="配置文件logback">配置文件(Logback)</h4>
+<p>SLF4J不过是日志接口而已，要想对日志进行配置，还需要在resources目录下新建一个配置文件。</p>
+<pre><code class="language-shell">│   pom.xml
+│
+├───src
+    └───main
+        ├───java
+        │   └───com
+        │       └───example
+        │               App.java
+        │
+        └───resources
+                logback.xml
+</code></pre>
+<p>配置文件格式可以是<code>groovy</code>或<code>xml</code>，笔者不熟悉<code>groovy</code>，所以选择<code>xml</code>格式。</p>
+<h5 id="groovy">Groovy</h5>
+<p><code>Groovy</code>是一种基于<code>JVM</code> 的敏捷开发语言，它结合了<code>Python</code>、<code>Ruby</code> 和 <code>Smalltalk</code> 的许多强大的特性。既可以作为脚本语言直接解释执行，也可以编译成<code>Java</code>字节码执行，十分强大。<br>
+这里不做过多介绍。</p>
+<h5 id="xml">XML</h5>
+<blockquote>
+<p>XML 指可扩展标记语言（e<strong>X</strong>tensible <strong>M</strong>arkup <strong>L</strong>anguage）。<br>
+XML 被设计用来传输和存储数据。</p>
+</blockquote>
+<p>logback.xml内容如下</p>
+<pre><code class="language-xml">&lt;configuration&gt;
+
+    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+        &lt;encoder&gt;
+            &lt;pattern&gt;xml %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/pattern&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+
+    &lt;root level=&quot;trace&quot;&gt;
+        &lt;appender-ref ref=&quot;STDOUT&quot; /&gt;
+    &lt;/root&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>名词解释</p>
+<table>
+<thead>
+<tr>
+<th>名词</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>configuration</td>
+<td>配置</td>
+</tr>
+<tr>
+<td>appender</td>
+<td>输出源</td>
+</tr>
+<tr>
+<td>encoder</td>
+<td>编码器</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td>模式</td>
+</tr>
+<tr>
+<td>layout</td>
+<td>布局</td>
+</tr>
+<tr>
+<td>root</td>
+<td>根</td>
+</tr>
+</tbody>
+</table>
+<p>笔者从logback官方手册中复制了一个最简单的配置，但又有所修改。<br>
+文件定义了一个名为STDOUT的appender，又它的class属性可以看出，它是一个向控制台输出的appender。<br>
+这个appender的encoder的pattern是<code>xml %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</code><br>
+转义表</p>
+<table>
+<thead>
+<tr>
+<th>名词</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d</td>
+<td>当前时间，后接{时间格式}</td>
+</tr>
+<tr>
+<td>%thread</td>
+<td>当前线程</td>
+</tr>
+<tr>
+<td>%-5level</td>
+<td>当前消息等级</td>
+</tr>
+<tr>
+<td>%logger{36}</td>
+<td>当前logger</td>
+</tr>
+<tr>
+<td>%msg</td>
+<td>消息内容</td>
+</tr>
+<tr>
+<td>%n</td>
+<td>换行</td>
+</tr>
+</tbody>
+</table>
+<p>root是配置的根，它的输出等级是trace，root中引用了名为STDOUT的appender。<br>
+让我们再运行一次工程。</p>
+<pre><code class="language-shell">xml 17:30:34.232 [main] TRACE com.example.App - Hello trace!
+xml 17:30:34.234 [main] DEBUG com.example.App - Hello debug!
+xml 17:30:34.235 [main] INFO  com.example.App - Hello info!
+xml 17:30:34.235 [main] WARN  com.example.App - Hello warn!
+xml 17:30:34.235 [main] ERROR com.example.App - Hello error!
+</code></pre>
 <h2 id="参考资料">参考资料</h2>
 <p>[1] <a href="https://baike.baidu.com/item/%E6%97%A5%E5%BF%97/2769135?fr=aladdin">百度百科 日志</a><br>
 [2] <a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的官方网站 Java教程</a><br>
 [3] <a href="http://www.slf4j.org/">SLF4J官网</a><br>
 [4] <a href="https://logback.qos.ch/">Logback官网</a><br>
 [5] <a href="https://juejin.cn/post/6844903949598736391#heading-5">Java日志框架：SLF4J详解</a><br>
-[6] <a href="https://www.jianshu.com/p/ec3bd614dcb0">SLF4J日志级别以及使用场景</a></p>
+[6] <a href="https://www.jianshu.com/p/ec3bd614dcb0">SLF4J日志级别以及使用场景</a><br>
+[7] <a href="https://www.runoob.com/xml/xml-tutorial.html">XML 教程</a></p>
 
               </div>
               <div class="toc-container">
@@ -286,6 +405,12 @@ public class App
 <li><a href="#%E5%88%86%E7%BA%A7%E6%89%93%E5%8D%B0">分级打印</a>
 <ul>
 <li><a href="#slf4j%E6%97%A5%E5%BF%97%E7%AD%89%E7%BA%A7">SLF4J日志等级</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6logback">配置文件(Logback)</a>
+<ul>
+<li><a href="#groovy">Groovy</a></li>
+<li><a href="#xml">XML</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
