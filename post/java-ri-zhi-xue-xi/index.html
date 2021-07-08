@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Java日志学习 | lzw-723&#39;s blog</title>
-<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1625651119978">
+<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1625735354127">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Java日志学习 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
@@ -28,7 +28,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://blog.lzw-723.xyz">
-  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1625651119978" alt="">
+  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1625735354127" alt="">
   </a>
   <h1 class="site-title">
     lzw-723&#39;s blog
@@ -272,7 +272,7 @@ public class App
 <p>XML 指可扩展标记语言（e<strong>X</strong>tensible <strong>M</strong>arkup <strong>L</strong>anguage）。<br>
 XML 被设计用来传输和存储数据。</p>
 </blockquote>
-<p>logback.xml内容如下</p>
+<p><em>logback.xml</em>内容如下</p>
 <pre><code class="language-xml">&lt;configuration&gt;
 
     &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
@@ -321,10 +321,14 @@ XML 被设计用来传输和存储数据。</p>
 </tr>
 </tbody>
 </table>
-<p>笔者从logback官方手册中复制了一个最简单的配置，但又有所修改。<br>
-文件定义了一个名为STDOUT的appender，又它的class属性可以看出，它是一个向控制台输出的appender。<br>
-这个appender的encoder的pattern是<code>xml %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</code><br>
-转义表</p>
+<p>笔者从<code>logback</code>官方手册中复制了一个最简单的配置，但又有所修改。<br>
+文件定义了一个名为<code>STDOUT</code>的<code>appender</code>，又它的<code>class</code>属性可以看出，它是一个向控制台输出的<code>appender</code>。<br>
+这个<code>appender</code>的<code>encoder</code>的<code>pattern</code>是<code>xml %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</code>。</p>
+<p>转义词(<em>Conversion Word</em>)表</p>
+<blockquote>
+<p>像%d{HH:mm:ss.SSS}中的{HH:mm:ss.SSS}是代表时间的格式，{}中的内容是转义词的一些属性。<br>
+更详细的解释可以看<a href="https://logback.qos.ch/manual/layouts.html#conversionWord">这里</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -335,18 +339,18 @@ XML 被设计用来传输和存储数据。</p>
 <tbody>
 <tr>
 <td>%d</td>
-<td>当前时间，后接{时间格式}</td>
+<td>当前时间</td>
 </tr>
 <tr>
 <td>%thread</td>
 <td>当前线程</td>
 </tr>
 <tr>
-<td>%-5level</td>
+<td>%level</td>
 <td>当前消息等级</td>
 </tr>
 <tr>
-<td>%logger{36}</td>
+<td>%logger</td>
 <td>当前logger</td>
 </tr>
 <tr>
@@ -359,7 +363,8 @@ XML 被设计用来传输和存储数据。</p>
 </tr>
 </tbody>
 </table>
-<p>root是配置的根，它的输出等级是trace，root中引用了名为STDOUT的appender。<br>
+<p>搞懂了<code>%</code>和<code>{}</code>的意义，但这个<code>%-5level</code>中间夹的<code>-5</code>又是怎么回事？</p>
+<p><code>root</code>是配置的根，它的输出等级是<code>trace</code>，<code>root</code>中引用了名为<code>STDOUT</code>的<code>appender</code>。<br>
 让我们再运行一次工程。</p>
 <pre><code class="language-shell">xml 17:30:34.232 [main] TRACE com.example.App - Hello trace!
 xml 17:30:34.234 [main] DEBUG com.example.App - Hello debug!
