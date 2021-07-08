@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-07-08T09:09:16.434Z</updated>
+    <updated>2021-07-08T10:43:05.613Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -221,7 +221,7 @@ XML 被设计用来传输和存储数据。</p>
 <p>笔者从<code>logback</code>官方手册中复制了一个最简单的配置，但又有所修改。<br>
 文件定义了一个名为<code>STDOUT</code>的<code>appender</code>，又它的<code>class</code>属性可以看出，它是一个向控制台输出的<code>appender</code>。<br>
 这个<code>appender</code>的<code>encoder</code>的<code>pattern</code>是<code>xml %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</code>。</p>
-<p>转义词(<em>Conversion Word</em>)表</p>
+<p>转义词(<em>Conversion Word</em>)表[部分]</p>
 <blockquote>
 <p>像%d{HH:mm:ss.SSS}中的{HH:mm:ss.SSS}是代表时间的格式，{}中的内容是转义词的一些属性。<br>
 更详细的解释可以看<a href="https://logback.qos.ch/manual/layouts.html#conversionWord">这里</a></p>
@@ -261,6 +261,42 @@ XML 被设计用来传输和存储数据。</p>
 </tbody>
 </table>
 <p>搞懂了<code>%</code>和<code>{}</code>的意义，但这个<code>%-5level</code>中间夹的<code>-5</code>又是怎么回事？</p>
+<p>格式修饰符(<em>Format modifiers</em>)表[部分]</p>
+<blockquote>
+<p>用格式修饰符可以美观地对齐内容。<br>
+点击[这里](https://logback.qos.ch/manual/layouts.html#Format modifiers)看更多用法与详解。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>格式修饰符</th>
+<th>左对齐</th>
+<th>最小宽度[字符]</th>
+<th>最大宽度[字符]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%20logger</td>
+<td>否</td>
+<td>20</td>
+<td>无</td>
+</tr>
+<tr>
+<td>%-20loggerr</td>
+<td>是</td>
+<td>20</td>
+<td>无</td>
+</tr>
+<tr>
+<td>%.30logger</td>
+<td>-</td>
+<td>无</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p>所以，<code>%-5level</code>就是将等级以最小5个字符左对齐。</p>
 <p><code>root</code>是配置的根，它的输出等级是<code>trace</code>，<code>root</code>中引用了名为<code>STDOUT</code>的<code>appender</code>。<br>
 让我们再运行一次工程。</p>
 <pre><code class="language-shell">xml 17:30:34.232 [main] TRACE com.example.App - Hello trace!
@@ -269,6 +305,8 @@ xml 17:30:34.235 [main] INFO  com.example.App - Hello info!
 xml 17:30:34.235 [main] WARN  com.example.App - Hello warn!
 xml 17:30:34.235 [main] ERROR com.example.App - Hello error!
 </code></pre>
+<p>look!!!<br>
+每行日志开头都由我们写进<code>pattern</code>的<strong>xml</strong>开头，我们的<code>xml</code>配置文件生效了。而且这一次，<code>trace</code>级别的日志打印出来了！再也不是没人爱了！</p>
 <h2 id="参考资料">参考资料</h2>
 <p>[1] <a href="https://baike.baidu.com/item/%E6%97%A5%E5%BF%97/2769135?fr=aladdin">百度百科 日志</a><br>
 [2] <a href="https://www.liaoxuefeng.com/wiki/1252599548343744">廖雪峰的官方网站 Java教程</a><br>
@@ -448,22 +486,22 @@ ___粗斜体文本___
   * [ ] task list 4-2
 </code></pre>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3039456"><label class="task-list-item-label" for="task-item-3039456"> task list 1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2512118"><label class="task-list-item-label" for="task-item-2512118"> task list 2</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2125206"><label class="task-list-item-label" for="task-item-2125206"> task list 3</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1504815"><label class="task-list-item-label" for="task-item-1504815"> task list 1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6875110"><label class="task-list-item-label" for="task-item-6875110"> task list 2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4169807"><label class="task-list-item-label" for="task-item-4169807"> task list 3</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7123220"><label class="task-list-item-label" for="task-item-7123220"> task list 3-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6968339"><label class="task-list-item-label" for="task-item-6968339"> task list 3-2</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9319273"><label class="task-list-item-label" for="task-item-9319273"> task list 3-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5128456"><label class="task-list-item-label" for="task-item-5128456"> task list 3-2</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1994543"><label class="task-list-item-label" for="task-item-1994543"> task list 3-2-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2914639"><label class="task-list-item-label" for="task-item-2914639"> task list 3-2-1</label></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1859484"><label class="task-list-item-label" for="task-item-1859484"> task list 4</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7244776"><label class="task-list-item-label" for="task-item-7244776"> task list 4</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-155629"><label class="task-list-item-label" for="task-item-155629"> task list 4-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1098532"><label class="task-list-item-label" for="task-item-1098532"> task list 4-2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4248414"><label class="task-list-item-label" for="task-item-4248414"> task list 4-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8250211"><label class="task-list-item-label" for="task-item-8250211"> task list 4-2</label></li>
 </ul>
 </li>
 </ul>
