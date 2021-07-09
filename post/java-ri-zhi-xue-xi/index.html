@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Java日志学习 | lzw-723&#39;s blog</title>
-<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1625807175860">
+<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1625807320421">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Java日志学习 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
@@ -28,7 +28,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://blog.lzw-723.xyz">
-  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1625807175860" alt="">
+  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1625807320421" alt="">
   </a>
   <h1 class="site-title">
     lzw-723&#39;s blog
@@ -322,7 +322,7 @@ XML 被设计用来传输和存储数据。</p>
 <p>笔者从<code>logback</code>官方手册中复制了一个最简单的配置，但又有所修改。<br>
 文件定义了一个名为<code>STDOUT</code>的<code>appender</code>，又它的<code>class</code>属性可以看出，它是一个向控制台输出的<code>appender</code>。<br>
 这个<code>appender</code>的<code>encoder</code>的<code>pattern</code>是<code>xml %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</code>。</p>
-<p>#####Conversion Word</p>
+<h5 id="conversion-word">Conversion Word</h5>
 <blockquote>
 <p>像%d{HH:mm:ss.SSS}中的{HH:mm:ss.SSS}是代表时间的格式，{}中的内容是转义词的一些属性。<br>
 更详细的解释可以看<a href="https://logback.qos.ch/manual/layouts.html#conversionWord">这里</a></p>
@@ -474,6 +474,7 @@ file 2021-07-09 12:53:33,948 ERROR [main] com.example.App [App.java:26] Hello er
 <li><a href="#xml">XML</a>
 <ul>
 <li><a href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A">名词解释</a></li>
+<li><a href="#conversion-word">Conversion Word</a></li>
 <li><a href="#format-modifiers">Format modifiers</a></li>
 </ul>
 </li>
