@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-08-06T01:58:48.742Z</updated>
+    <updated>2021-08-06T03:21:24.731Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -10,6 +10,141 @@
     <logo>https://blog.lzw-723.xyz/images/avatar.png</logo>
     <icon>https://blog.lzw-723.xyz/favicon.ico</icon>
     <rights>All rights reserved 2021, lzw-723&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[C语言教程 - 多维数组]]></title>
+        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-duo-wei-shu-zu/</id>
+        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-duo-wei-shu-zu/">
+        </link>
+        <updated>2021-08-06T03:19:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>C语言可以创建和使用多维数组。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>C语言可以创建和使用多维数组。</p>
+<!-- more -->
+<h2 id="tutorial">Tutorial</h2>
+<p>在前一节<a href="https://www.learn-c.org/zh/%E6%95%B0%E7%BB%84">数组</a>教程中讲解了如何使用数组。这些数组都是一维的，但C语言可以创建和使用多维数组。下面是一个多维数组声明的一般形式。</p>
+<pre><code>type name[size1][size2]...[sizeN];
+</code></pre>
+<p>这里有一个基本示例参考——</p>
+<pre><code>int foo[1][2][3];
+</code></pre>
+<p>也可以这样——</p>
+<pre><code>char vowels[1][5] = {
+	{'a', 'e', 'i', 'o', 'u'}
+};
+</code></pre>
+<h3 id="二维数组">二维数组</h3>
+<p>二维数组是最简单的多维数组。一个二维数组差不多是一个一维数组的列表。要声明一个大小为[ x ][ y ]的二维整数数组，你可以这样写——</p>
+<pre><code>type arrayName [x][y];
+</code></pre>
+<p>其中<strong>type</strong>可以是C语言的任何数据类型（int, char, long, long long, double, 等等），<strong>arrayName</strong>是一个有效的C语言标识符，或变量。一个二维数组可以被认为是一个表，它有[ x ]行和[ y ]列。可以这样想象一个包含三行四列的二维数组a——</p>
+<figure data-type="image" tabindex="1"><img src="https://www.tutorialspoint.com/cprogramming/images/two_dimensional_arrays.jpg" alt="Table 1A" loading="lazy"></figure>
+<p>像这样，数组a中的每个元素都由**a[i][j]**形式的元素名来识别，其中'a'是数组的名称，'i'和'j'是独一无二的索引，合起来也就是'a'中的一个元素的意思。</p>
+<p>其实，不需要把[ x ]值真的放进去，因为如果这样做——</p>
+<pre><code>char vowels[][5] = {
+	{'A', 'E', 'I', 'O', 'U'},
+	{'a', 'e', 'i', 'o', 'u'}
+};
+</code></pre>
+<p>编译器已经知道有两个 &quot;维度&quot;，但是，<strong>需要</strong>一个[ y ]值！! 编译器很聪明，但是它<em>不会知道</em>你在维度中使用了多少个整数、字符、浮点数，或者其他。请牢记这一点。</p>
+<h3 id="初始化二维数组">初始化二维数组</h3>
+<p>多维数组中可以为每一行指定[]内的值。下面是一个3行4列的数组。为了方便，你可以不写3，不填写行数，它仍然可以工作。</p>
+<pre><code>int a[3][4] = {  
+   {0, 1, 2, 3} ,   /*  初始化索引为0的行 */
+   {4, 5, 6, 7} ,   /*  初始化索引为1的行 */
+   {8, 9, 10, 11}   /*  初始化索引为2的行 */
+};
+</code></pre>
+<p>里面的大括号表示想要的行，是可选的。下面的初始化效果与前面的例子相同——</p>
+<pre><code>int a[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11};
+</code></pre>
+<h3 id="访问二维数组中的元素">访问二维数组中的元素</h3>
+<p>通过使用下标来访问二维数组中的元素，即使用数组的行索引和列索引。例如——</p>
+<pre><code>int val = a[2][3];
+</code></pre>
+<p>上述语句将从数组中取出第3行第4个元素。</p>
+<h2 id="exercise">Exercise</h2>
+<p>尝试找出五名学生数学和物理两门学科的平均分。使用一个名为<code>grades</code>的二维数组去完成。数学对应的分数将被存储在第一行（<code>grades[0]</code>），物理对应的分数将被存储在第二行（<code>grades[1]</code>）。完成以下剩余步骤，执行这个程序。</p>
+<ul>
+<li>将成绩声明为一个二维整数数组</li>
+<li>通过指定终止条件来完成for循环</li>
+<li>计算各科的平均分</li>
+</ul>
+<h2 id="tutorial-code">Tutorial Code</h2>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+	/* TODO：在此声明成绩二维数组 */
+	float average;
+	int i;
+	int j;
+
+	grades[0][0] = 80;
+	grades[0][1] = 70;
+	grades[0][2] = 65;
+	grades[0][3] = 89;
+	grades[0][4] = 90;
+
+	grades[1][0] = 85;
+	grades[1][1] = 80;
+	grades[1][2] = 80;
+	grades[1][3] = 82;
+	grades[1][4] = 87;
+
+	/* TODO：通过指定终止条件来完成for循环 */
+	for (i = 0; i &lt; ; i++) {
+		average = 0;
+		for (j = 0; j &lt; ; j++) {
+			average += grades[i][j];
+		}
+
+		/* TODO：计算学科i的平均分 */
+		printf(&quot;The average marks obtained in subject %d is: %.2f\n&quot;, i, average);
+	}
+
+	return 0;
+}
+</code></pre>
+<h2 id="expected-output">Expected Output</h2>
+<pre><code>The average marks obtained in subject 0 is: 78.80
+The average marks obtained in subject 1 is: 82.80
+</code></pre>
+<h2 id="solution">Solution</h2>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+	int grades[2][5];
+	float average;
+	int i;
+	int j;
+
+	grades[0][0] = 80;
+	grades[0][1] = 70;
+	grades[0][2] = 65;
+	grades[0][3] = 89;
+	grades[0][4] = 90;
+
+	grades[1][0] = 85;
+	grades[1][1] = 80;
+	grades[1][2] = 80;
+	grades[1][3] = 82;
+	grades[1][4] = 87;
+
+	for (i = 0; i &lt; 2; i++) {
+		average = 0;
+		
+		for (j = 0; j &lt; 5; j++) {
+			average += grades[i][j];
+		}
+
+		average /= 5.0;
+		printf(&quot;The average marks obtained in subject %d is: %.2f\n&quot;, i, average);
+	}
+
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[C语言教程 - 数组]]></title>
         <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-shu-zu/</id>
@@ -249,7 +384,7 @@ int main() {
 <li><a href="../c-yu-yan-jiao-cheng-ni-hao-shi-jie">你好，世界!</a></li>
 <li><a href="../c-yu-yan-jiao-cheng-bian-liang-he-lei-xing">变量和类型</a></li>
 <li><a href="../c-yu-yan-jiao-cheng-shu-zu">数组</a></li>
-<li>[[Multidimensional Arrays]]</li>
+<li><a href="../c-yu-yan-jiao-cheng-duo-wei-shu-zu">多维数组</a></li>
 <li>[[Conditions]]</li>
 <li>[[Strings]]</li>
 <li>[[For loops]]</li>
@@ -821,22 +956,22 @@ ___粗斜体文本___
   * [ ] task list 4-2
 </code></pre>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4694712"><label class="task-list-item-label" for="task-item-4694712"> task list 1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7981014"><label class="task-list-item-label" for="task-item-7981014"> task list 2</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5589411"><label class="task-list-item-label" for="task-item-5589411"> task list 3</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9246594"><label class="task-list-item-label" for="task-item-9246594"> task list 1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5893068"><label class="task-list-item-label" for="task-item-5893068"> task list 2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2741788"><label class="task-list-item-label" for="task-item-2741788"> task list 3</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5192233"><label class="task-list-item-label" for="task-item-5192233"> task list 3-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1161338"><label class="task-list-item-label" for="task-item-1161338"> task list 3-2</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9822321"><label class="task-list-item-label" for="task-item-9822321"> task list 3-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8963616"><label class="task-list-item-label" for="task-item-8963616"> task list 3-2</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9337223"><label class="task-list-item-label" for="task-item-9337223"> task list 3-2-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3069659"><label class="task-list-item-label" for="task-item-3069659"> task list 3-2-1</label></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8438927"><label class="task-list-item-label" for="task-item-8438927"> task list 4</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-459683"><label class="task-list-item-label" for="task-item-459683"> task list 4</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2134690"><label class="task-list-item-label" for="task-item-2134690"> task list 4-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-990709"><label class="task-list-item-label" for="task-item-990709"> task list 4-2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4291687"><label class="task-list-item-label" for="task-item-4291687"> task list 4-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7849831"><label class="task-list-item-label" for="task-item-7849831"> task list 4-2</label></li>
 </ul>
 </li>
 </ul>
@@ -1051,104 +1186,6 @@ public class App {
 <blockquote>
 <p><a href="https://www.runoob.com/java/java-serialization.html">Java 序列化 | 菜鸟教程</a></p>
 </blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java中单例模式笔记]]></title>
-        <id>https://blog.lzw-723.xyz/post/java-zhong-dan-li-mo-shi-bi-ji/</id>
-        <link href="https://blog.lzw-723.xyz/post/java-zhong-dan-li-mo-shi-bi-ji/">
-        </link>
-        <updated>2019-01-05T04:06:25.000Z</updated>
-        <summary type="html"><![CDATA[<p>单例模式（<code>Singleton Pattern</code>）是 <code>Java</code> 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>单例模式（<code>Singleton Pattern</code>）是 <code>Java</code> 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
-<!-- more -->
-<p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
-<p>注意：</p>
-<p>1.单例类只能有一个实例。<br>
-2.单例类必须自己创建自己的唯一实例。<br>
-3.单例类必须给所有其他对象提供这一实例。<br>
-介绍<br>
-意图：保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
-<p>主要解决：一个全局使用的类频繁地创建与销毁。</p>
-<p>何时使用：当您想控制实例数目，节省系统资源的时候。</p>
-<p>如何解决：判断系统是否已经有这个单例，如果有则返回，如果没有则创建。</p>
-<p>关键代码：构造函数是私有的。</p>
-<p>应用实例：<br>
-1.一个党只能有一个书记。<br>
-2.Windows 是多进程多线程的，在操作一个文件的时候，就不可避免地出现多个进程或线程同时操作一个文件的现象，所以所有文件的处理必须通过唯一的实例来进行。<br>
-3.一些设备管理器常常设计为单例模式，比如一个电脑有两台打印机，在输出的时候就要处理不能两台打印机打印同一个文件。</p>
-<p>优点：<br>
-1.在内存里只有一个实例，减少了内存的开销，尤其是频繁的创建和销毁实例（比如管理学院首页页面缓存）。<br>
-2.避免对资源的多重占用（比如写文件操作）。</p>
-<p>缺点：<br>
-没有接口，不能继承，与单一职责原则冲突，一个类应该只关心内部逻辑，而不关心外面怎么样来实例化。</p>
-<p>使用场景：<br>
-1.要求生产唯一序列号。<br>
-2.WEB 中的计数器，不用每次刷新都在数据库里加一次，用单例先缓存起来。 3、创建的一个对象需要消耗的资源过多，比如 I/O 与数据库的连接等。</p>
-<p>注意事项：<br>
-<code>getInstance()</code> 方法中需要使用同步锁 <code>synchronized (Singleton.class)</code> 防止多线程同时进入造成 <code>instance</code> 被多次实例化。</p>
-<p>分为以下两种</p>
-<h4 id="懒汉模式">懒汉模式</h4>
-<h6 id="懒汉式线程不安全">懒汉式，线程不安全</h6>
-<p>是否 Lazy 初始化：是</p>
-<p>是否多线程安全：否</p>
-<p>实现难度：易</p>
-<p>描述：这种方式是最基本的实现方式，这种实现最大的问题就是不支持多线程。因为没有加锁 <code>synchronized</code>，所以严格意义上它并不算单例模式。<br>
-这种方式 lazy loading 很明显，不要求线程安全，在多线程不能正常工作。</p>
-<p>实例</p>
-<pre><code class="language-java">public class Singleton {  
-    private static Singleton instance;  
-    private Singleton (){}  
-  
-    public static Singleton getInstance() {  
-    if (instance == null) {  
-        instance = new Singleton();  
-    }  
-    return instance;  
-    }  
-}
-</code></pre>
-<p>接下来介绍的几种实现方式都支持多线程，但是在性能上有所差异。</p>
-<h5 id="2-懒汉式线程安全">2、懒汉式，线程安全</h5>
-<p>是否 Lazy 初始化：是</p>
-<p>是否多线程安全：是</p>
-<p>实现难度：易</p>
-<p>描述：这种方式具备很好的 lazy loading，能够在多线程中很好的工作，但是，效率很低，99% 情况下不需要同步。<br>
-优点：第一次调用才初始化，避免内存浪费。<br>
-缺点：必须加锁 <code>synchronized</code> 才能保证单例，但加锁会影响效率。<br>
-<code>getInstance()</code> 的性能对应用程序不是很关键（该方法使用不太频繁）。</p>
-<p>实例</p>
-<pre><code class="language-java">public class Singleton {  
-    private static Singleton instance;  
-    private Singleton (){}  
-    public static synchronized Singleton getInstance() {  
-    if (instance == null) {  
-        instance = new Singleton();  
-    }  
-    return instance;  
-    }  
-}
-</code></pre>
-<h4 id="饿汉模式">饿汉模式</h4>
-<p>是否 Lazy 初始化：否</p>
-<p>是否多线程安全：是</p>
-<p>实现难度：易</p>
-<p>描述：这种方式比较常用，但容易产生垃圾对象。<br>
-优点：没有加锁，执行效率会提高。<br>
-缺点：类加载时就初始化，浪费内存。<br>
-它基于 <code>classloader</code> 机制避免了多线程的同步问题，不过，<code>instance</code> 在类装载时就实例化，虽然导致类装载的原因有很多种，在单例模式中大多数都是调用 <code>getInstance</code> 方法， 但是也不能确定有其他的方式（或者其他的静态方法）导致类装载，这时候初始化 <code>instance</code> 显然没有达到 lazy loading 的效果。</p>
-<p>实例</p>
-<pre><code class="language-java">public class Singleton {  
-    private static Singleton instance = new Singleton();  
-    private Singleton (){}  
-    public static Singleton getInstance() {  
-    return instance;  
-    }  
-}
-</code></pre>
-<h3 id="资料引用">资料引用</h3>
-<p><a href="https://www.runoob.com/design-pattern/singleton-pattern.html">菜鸟教程</a></p>
 ]]></content>
     </entry>
 </feed>

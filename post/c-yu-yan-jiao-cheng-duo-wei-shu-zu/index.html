@@ -2,23 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>C语言教程 - 变量和类型 | lzw-723&#39;s blog</title>
+<title>C语言教程 - 多维数组 | lzw-723&#39;s blog</title>
 <link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1628220081796">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="C语言教程 - 变量和类型 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="C语言教程 - 多维数组 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="C语言有很多种类型的变量，但只有几个基本类型。
+    <meta name="description" content="C语言可以创建和使用多维数组。
 
 Tutorial
-数据类型
-C语言有很多种类型的变量，但只有几个基本类型。
-
-整数——可以是正数或负数的整数。使用char、int、short、long或long long来定义。
-无符号整..." />
+在前一节数组教程中讲解了如何使用数组。这些数组都是一维的，但C语言可以创建和使用多维数组。下面是一个多维数组声明的一般形式。
+type name[size1][size2]...[size..." />
     <meta name="keywords" content="C,教程,翻译" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -93,14 +90,14 @@ C语言有很多种类型的变量，但只有几个基本类型。
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              C语言教程 - 变量和类型
+              C语言教程 - 多维数组
             </h2>
             <div class="post-info">
               <span>
                 2021-08-06
               </span>
               <span>
-                3 min read
+                5 min read
               </span>
               
                 <a href="https://blog.lzw-723.xyz/tag/79EhJkn3_/" class="post-tag">
@@ -119,71 +116,129 @@ C语言有很多种类型的变量，但只有几个基本类型。
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>C语言有很多种类型的变量，但只有几个基本类型。</p>
+                <p>C语言可以创建和使用多维数组。</p>
 <!-- more -->
 <h2 id="tutorial">Tutorial</h2>
-<h3 id="数据类型">数据类型</h3>
-<p>C语言有很多种类型的变量，但只有几个基本类型。</p>
-<ul>
-<li>整数——可以是正数或负数的整数。使用<code>char</code>、<code>int</code>、<code>short</code>、<code>long</code>或<code>long long</code>来定义。</li>
-<li>无符号整数——只能是正数的整数。使用<code>unsigned char</code>、<code>unsigned int</code>、<code>unsigned short</code>、<code>unsigned long</code>或<code>unsigned long long</code>定义。</li>
-<li>浮点数——实数（带小数的数字）。使用<code>float</code>和<code>double</code>来定义。</li>
-<li>结构——将在后面的结构部分解释。</li>
-</ul>
-<p>不同类型的变量定义了它们的界限。一个<code>char</code>的范围只能从-128到127，而一个<code>long</code>的范围可以从-2,147,483,648到2,147,483,647（<code>long</code>和其他数字数据类型在不同的计算机上可能有另一个范围，例如——在64位计算机上从-9,223,372,036,854,775,808到9,223,372,036,854,775,807）。</p>
-<p>请注意，C语言<em>没有</em>布尔类型。通常情况下，它是用下面的符号定义的。</p>
-<pre><code>#define BOOL char
-#define FALSE 0
-#define TRUE 1
+<p>在前一节<a href="https://www.learn-c.org/zh/%E6%95%B0%E7%BB%84">数组</a>教程中讲解了如何使用数组。这些数组都是一维的，但C语言可以创建和使用多维数组。下面是一个多维数组声明的一般形式。</p>
+<pre><code>type name[size1][size2]...[sizeN];
 </code></pre>
-<p>C语言使用字符数组来定义字符串，将在<code>字符串</code>部分进行解释。</p>
-<h3 id="定义变量">定义变量</h3>
-<p>通常使用<code>int</code>类型定义数字，它是一个<code>字</code>大小的整数，也就是程序的编译机器的默认数字大小。<br>
-在今天的大多数计算机上，它是一个32位的数字，这意味着数字的范围可以从-2,147,483,648到2,147,483,647。</p>
-<p>为了定义变量<code>foo</code>和<code>bar</code>，需要使用以下语法。</p>
-<pre><code>int foo;
-int bar = 1;
+<p>这里有一个基本示例参考——</p>
+<pre><code>int foo[1][2][3];
 </code></pre>
-<p>变量<code>foo</code>可以使用，但由于没有初始化它，我们不知道里面有什么。变量<code>bar</code>装着数字1。</p>
-<p>现在，可以做一些数学运算。<br>
-假设<code>a</code>、<code>b</code>、<code>c</code>、<code>d</code>和<code>e</code>是变量，可以简单地使用加、减和乘法运算符 在下面的代码中，给<code>a</code>分配一个新值：</p>
-<pre><code>int a = 0, b = 1, c = 2, d = 3, e = 4;
-a = b - c + d * e;
-printf(&quot;%d&quot;, a); /* will print 1-2+3*4 = 11 */
+<p>也可以这样——</p>
+<pre><code>char vowels[1][5] = {
+	{'a', 'e', 'i', 'o', 'u'}
+};
 </code></pre>
+<h3 id="二维数组">二维数组</h3>
+<p>二维数组是最简单的多维数组。一个二维数组差不多是一个一维数组的列表。要声明一个大小为[ x ][ y ]的二维整数数组，你可以这样写——</p>
+<pre><code>type arrayName [x][y];
+</code></pre>
+<p>其中<strong>type</strong>可以是C语言的任何数据类型（int, char, long, long long, double, 等等），<strong>arrayName</strong>是一个有效的C语言标识符，或变量。一个二维数组可以被认为是一个表，它有[ x ]行和[ y ]列。可以这样想象一个包含三行四列的二维数组a——</p>
+<figure data-type="image" tabindex="1"><img src="https://www.tutorialspoint.com/cprogramming/images/two_dimensional_arrays.jpg" alt="Table 1A" loading="lazy"></figure>
+<p>像这样，数组a中的每个元素都由**a[i][j]**形式的元素名来识别，其中'a'是数组的名称，'i'和'j'是独一无二的索引，合起来也就是'a'中的一个元素的意思。</p>
+<p>其实，不需要把[ x ]值真的放进去，因为如果这样做——</p>
+<pre><code>char vowels[][5] = {
+	{'A', 'E', 'I', 'O', 'U'},
+	{'a', 'e', 'i', 'o', 'u'}
+};
+</code></pre>
+<p>编译器已经知道有两个 &quot;维度&quot;，但是，<strong>需要</strong>一个[ y ]值！! 编译器很聪明，但是它<em>不会知道</em>你在维度中使用了多少个整数、字符、浮点数，或者其他。请牢记这一点。</p>
+<h3 id="初始化二维数组">初始化二维数组</h3>
+<p>多维数组中可以为每一行指定[]内的值。下面是一个3行4列的数组。为了方便，你可以不写3，不填写行数，它仍然可以工作。</p>
+<pre><code>int a[3][4] = {  
+   {0, 1, 2, 3} ,   /*  初始化索引为0的行 */
+   {4, 5, 6, 7} ,   /*  初始化索引为1的行 */
+   {8, 9, 10, 11}   /*  初始化索引为2的行 */
+};
+</code></pre>
+<p>里面的大括号表示想要的行，是可选的。下面的初始化效果与前面的例子相同——</p>
+<pre><code>int a[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11};
+</code></pre>
+<h3 id="访问二维数组中的元素">访问二维数组中的元素</h3>
+<p>通过使用下标来访问二维数组中的元素，即使用数组的行索引和列索引。例如——</p>
+<pre><code>int val = a[2][3];
+</code></pre>
+<p>上述语句将从数组中取出第3行第4个元素。</p>
 <h2 id="exercise">Exercise</h2>
-<p>在下一个练习中，你将创建一个程序，打印出数字<code>a</code>、<code>b</code>和<code>c</code>的和。</p>
+<p>尝试找出五名学生数学和物理两门学科的平均分。使用一个名为<code>grades</code>的二维数组去完成。数学对应的分数将被存储在第一行（<code>grades[0]</code>），物理对应的分数将被存储在第二行（<code>grades[1]</code>）。完成以下剩余步骤，执行这个程序。</p>
+<ul>
+<li>将成绩声明为一个二维整数数组</li>
+<li>通过指定终止条件来完成for循环</li>
+<li>计算各科的平均分</li>
+</ul>
 <h2 id="tutorial-code">Tutorial Code</h2>
 <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
-  int a = 3;
-  float b = 4.5;
-  double c = 5.25;
-  float sum;
+	/* TODO：在此声明成绩二维数组 */
+	float average;
+	int i;
+	int j;
 
-  /* 你的代码放在这里 */
+	grades[0][0] = 80;
+	grades[0][1] = 70;
+	grades[0][2] = 65;
+	grades[0][3] = 89;
+	grades[0][4] = 90;
 
-  printf(&quot;The sum of a, b, and c is %f.&quot;, sum);
-  return 0;
+	grades[1][0] = 85;
+	grades[1][1] = 80;
+	grades[1][2] = 80;
+	grades[1][3] = 82;
+	grades[1][4] = 87;
+
+	/* TODO：通过指定终止条件来完成for循环 */
+	for (i = 0; i &lt; ; i++) {
+		average = 0;
+		for (j = 0; j &lt; ; j++) {
+			average += grades[i][j];
+		}
+
+		/* TODO：计算学科i的平均分 */
+		printf(&quot;The average marks obtained in subject %d is: %.2f\n&quot;, i, average);
+	}
+
+	return 0;
 }
 </code></pre>
 <h2 id="expected-output">Expected Output</h2>
-<pre><code>The sum of a, b, and c is 12.750000.
+<pre><code>The average marks obtained in subject 0 is: 78.80
+The average marks obtained in subject 1 is: 82.80
 </code></pre>
 <h2 id="solution">Solution</h2>
 <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
-  int a = 3;
-  float b = 4.5;
-  double c = 5.25;
-  float sum;
+	int grades[2][5];
+	float average;
+	int i;
+	int j;
 
-  sum = a + b + c;
+	grades[0][0] = 80;
+	grades[0][1] = 70;
+	grades[0][2] = 65;
+	grades[0][3] = 89;
+	grades[0][4] = 90;
 
-  printf(&quot;The sum of a, b, and c is %f.&quot;, sum);
-  return 0;
+	grades[1][0] = 85;
+	grades[1][1] = 80;
+	grades[1][2] = 80;
+	grades[1][3] = 82;
+	grades[1][4] = 87;
+
+	for (i = 0; i &lt; 2; i++) {
+		average = 0;
+		
+		for (j = 0; j &lt; 5; j++) {
+			average += grades[i][j];
+		}
+
+		average /= 5.0;
+		printf(&quot;The average marks obtained in subject %d is: %.2f\n&quot;, i, average);
+	}
+
+	return 0;
 }
 </code></pre>
 
@@ -194,8 +249,9 @@ int main() {
 <ul>
 <li><a href="#tutorial">Tutorial</a>
 <ul>
-<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a></li>
-<li><a href="#%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F">定义变量</a></li>
+<li><a href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84">二维数组</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84">初始化二维数组</a></li>
+<li><a href="#%E8%AE%BF%E9%97%AE%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0">访问二维数组中的元素</a></li>
 </ul>
 </li>
 <li><a href="#exercise">Exercise</a></li>
@@ -214,9 +270,9 @@ int main() {
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-ni-hao-shi-jie/">
+            <a href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-shu-zu/">
               <h3 class="post-title">
-                C语言教程 - 你好，世界！
+                C语言教程 - 数组
               </h3>
             </a>
           </div>
