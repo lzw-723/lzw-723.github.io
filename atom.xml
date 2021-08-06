@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-08-06T03:21:58.960Z</updated>
+    <updated>2021-08-06T07:44:36.659Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -10,6 +10,133 @@
     <logo>https://blog.lzw-723.xyz/images/avatar.png</logo>
     <icon>https://blog.lzw-723.xyz/favicon.ico</icon>
     <rights>All rights reserved 2021, lzw-723&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[C语言教程 - 条件语句]]></title>
+        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-tiao-jian-yu-ju/</id>
+        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-tiao-jian-yu-ju/">
+        </link>
+        <updated>2021-08-06T07:43:55.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="tutorial">Tutorial</h2>
+<h3 id="决策">决策</h3>
+<p>生活中我们必须做出决定。要根据自己的需要来做出决定，程序也是如此。</p>
+<p>下面是C语言中决策结构的一般形式。</p>
+<pre><code>int target = 10;
+if (target == 10) {
+    printf(&quot;Target is equal to 10&quot;);
+}
+</code></pre>
+<h3 id="if语句"><code>if</code>语句</h3>
+<p><code>if</code>语句检查一个表达式是<code>真</code>还是<code>假</code>，并根据结果执行不同的代码。</p>
+<p>使用了<code>==</code>运算符判断两个变量是否相等，就像上面的例子一样。</p>
+<p>也可以用不等式运算符来判断。例如——</p>
+<pre><code>int foo = 1;
+int bar = 2;
+
+if (foo &lt; bar) {
+    printf(&quot;foo is smaller than bar.&quot;);
+}
+
+if (foo &gt; bar) {
+    printf(&quot;foo is greater than bar.&quot;);
+}
+</code></pre>
+<p>使用<code>else</code>关键字在表达式为<code>false</code>时退出代码。</p>
+<pre><code>int foo = 1;
+int bar = 2;
+
+if (foo &lt; bar) {
+    printf(&quot;foo is smaller than bar.&quot;);
+} else {
+    printf(&quot;foo is greater than bar.&quot;);
+}
+</code></pre>
+<p>有两个以上的结果可供选择的情况下，可以将多个<code>if``else</code>语句<code>连锁</code>。</p>
+<pre><code>int foo = 1;
+int bar = 2;
+
+if (foo &lt; bar) {
+    printf(&quot;foo is smaller than bar.&quot;);
+} else if (foo == bar) {
+    printf(&quot;foo is equal to bar.&quot;);
+} else {
+    printf(&quot;foo is greater than bar.&quot;);
+}
+</code></pre>
+<p>也可以嵌套<code>if``else</code>语句。</p>
+<pre><code>int peanuts_eaten = 22;
+int peanuts_in_jar = 100;
+int max_peanut_limit = 50;
+
+if (peanuts_in_jar &gt; 80) {
+    if (peanuts_eaten &lt; max_peanut_limit) {
+        printf(&quot;Take as many peanuts as you want!\n&quot;);
+    }
+} else {
+    if (peanuts_eaten &gt; peanuts_in_jar) {
+        printf(&quot;You can't have anymore peanuts!\n&quot;);
+    }
+    else {
+        printf(&quot;Alright, just one more peanut.\n&quot;);
+    }
+}
+</code></pre>
+<p>两个或多个表达式可以使用逻辑运算符检查是否都为<code>真</code>，或是否其中一个为<code>真</code>。使用AND运算符<code>&amp;&amp;</code>检查两个表达式是否都为<code>真</code>。使用OR运算符<code>||</code>检查是否至少有一个表达式为<code>真</code>。</p>
+<pre><code>int foo = 1;
+int bar = 2;
+int moo = 3;
+
+if (foo &lt; bar &amp;&amp; moo &gt; bar) {
+    printf(&quot;foo is smaller than bar AND moo is larger than bar.&quot;);
+}
+
+if (foo &lt; bar || moo &gt; bar) {
+    printf(&quot;foo is smaller than bar OR moo is larger than bar.&quot;);
+}
+</code></pre>
+<p>NOT运算符<code>!</code>类似：</p>
+<pre><code>int target = 9;
+if (target != 10) {
+    printf(&quot;Target is not equal to 10&quot;);
+}
+</code></pre>
+<h2 id="exercise">Exercise</h2>
+<p>练习，在<code>guessNumber</code>函数中构建一个<code>if</code>语句，检查数字<code>guess</code>是否等于555。如果是，在该函数内用<code>printf</code>打印出 &quot;正确。你猜对了！&quot;。如果<code>guess</code>小于555，用<code>printf</code>打印出 &quot;你猜的低了&quot;。如果<code>guess</code>大于555，用<code>printf</code>打印出 &quot;你猜的高了&quot;。</p>
+<ul>
+<li><strong>重要</strong>：不要忘记在要打印的字符串末尾添加一个换行符<code>\n</code>。</li>
+</ul>
+<h2 id="tutorial-code">Tutorial Code</h2>
+<p>#include &lt;stdio.h&gt;</p>
+<p>void guessNumber(int guess) {<br>
+// TODO：在这里写代码<br>
+}</p>
+<p>int main() {<br>
+guessNumber(500);<br>
+guessNumber(600);<br>
+guessNumber(555);<br>
+}</p>
+<h2 id="expected-output">Expected Output</h2>
+<p>Your guess is too low.<br>
+Your guess is too high.<br>
+Correct. You guessed it!</p>
+<h2 id="solution">Solution</h2>
+<p>#include &lt;stdio.h&gt;</p>
+<p>void guessNumber(int guess) {<br>
+// TODO：在这里写代码<br>
+if (guess &lt; 555) {<br>
+printf(&quot;Your guess is too low.\n&quot;);<br>
+} else if (guess &gt; 555) {<br>
+printf(&quot;Your guess is too high.\n&quot;);<br>
+} else {<br>
+printf(&quot;Correct. You guessed it!\n&quot;);<br>
+}<br>
+}</p>
+<p>int main() {<br>
+guessNumber(500);<br>
+guessNumber(600);<br>
+guessNumber(555);<br>
+}</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[C语言教程 - 多维数组]]></title>
         <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-duo-wei-shu-zu/</id>
@@ -956,22 +1083,22 @@ ___粗斜体文本___
   * [ ] task list 4-2
 </code></pre>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2660569"><label class="task-list-item-label" for="task-item-2660569"> task list 1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6006437"><label class="task-list-item-label" for="task-item-6006437"> task list 2</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2034395"><label class="task-list-item-label" for="task-item-2034395"> task list 3</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-322618"><label class="task-list-item-label" for="task-item-322618"> task list 1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3219987"><label class="task-list-item-label" for="task-item-3219987"> task list 2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1836102"><label class="task-list-item-label" for="task-item-1836102"> task list 3</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1416767"><label class="task-list-item-label" for="task-item-1416767"> task list 3-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7471128"><label class="task-list-item-label" for="task-item-7471128"> task list 3-2</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5092625"><label class="task-list-item-label" for="task-item-5092625"> task list 3-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-770817"><label class="task-list-item-label" for="task-item-770817"> task list 3-2</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6084843"><label class="task-list-item-label" for="task-item-6084843"> task list 3-2-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8160229"><label class="task-list-item-label" for="task-item-8160229"> task list 3-2-1</label></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-413105"><label class="task-list-item-label" for="task-item-413105"> task list 4</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7411687"><label class="task-list-item-label" for="task-item-7411687"> task list 4</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-807679"><label class="task-list-item-label" for="task-item-807679"> task list 4-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5949628"><label class="task-list-item-label" for="task-item-5949628"> task list 4-2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3291948"><label class="task-list-item-label" for="task-item-3291948"> task list 4-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9803385"><label class="task-list-item-label" for="task-item-9803385"> task list 4-2</label></li>
 </ul>
 </li>
 </ul>
@@ -1083,109 +1210,6 @@ $$ \sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f)) $$
 </li>
 </ol>
 </section>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java中序列化与反序列化笔记]]></title>
-        <id>https://blog.lzw-723.xyz/post/java-zhong-xu-lie-hua-yu-fan-xu-lie-hua-bi-ji/</id>
-        <link href="https://blog.lzw-723.xyz/post/java-zhong-xu-lie-hua-yu-fan-xu-lie-hua-bi-ji/">
-        </link>
-        <updated>2020-01-11T04:33:32.000Z</updated>
-        <summary type="html"><![CDATA[<p><code>Java</code> 提供了一种对象序列化的机制，该机制中，一个对象可以被表示为一个字节序列，该字节序列包括该对象的数据、有关对象的类型的信息和存储在对象中数据的类型。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p><code>Java</code> 提供了一种对象序列化的机制，该机制中，一个对象可以被表示为一个字节序列，该字节序列包括该对象的数据、有关对象的类型的信息和存储在对象中数据的类型。</p>
-<!-- more -->
-<h2 id="概念">概念</h2>
-<p>将序列化对象写入文件之后，可以从文件中读取出来，并且对它进行反序列化，也就是说，对象的类型信息、对象的数据，还有对象中的数据类型可以用来在内存中新建对象。</p>
-<p>整个过程都是 <code>Java</code> 虚拟机（<code>JVM</code>）独立的，也就是说，在一个平台上序列化的对象可以在另一个完全不同的平台上反序列化该对象。</p>
-<h2 id="实现">实现</h2>
-<h3 id="方法">方法</h3>
-<p>类 <code>ObjectInputStream</code> 和 <code>ObjectOutputStream</code> 是高层次的数据流，它们包含反序列化和序列化对象的方法。</p>
-<pre><code class="language-java">public final void writeObject(Object x) throws IOException
-</code></pre>
-<p><code>writeObject</code>方法序列化一个对象，并将它发送到输出流。</p>
-<p>相似的 <code>ObjectInputStream</code> 类包含如下反序列化一个对象的方法：</p>
-<pre><code class="language-java">public final Object readObject() throws IOException, ClassNotFoundException
-</code></pre>
-<p>readObject方法从流中取出下一个对象，并将对象反序列化。它的返回值为Object，因此，你需要将它转换成合适的数据类型。</p>
-<blockquote>
-<p>请注意，一个类的对象要想序列化成功，必须满足两个条件：</p>
-<blockquote>
-<ul>
-<li>该类必须实现 <code>java.io.Serializable</code> 接口。</li>
-<li>该类的所有属性必须是可序列化的。如果有一个属性不是可序列化的，则该属性必须注明是短暂的。</li>
-</ul>
-</blockquote>
-</blockquote>
-<p><code>如果你想知道一个 Java 标准类是否是可序列化的，请查看该类的文档。检验一个类的实例是否能序列化十分简单， 只需要查看该类有没有实现*java.io.Serializable*接口。</code></p>
-<p>当序列化一个对象到文件时， 按照 <code>Java</code> 的标准约定是给文件一个 <code>.ser</code> 扩展名。<br>
-对于一个实体类，不想将所有的属性都进行序列化，有专门的关键字 <em>transient</em>：</p>
-<pre><code class="language-java">private transient String name;
-</code></pre>
-<p>当对该类序列化时，会自动忽略被 <code>transient</code> 修饰的属性。</p>
-<h3 id="代码">代码</h3>
-<pre><code class="language-java">/**
- * 序列化测试
- *
- */
-public class App {
-    /**
-     * Person
-     */
-    public static class Person implements Serializable {
-
-        private String name;
-        private int age;
-        private transient String info = &quot;nothing&quot;;
-
-        public Person(String name, int age) {
-            this.name = name;
-            this.age = age;
-        }
-
-        public Person setInfo(String info) {
-            this.info = info;
-            return this;
-        }
-        public void show(){
-            System.out.println(name + '-' + age + '-' + info);
-        }
-    }
-
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        writePerson();
-        readPerson();
-    }
-
-    // 从文件中读取Person对象
-    public static void readPerson() throws IOException, ClassNotFoundException {
-        // 创建反序列化流
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(&quot;\\dls.ser&quot;));
-        // 从文件中读取对象
-        Object obj = ois.readObject();
-        ((Person) obj).show();
-        // 释放资源
-        ois.close();
-    }
-
-    // 向文件中写Person对象
-    public static void writePerson() throws IOException {
-        // 创建序列化流
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(&quot;\\dls.ser&quot;));
-        // 向文件中写Person对象
-        oos.writeObject(new Person(&quot;大老师&quot;, 17).setInfo(&quot;没有期望就没有失望，没有羁绊就不会受伤。&quot;));
-        // 关流
-        oos.close();
-    }
-}
-
-</code></pre>
-<h3 id="输出">输出</h3>
-<p><code>大老师-17-null</code></p>
-<h2 id="参考资料">参考资料</h2>
-<blockquote>
-<p><a href="https://www.runoob.com/java/java-serialization.html">Java 序列化 | 菜鸟教程</a></p>
-</blockquote>
 ]]></content>
     </entry>
 </feed>
