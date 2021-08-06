@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-08-06T07:45:48.578Z</updated>
+    <updated>2021-08-06T07:52:32.512Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -54,7 +54,7 @@ if (foo &lt; bar) {
     printf(&quot;foo is greater than bar.&quot;);
 }
 </code></pre>
-<p>有两个以上的结果可供选择的情况下，可以将多个<code>if``else</code>语句<code>连锁</code>。</p>
+<p>有两个以上的结果可供选择的情况下，可以将多个<code>if</code> <code>else</code>语句<code>连锁</code>。</p>
 <pre><code>int foo = 1;
 int bar = 2;
 
@@ -66,7 +66,7 @@ if (foo &lt; bar) {
     printf(&quot;foo is greater than bar.&quot;);
 }
 </code></pre>
-<p>也可以嵌套<code>if``else</code>语句。</p>
+<p>也可以嵌套<code>if</code> <code>else</code>语句。</p>
 <pre><code>int peanuts_eaten = 22;
 int peanuts_in_jar = 100;
 int max_peanut_limit = 50;
@@ -109,36 +109,42 @@ if (target != 10) {
 <li><strong>重要</strong>：不要忘记在要打印的字符串末尾添加一个换行符<code>\n</code>。</li>
 </ul>
 <h2 id="tutorial-code">Tutorial Code</h2>
-<p>#include &lt;stdio.h&gt;</p>
-<p>void guessNumber(int guess) {<br>
-// TODO：在这里写代码<br>
-}</p>
-<p>int main() {<br>
-guessNumber(500);<br>
-guessNumber(600);<br>
-guessNumber(555);<br>
-}</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+void guessNumber(int guess) {
+    // TODO：在这里写代码
+}
+
+int main() {
+    guessNumber(500);
+    guessNumber(600);
+    guessNumber(555);
+}
+</code></pre>
 <h2 id="expected-output">Expected Output</h2>
 <p>Your guess is too low.<br>
 Your guess is too high.<br>
 Correct. You guessed it!</p>
 <h2 id="solution">Solution</h2>
-<p>#include &lt;stdio.h&gt;</p>
-<p>void guessNumber(int guess) {<br>
-// TODO：在这里写代码<br>
-if (guess &lt; 555) {<br>
-printf(&quot;Your guess is too low.\n&quot;);<br>
-} else if (guess &gt; 555) {<br>
-printf(&quot;Your guess is too high.\n&quot;);<br>
-} else {<br>
-printf(&quot;Correct. You guessed it!\n&quot;);<br>
-}<br>
-}</p>
-<p>int main() {<br>
-guessNumber(500);<br>
-guessNumber(600);<br>
-guessNumber(555);<br>
-}</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+void guessNumber(int guess) {
+    // TODO：在这里写代码
+    if (guess &lt; 555) {
+        printf(&quot;Your guess is too low.\n&quot;);
+    } else if (guess &gt; 555) {
+        printf(&quot;Your guess is too high.\n&quot;);
+    } else {
+        printf(&quot;Correct. You guessed it!\n&quot;);
+    }
+}
+
+int main() {
+    guessNumber(500);
+    guessNumber(600);
+    guessNumber(555);
+}
+</code></pre>
 ]]></content>
     </entry>
     <entry>
@@ -1087,22 +1093,22 @@ ___粗斜体文本___
   * [ ] task list 4-2
 </code></pre>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4327097"><label class="task-list-item-label" for="task-item-4327097"> task list 1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3861782"><label class="task-list-item-label" for="task-item-3861782"> task list 2</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9781194"><label class="task-list-item-label" for="task-item-9781194"> task list 3</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4805469"><label class="task-list-item-label" for="task-item-4805469"> task list 1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1307758"><label class="task-list-item-label" for="task-item-1307758"> task list 2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6759766"><label class="task-list-item-label" for="task-item-6759766"> task list 3</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-711752"><label class="task-list-item-label" for="task-item-711752"> task list 3-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-659154"><label class="task-list-item-label" for="task-item-659154"> task list 3-2</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9315351"><label class="task-list-item-label" for="task-item-9315351"> task list 3-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7762427"><label class="task-list-item-label" for="task-item-7762427"> task list 3-2</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4333087"><label class="task-list-item-label" for="task-item-4333087"> task list 3-2-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6254442"><label class="task-list-item-label" for="task-item-6254442"> task list 3-2-1</label></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7477264"><label class="task-list-item-label" for="task-item-7477264"> task list 4</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2897074"><label class="task-list-item-label" for="task-item-2897074"> task list 4</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3097948"><label class="task-list-item-label" for="task-item-3097948"> task list 4-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8447908"><label class="task-list-item-label" for="task-item-8447908"> task list 4-2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3798148"><label class="task-list-item-label" for="task-item-3798148"> task list 4-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7702610"><label class="task-list-item-label" for="task-item-7702610"> task list 4-2</label></li>
 </ul>
 </li>
 </ul>

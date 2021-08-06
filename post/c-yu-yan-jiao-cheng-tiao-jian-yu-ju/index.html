@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>C语言教程 - 条件语句 | lzw-723&#39;s blog</title>
-<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1628235941743">
+<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1628236350364">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="C语言教程 - 条件语句 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
@@ -28,7 +28,7 @@ if (..." />
       <div class="main-content">
         <div class="site-header">
   <a href="https://blog.lzw-723.xyz">
-  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1628235941743" alt="">
+  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1628236350364" alt="">
   </a>
   <h1 class="site-title">
     lzw-723&#39;s blog
@@ -155,7 +155,7 @@ if (foo &lt; bar) {
     printf(&quot;foo is greater than bar.&quot;);
 }
 </code></pre>
-<p>有两个以上的结果可供选择的情况下，可以将多个<code>if``else</code>语句<code>连锁</code>。</p>
+<p>有两个以上的结果可供选择的情况下，可以将多个<code>if</code> <code>else</code>语句<code>连锁</code>。</p>
 <pre><code>int foo = 1;
 int bar = 2;
 
@@ -167,7 +167,7 @@ if (foo &lt; bar) {
     printf(&quot;foo is greater than bar.&quot;);
 }
 </code></pre>
-<p>也可以嵌套<code>if``else</code>语句。</p>
+<p>也可以嵌套<code>if</code> <code>else</code>语句。</p>
 <pre><code>int peanuts_eaten = 22;
 int peanuts_in_jar = 100;
 int max_peanut_limit = 50;
@@ -210,36 +210,42 @@ if (target != 10) {
 <li><strong>重要</strong>：不要忘记在要打印的字符串末尾添加一个换行符<code>\n</code>。</li>
 </ul>
 <h2 id="tutorial-code">Tutorial Code</h2>
-<p>#include &lt;stdio.h&gt;</p>
-<p>void guessNumber(int guess) {<br>
-// TODO：在这里写代码<br>
-}</p>
-<p>int main() {<br>
-guessNumber(500);<br>
-guessNumber(600);<br>
-guessNumber(555);<br>
-}</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+void guessNumber(int guess) {
+    // TODO：在这里写代码
+}
+
+int main() {
+    guessNumber(500);
+    guessNumber(600);
+    guessNumber(555);
+}
+</code></pre>
 <h2 id="expected-output">Expected Output</h2>
 <p>Your guess is too low.<br>
 Your guess is too high.<br>
 Correct. You guessed it!</p>
 <h2 id="solution">Solution</h2>
-<p>#include &lt;stdio.h&gt;</p>
-<p>void guessNumber(int guess) {<br>
-// TODO：在这里写代码<br>
-if (guess &lt; 555) {<br>
-printf(&quot;Your guess is too low.\n&quot;);<br>
-} else if (guess &gt; 555) {<br>
-printf(&quot;Your guess is too high.\n&quot;);<br>
-} else {<br>
-printf(&quot;Correct. You guessed it!\n&quot;);<br>
-}<br>
-}</p>
-<p>int main() {<br>
-guessNumber(500);<br>
-guessNumber(600);<br>
-guessNumber(555);<br>
-}</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+void guessNumber(int guess) {
+    // TODO：在这里写代码
+    if (guess &lt; 555) {
+        printf(&quot;Your guess is too low.\n&quot;);
+    } else if (guess &gt; 555) {
+        printf(&quot;Your guess is too high.\n&quot;);
+    } else {
+        printf(&quot;Correct. You guessed it!\n&quot;);
+    }
+}
+
+int main() {
+    guessNumber(500);
+    guessNumber(600);
+    guessNumber(555);
+}
+</code></pre>
 
               </div>
               <div class="toc-container">
