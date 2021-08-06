@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-08-06T07:44:36.659Z</updated>
+    <updated>2021-08-06T07:45:48.578Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -16,7 +16,11 @@
         <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-tiao-jian-yu-ju/">
         </link>
         <updated>2021-08-06T07:43:55.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="tutorial">Tutorial</h2>
+        <summary type="html"><![CDATA[<p>生活中我们必须做出决定。要根据自己的需要来做出决定，程序也是如此。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>生活中我们必须做出决定。要根据自己的需要来做出决定，程序也是如此。</p>
+<!-- more -->
+<h2 id="tutorial">Tutorial</h2>
 <h3 id="决策">决策</h3>
 <p>生活中我们必须做出决定。要根据自己的需要来做出决定，程序也是如此。</p>
 <p>下面是C语言中决策结构的一般形式。</p>
@@ -501,7 +505,7 @@ int main() {
 <p>本教程是笔者对<a href="https://github.com/ronreiter/interactive-tutorials/blob/master/tutorials/learn-c.org/">learn-c.org</a>的翻译，详见<a href="https://github.com/ronreiter/interactive-tutorials/pull/611">Added learn-c.org Chinese translation</a>，转载后交互式内容缺失，可以前往<a href="https://www.learn-c.org/zh/">learn-c.org 中文版</a>查看。</p>
 </blockquote>
 <!-- more -->
-<h1 id="欢迎">欢迎</h1>
+<h2 id="欢迎">欢迎</h2>
 <p>欢迎来到learn-c.org的免费交互式C语言教程。</p>
 <p>这个网站都是为每个希望学习C语言的人准备的，无论你是否是一个有经验的程序员。</p>
 <p>不需要下载任何东西——只需点击你想开始的章节，然后按照指示操作。祝您好运!</p>
@@ -512,7 +516,7 @@ int main() {
 <li><a href="../c-yu-yan-jiao-cheng-bian-liang-he-lei-xing">变量和类型</a></li>
 <li><a href="../c-yu-yan-jiao-cheng-shu-zu">数组</a></li>
 <li><a href="../c-yu-yan-jiao-cheng-duo-wei-shu-zu">多维数组</a></li>
-<li>[[Conditions]]</li>
+<li><a href="../c-yu-yan-jiao-cheng-tiao-jian-yu-ju">条件语句</a></li>
 <li>[[Strings]]</li>
 <li>[[For loops]]</li>
 <li>[[While loops]]</li>
@@ -1083,22 +1087,22 @@ ___粗斜体文本___
   * [ ] task list 4-2
 </code></pre>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-322618"><label class="task-list-item-label" for="task-item-322618"> task list 1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3219987"><label class="task-list-item-label" for="task-item-3219987"> task list 2</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1836102"><label class="task-list-item-label" for="task-item-1836102"> task list 3</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4327097"><label class="task-list-item-label" for="task-item-4327097"> task list 1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3861782"><label class="task-list-item-label" for="task-item-3861782"> task list 2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9781194"><label class="task-list-item-label" for="task-item-9781194"> task list 3</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5092625"><label class="task-list-item-label" for="task-item-5092625"> task list 3-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-770817"><label class="task-list-item-label" for="task-item-770817"> task list 3-2</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-711752"><label class="task-list-item-label" for="task-item-711752"> task list 3-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-659154"><label class="task-list-item-label" for="task-item-659154"> task list 3-2</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8160229"><label class="task-list-item-label" for="task-item-8160229"> task list 3-2-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4333087"><label class="task-list-item-label" for="task-item-4333087"> task list 3-2-1</label></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7411687"><label class="task-list-item-label" for="task-item-7411687"> task list 4</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7477264"><label class="task-list-item-label" for="task-item-7477264"> task list 4</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3291948"><label class="task-list-item-label" for="task-item-3291948"> task list 4-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9803385"><label class="task-list-item-label" for="task-item-9803385"> task list 4-2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3097948"><label class="task-list-item-label" for="task-item-3097948"> task list 4-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8447908"><label class="task-list-item-label" for="task-item-8447908"> task list 4-2</label></li>
 </ul>
 </li>
 </ul>
