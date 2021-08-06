@@ -2,22 +2,23 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>C语言教程 - 你好，世界！ | lzw-723&#39;s blog</title>
+<title>C语言教程 - 变量和类型 | lzw-723&#39;s blog</title>
 <link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1628214556362">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="C语言教程 - 你好，世界！ | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="C语言教程 - 变量和类型 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="虽然C语言被认为 &quot;难学&quot;，实际上C语言是一种非常简单的语言，功能强大。
+    <meta name="description" content="C语言有很多种类型的变量，但只有几个基本类型。
 
 Tutorial
-导言
-C语言是一种通用的编程语言，它与机器的工作方式密切相关。
-理解计算机内存的工作方式是C语言编程的一个重要方面。
-虽然C语..." />
+数据类型
+C语言有很多种类型的变量，但只有几个基本类型。
+
+整数——可以是正数或负数的整数。使用char、int、short、long或long long来定义。
+无符号整..." />
     <meta name="keywords" content="C,教程,翻译" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -92,7 +93,7 @@ C语言是一种通用的编程语言，它与机器的工作方式密切相关�
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              C语言教程 - 你好，世界！
+              C语言教程 - 变量和类型
             </h2>
             <div class="post-info">
               <span>
@@ -118,50 +119,70 @@ C语言是一种通用的编程语言，它与机器的工作方式密切相关�
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>虽然C语言被认为 &quot;难学&quot;，实际上C语言是一种非常简单的语言，功能强大。</p>
+                <p>C语言有很多种类型的变量，但只有几个基本类型。</p>
 <!-- more -->
 <h2 id="tutorial">Tutorial</h2>
-<h3 id="导言">导言</h3>
-<p>C语言是一种通用的编程语言，它与机器的工作方式密切相关。<br>
-理解计算机内存的工作方式是C语言编程的一个重要方面。<br>
-虽然C语言被认为 &quot;难学&quot;，实际上C语言是一种非常简单的语言，功能强大。</p>
-<p>C语言是一种非常常见的编程语言，它是许多应用程序的开发语言，如Windows、Python解释器、Git和许多其他编程语言。</p>
-<p>C语言是一种编译语言——这意味着为了运行它，编译器（例如GCC或Visual Studio）必须将编写的代码进行处理，然后创建一个可执行文件。这个文件可以被执行，会做我们想让程序做的事情。</p>
-<h3 id="第一个程序">第一个程序</h3>
-<p>每个C语言程序都使用库，它赋予执行必要功能的能力。例如，最基本的函数<code>printf</code>，用于向屏幕打印输出，定义在 <code>stdio.h</code>头文件中。</p>
-<p>为了在程序中增加运行<code>printf</code>命令的能力，必须在第一行代码中添加以下include指令。</p>
-<pre><code>#include &lt;stdio.h&gt;
+<h3 id="数据类型">数据类型</h3>
+<p>C语言有很多种类型的变量，但只有几个基本类型。</p>
+<ul>
+<li>整数——可以是正数或负数的整数。使用<code>char</code>、<code>int</code>、<code>short</code>、<code>long</code>或<code>long long</code>来定义。</li>
+<li>无符号整数——只能是正数的整数。使用<code>unsigned char</code>、<code>unsigned int</code>、<code>unsigned short</code>、<code>unsigned long</code>或<code>unsigned long long</code>定义。</li>
+<li>浮点数——实数（带小数的数字）。使用<code>float</code>和<code>double</code>来定义。</li>
+<li>结构——将在后面的结构部分解释。</li>
+</ul>
+<p>不同类型的变量定义了它们的界限。一个<code>char</code>的范围只能从-128到127，而一个<code>long</code>的范围可以从-2,147,483,648到2,147,483,647（<code>long</code>和其他数字数据类型在不同的计算机上可能有另一个范围，例如——在64位计算机上从-9,223,372,036,854,775,808到9,223,372,036,854,775,807）。</p>
+<p>请注意，C语言<em>没有</em>布尔类型。通常情况下，它是用下面的符号定义的。</p>
+<pre><code>#define BOOL char
+#define FALSE 0
+#define TRUE 1
 </code></pre>
-<p>代码的第二部分是要写的实际代码。将要运行的第一段代码将始终在<code>main</code>函数中。</p>
-<pre><code>int main() {
-  ...你的代码放在这里
-}
+<p>C语言使用字符数组来定义字符串，将在<code>字符串</code>部分进行解释。</p>
+<h3 id="定义变量">定义变量</h3>
+<p>通常使用<code>int</code>类型定义数字，它是一个<code>字</code>大小的整数，也就是程序的编译机器的默认数字大小。<br>
+在今天的大多数计算机上，它是一个32位的数字，这意味着数字的范围可以从-2,147,483,648到2,147,483,647。</p>
+<p>为了定义变量<code>foo</code>和<code>bar</code>，需要使用以下语法。</p>
+<pre><code>int foo;
+int bar = 1;
 </code></pre>
-<p><code>int</code>关键字表示函数<code>main</code>将返回一个整数——一个简单的数字。该函数返回的数字表明编写的程序是否正常工作。<br>
-如果想表达代码运行成功，将返回数字0。一个大于0的数字将意味着编写的程序运行失败。</p>
-<p>在本教程中，将返回0以表示程序是成功的：</p>
-<pre><code>return 0;
+<p>变量<code>foo</code>可以使用，但由于没有初始化它，我们不知道里面有什么。变量<code>bar</code>装着数字1。</p>
+<p>现在，可以做一些数学运算。<br>
+假设<code>a</code>、<code>b</code>、<code>c</code>、<code>d</code>和<code>e</code>是变量，可以简单地使用加、减和乘法运算符 在下面的代码中，给<code>a</code>分配一个新值：</p>
+<pre><code>int a = 0, b = 1, c = 2, d = 3, e = 4;
+a = b - c + d * e;
+printf(&quot;%d&quot;, a); /* will print 1-2+3*4 = 11 */
 </code></pre>
-<p>请注意，C语言中的每个语句都必须以分号结束，这样编译器才知道一个新的语句已经开始。</p>
-<p>最后不能不提，需要调用<code>printf</code>函数来打印句子。</p>
 <h2 id="exercise">Exercise</h2>
-<p>改写下面的程序，使其打印输出<code>Hello, World!</code>。</p>
+<p>在下一个练习中，你将创建一个程序，打印出数字<code>a</code>、<code>b</code>和<code>c</code>的和。</p>
 <h2 id="tutorial-code">Tutorial Code</h2>
 <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
-  printf(&quot;Goodbye, World!&quot;);
+  int a = 3;
+  float b = 4.5;
+  double c = 5.25;
+  float sum;
+
+  /* 你的代码放在这里 */
+
+  printf(&quot;The sum of a, b, and c is %f.&quot;, sum);
   return 0;
 }
 </code></pre>
 <h2 id="expected-output">Expected Output</h2>
-<pre><code>Hello, World!
+<pre><code>The sum of a, b, and c is 12.750000.
 </code></pre>
 <h2 id="solution">Solution</h2>
 <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
-  printf(&quot;Hello, World!&quot;);
+  int a = 3;
+  float b = 4.5;
+  double c = 5.25;
+  float sum;
+
+  sum = a + b + c;
+
+  printf(&quot;The sum of a, b, and c is %f.&quot;, sum);
   return 0;
 }
 </code></pre>
@@ -173,8 +194,8 @@ int main() {
 <ul>
 <li><a href="#tutorial">Tutorial</a>
 <ul>
-<li><a href="#%E5%AF%BC%E8%A8%80">导言</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F">第一个程序</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a></li>
+<li><a href="#%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F">定义变量</a></li>
 </ul>
 </li>
 <li><a href="#exercise">Exercise</a></li>
@@ -193,9 +214,9 @@ int main() {
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-mu-lu/">
+            <a href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-ni-hao-shi-jie/">
               <h3 class="post-title">
-                C语言教程 - 目录
+                C语言教程 - 你好，世界！
               </h3>
             </a>
           </div>
