@@ -2,23 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>C语言教程 - 你好，世界！ | lzw-723&#39;s blog</title>
+<title>C语言教程 - 字符串 | lzw-723&#39;s blog</title>
 <link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1629783398777">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="C语言教程 - 你好，世界！ | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="C语言教程 - 字符串 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="虽然C语言被认为 &quot;难学&quot;，实际上C语言是一种非常简单的语言，功能强大。
-
-Tutorial
-导言
-C语言是一种通用的编程语言，它与机器的工作方式密切相关。
-理解计算机内存的工作方式是C语言编程的一个重要方面。
-虽然C语..." />
-    <meta name="keywords" content="C,教程,翻译" />
+    <meta name="description" content="Tutorial
+字符串的定义
+C语言中的字符串实际上是字符数组。尽管使用指针是C语言中的高级课题，后面会详细解释，先使用指向字符数组的指针来定义简单的字符串，方法如下：
+char * name = &quot;John Smith&quo..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -100,76 +97,113 @@ C语言是一种通用的编程语言，它与机器的工作方式密切相关�
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              C语言教程 - 你好，世界！
+              C语言教程 - 字符串
             </h2>
             <div class="post-info">
               <span>
-                2021-08-06
+                2021-08-24
               </span>
               <span>
-                3 min read
+                4 min read
               </span>
-              
-                <a href="https://blog.lzw-723.xyz/tag/79EhJkn3_/" class="post-tag">
-                  # C
-                </a>
-              
-                <a href="https://blog.lzw-723.xyz/tag/ED-Tw5-vhp/" class="post-tag">
-                  # 教程
-                </a>
-              
-                <a href="https://blog.lzw-723.xyz/tag/1-Q3SKzSGk/" class="post-tag">
-                  # 翻译
-                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>虽然C语言被认为 &quot;难学&quot;，实际上C语言是一种非常简单的语言，功能强大。</p>
-<!-- more -->
-<h2 id="tutorial">Tutorial</h2>
-<h3 id="导言">导言</h3>
-<p>C语言是一种通用的编程语言，它与机器的工作方式密切相关。<br>
-理解计算机内存的工作方式是C语言编程的一个重要方面。<br>
-虽然C语言被认为 &quot;难学&quot;，实际上C语言是一种非常简单的语言，功能强大。</p>
-<p>C语言是一种非常常见的编程语言，它是许多应用程序的开发语言，如Windows、Python解释器、Git和许多其他编程语言。</p>
-<p>C语言是一种编译语言——这意味着为了运行它，编译器（例如GCC或Visual Studio）必须将编写的代码进行处理，然后创建一个可执行文件。这个文件可以被执行，会做我们想让程序做的事情。</p>
-<h3 id="第一个程序">第一个程序</h3>
-<p>每个C语言程序都使用库，它赋予执行必要功能的能力。例如，最基本的函数<code>printf</code>，用于向屏幕打印输出，定义在 <code>stdio.h</code>头文件中。</p>
-<p>为了在程序中增加运行<code>printf</code>命令的能力，必须在第一行代码中添加以下include指令。</p>
-<pre><code>#include &lt;stdio.h&gt;
+                <h2 id="tutorial">Tutorial</h2>
+<h3 id="字符串的定义">字符串的定义</h3>
+<p>C语言中的字符串实际上是字符数组。尽管使用指针是C语言中的高级课题，后面会详细解释，先使用指向字符数组的指针来定义简单的字符串，方法如下：</p>
+<pre><code>char * name = &quot;John Smith&quot;;
 </code></pre>
-<p>代码的第二部分是要写的实际代码。将要运行的第一段代码将始终在<code>main</code>函数中。</p>
-<pre><code>int main() {
-  ...你的代码放在这里
+<p>这个方法创建了一个只能读取的字符串。<br>
+如果希望定义一个可以被操作的字符串，需要定义为一个字符数组。</p>
+<pre><code>char name[] = &quot;John Smith&quot;;
+</code></pre>
+<p>符号不同是因为它分配了一个数组变量，所以可以对它进行操作。方括号<code>[]</code>告诉编译器自动计算数组的大小。实际上是否指明大小都是一样的，字符串的长度为字符数组的大小减一。</p>
+<pre><code>char name[] = &quot;John Smith&quot;;
+/* 与下面的意思相同 */
+char name[11] = &quot;John Smith&quot;;
+</code></pre>
+<p>尽管字符串<code>John Smith</code>正好是10个字符长，但需要加一，是为了表明字符串的结束。一个特殊的char（等于0）表示字符串的结束。字符串的结尾被标记出来是因为程序不知道字符串的长度——只有编译器根据代码才知道。</p>
+<h3 id="用printf格式化字符串">用printf格式化字符串</h3>
+<p>可以使用<code>printf</code>方法将一个字符串与其他字符串一起格式化，具体方法如下：</p>
+<pre><code>char * name = &quot;John Smith&quot;;
+int age = 27;
+
+/* 打印'John Smith is 27 years old.' */
+printf(&quot;%s is %d years old.\n&quot;, name, age);
+</code></pre>
+<p>请注意，在打印字符串时，必须添加一个换行符（<code>\n</code>）来让下一个<code>printf</code>语句打印在一个新行中。</p>
+<h3 id="字符串长度">字符串长度</h3>
+<p>函数<code>strlen</code>返回作为参数传递的字符串的长度。</p>
+<pre><code>char * name = &quot;Nikhil&quot;;
+printf(&quot;%d\n&quot;,strlen(name));        
+</code></pre>
+<h3 id="比较字符串">比较字符串</h3>
+<p>函数<code>strncmp</code>对两个字符串进行比较。如果相同，返回数字0；如果不同，返回其他数字。<br>
+参数是要比较的两个字符串，以及最大比较长度。这个函数还有一个不安全的版本，叫做<code>strcmp</code>，不建议使用。例如：</p>
+<pre><code>char * name = &quot;John&quot;;
+
+if (strncmp(name, &quot;John&quot;, 4) == 0) {
+    printf(&quot;Hello, John!\n&quot;);
+} else {
+    printf(&quot;You are not John. Go away.\n&quot;);
 }
 </code></pre>
-<p><code>int</code>关键字表示函数<code>main</code>将返回一个整数——一个简单的数字。该函数返回的数字表明编写的程序是否正常工作。<br>
-如果想表达代码运行成功，将返回数字0。一个大于0的数字将意味着编写的程序运行失败。</p>
-<p>在本教程中，将返回0以表示程序是成功的：</p>
-<pre><code>return 0;
+<h3 id="字符串拼接">字符串拼接</h3>
+<p>函数<code>strncat</code>将src字符串的前n个字符添加到目标字符串中，其中n为min(n,length(src))。<br>
+传递的参数是目标字符串、源字符串和n——要增添的最大字符数。例如：</p>
+<pre><code>char dest[20]=&quot;Hello&quot;;
+char src[20]=&quot;World&quot;;
+strncat(dest,src,3);
+printf(&quot;%s\n&quot;,dest);
+strncat(dest,src,20);
+printf(&quot;%s\n&quot;,dest);
 </code></pre>
-<p>请注意，C语言中的每个语句都必须以分号结束，这样编译器才知道一个新的语句已经开始。</p>
-<p>最后不能不提，需要调用<code>printf</code>函数来打印句子。</p>
 <h2 id="exercise">Exercise</h2>
-<p>改写下面的程序，使其打印输出<code>Hello, World!</code>。</p>
+<p>使用指针定义字符串<code>first_name</code>，其值为<code>John</code>，使用字符数组定义字符串<code>last_name</code>，其值为<code>Doe</code>。</p>
 <h2 id="tutorial-code">Tutorial Code</h2>
 <pre><code>#include &lt;stdio.h&gt;
-
+#include &lt;string.h&gt;
 int main() {
-  printf(&quot;Goodbye, World!&quot;);
+  /* 定义first_name */
+  /* 定义last_name */
+  char name[100];
+
+  last_name[0] = 'B';
+  sprintf(name, &quot;%s %s&quot;, first_name, last_name);
+  if (strncmp(name, &quot;John Boe&quot;, 100) == 0) {
+      printf(&quot;Done!\n&quot;);
+  }
+  name[0]='\0';
+  strncat(name,first_name,4);
+  strncat(name,last_name,20);
+  printf(&quot;%s\n&quot;,name);
   return 0;
 }
 </code></pre>
 <h2 id="expected-output">Expected Output</h2>
-<pre><code>Hello, World!
+<pre><code>Done!
+JohnBoe
 </code></pre>
 <h2 id="solution">Solution</h2>
 <pre><code>#include &lt;stdio.h&gt;
-
+#include &lt;string.h&gt;
 int main() {
-  printf(&quot;Hello, World!&quot;);
+  char * first_name = &quot;John&quot;;
+  char last_name[] = &quot;Doe&quot;;
+  char name[100];
+
+  last_name[0] = 'B';
+  sprintf(name, &quot;%s %s&quot;, first_name, last_name);
+  if (strncmp(name, &quot;John Boe&quot;, 100) == 0) {
+      printf(&quot;Done!\n&quot;);
+  }
+  name[0]='\0';
+  strncat(name,first_name,4);
+  strncat(name,last_name,20);
+  printf(&quot;%s\n&quot;,name);
   return 0;
 }
 </code></pre>
@@ -181,8 +215,11 @@ int main() {
 <ul>
 <li><a href="#tutorial">Tutorial</a>
 <ul>
-<li><a href="#%E5%AF%BC%E8%A8%80">导言</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F">第一个程序</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9A%E4%B9%89">字符串的定义</a></li>
+<li><a href="#%E7%94%A8printf%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2">用printf格式化字符串</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6">字符串长度</a></li>
+<li><a href="#%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2">比较字符串</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5">字符串拼接</a></li>
 </ul>
 </li>
 <li><a href="#exercise">Exercise</a></li>
@@ -201,9 +238,9 @@ int main() {
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-mu-lu/">
+            <a href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-tiao-jian-yu-ju/">
               <h3 class="post-title">
-                C语言教程 - 目录
+                C语言教程 - 条件语句
               </h3>
             </a>
           </div>
