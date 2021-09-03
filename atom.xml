@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-08-26T05:52:10.563Z</updated>
+    <updated>2021-09-03T12:58:39.069Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -16,9 +16,15 @@
         <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-zi-fu-chuan/">
         </link>
         <updated>2021-08-24T05:36:19.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="tutorial">Tutorial</h2>
+<h3 id="字符串的定义">字符串的定义</h3>
+<p>C语言中的字符串实际上是字符数组。</p>
+]]></summary>
         <content type="html"><![CDATA[<h2 id="tutorial">Tutorial</h2>
 <h3 id="字符串的定义">字符串的定义</h3>
-<p>C语言中的字符串实际上是字符数组。尽管使用指针是C语言中的高级课题，后面会详细解释，先使用指向字符数组的指针来定义简单的字符串，方法如下：</p>
+<p>C语言中的字符串实际上是字符数组。</p>
+<!-- more -->
+<p>尽管使用指针是C语言中的高级课题，后面会详细解释，先使用指向字符数组的指针来定义简单的字符串，方法如下：</p>
 <pre><code>char * name = &quot;John Smith&quot;;
 </code></pre>
 <p>这个方法创建了一个只能读取的字符串。<br>
@@ -1150,22 +1156,22 @@ ___粗斜体文本___
   * [ ] task list 4-2
 </code></pre>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-865841"><label class="task-list-item-label" for="task-item-865841"> task list 1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1225137"><label class="task-list-item-label" for="task-item-1225137"> task list 2</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5217312"><label class="task-list-item-label" for="task-item-5217312"> task list 3</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4013612"><label class="task-list-item-label" for="task-item-4013612"> task list 1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1470738"><label class="task-list-item-label" for="task-item-1470738"> task list 2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-160677"><label class="task-list-item-label" for="task-item-160677"> task list 3</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1104632"><label class="task-list-item-label" for="task-item-1104632"> task list 3-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8775868"><label class="task-list-item-label" for="task-item-8775868"> task list 3-2</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5313909"><label class="task-list-item-label" for="task-item-5313909"> task list 3-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8746490"><label class="task-list-item-label" for="task-item-8746490"> task list 3-2</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2717061"><label class="task-list-item-label" for="task-item-2717061"> task list 3-2-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1955848"><label class="task-list-item-label" for="task-item-1955848"> task list 3-2-1</label></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4101736"><label class="task-list-item-label" for="task-item-4101736"> task list 4</label>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3135548"><label class="task-list-item-label" for="task-item-3135548"> task list 4</label>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5690210"><label class="task-list-item-label" for="task-item-5690210"> task list 4-1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1396454"><label class="task-list-item-label" for="task-item-1396454"> task list 4-2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8278319"><label class="task-list-item-label" for="task-item-8278319"> task list 4-1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1012633"><label class="task-list-item-label" for="task-item-1012633"> task list 4-2</label></li>
 </ul>
 </li>
 </ul>
