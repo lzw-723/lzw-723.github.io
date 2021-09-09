@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-09-07T08:03:39.872Z</updated>
+    <updated>2021-09-09T10:08:32.164Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -10,6 +10,36 @@
     <logo>https://blog.lzw-723.xyz/images/avatar.png</logo>
     <icon>https://blog.lzw-723.xyz/favicon.ico</icon>
     <rights>All rights reserved 2021, lzw-723&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[《Moe Era》 - 时代潮流中不值一提的我]]></title>
+        <id>https://blog.lzw-723.xyz/post/moe-era-ren-ying-dang-gan-jin-de-chong-fen-de-sheng-huo/</id>
+        <link href="https://blog.lzw-723.xyz/post/moe-era-ren-ying-dang-gan-jin-de-chong-fen-de-sheng-huo/">
+        </link>
+        <updated>2021-09-08T11:43:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>这是一个深刻的、奇妙的故事。过了一个小时，就像只过了几秒。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这是一个深刻的、奇妙的故事。过了一个小时，就像只过了几秒。</p>
+<!-- more -->
+<h2 id="初识">初识</h2>
+<p>Steam商店界面简介：</p>
+<blockquote>
+<p>进入可爱的东西的时代吧！这个世界什么都有，只缺少一个能够解救四个美女的英雄。这个英雄会是你吗？</p>
+</blockquote>
+<p>Steam游戏评测摘选：</p>
+<blockquote>
+<p>在游戏的结局，就像是作者站在街道上对过往的行人们微笑致意；“你可千万不要再这样过下去了”。而结尾希望我们无论是去做什么，要对自己选择有意义的生活，无论平淡与否，为之改变自我，认识自我，找到自我的价值，即使平淡也是幸福的。</p>
+</blockquote>
+<blockquote>
+<p>如果你是冲着“免费‘”色情内容”“恋爱模拟”这几个标签来的，仅此而已，那就请先改变你的想法，否则你会得不到你想要的，这游戏给不了你，不如去色情分区自己买。</p>
+</blockquote>
+<blockquote>
+<p>噢上帝，你绝对不会相信我竟然在一款免费的游戏里看见了动态背景CG，以及天马行空的立绘展现方式，甚至还穿插有通过选择组合出一款属于你自己的蛋糕的创意内容。欧美游戏制作者们不拘一格的想象力让我看见了不同于日产galgame的更多可行性，这仅是我游玩半个小时的直观感受！</p>
+</blockquote>
+<blockquote>
+<p>如果我是作者，做一款表现自己的游戏大概如此，把自己想法分成好几个家伙，中间塞点福利，免费让大家认识自己。</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[C语言教程 - for循环]]></title>
         <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-for-xun-huan/</id>
@@ -1057,60 +1087,6 @@ file 2021-07-09 12:53:33,948 ERROR [main] com.example.App [App.java:26] Hello er
 [5] <a href="https://juejin.cn/post/6844903949598736391#heading-5">Java日志框架：SLF4J详解</a><br>
 [6] <a href="https://www.jianshu.com/p/ec3bd614dcb0">SLF4J日志级别以及使用场景</a><br>
 [7] <a href="https://www.runoob.com/xml/xml-tutorial.html">XML 教程</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Vue初体验]]></title>
-        <id>https://blog.lzw-723.xyz/post/vue-chu-ti-yan/</id>
-        <link href="https://blog.lzw-723.xyz/post/vue-chu-ti-yan/">
-        </link>
-        <updated>2021-02-12T09:29:59.000Z</updated>
-        <summary type="html"><![CDATA[<p><code>Vue</code> (读音 <em>/vjuː/</em>，类似于 <strong>view</strong>) 是一套用于构建用户界面的渐进式框架。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p><code>Vue</code> (读音 <em>/vjuː/</em>，类似于 <strong>view</strong>) 是一套用于构建用户界面的渐进式框架。</p>
-<!-- more -->
-<p>与其它大型框架不同的是，<code>Vue</code> 被设计为可以自底向上逐层应用。<code>Vue</code> 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，<code>Vue</code> 也完全能够为复杂的单页应用提供驱动。</p>
-<h2 id="准备工作">准备工作</h2>
-<h3 id="1配置nodejs">1.配置<code>nodejs</code></h3>
-<p>到<a href="https://nodejs.org/en/download/">Nodejs官网</a>或<a href="http://nodejs.cn/download/">Nodejs中文网</a>直接下载对应操作系统的安装包，一路Next完成。</p>
-<blockquote>
-<p>建议选择<code>LTS</code>(长期支持)版本</p>
-</blockquote>
-<h3 id="2配置pnpm">2.配置pnpm</h3>
-<blockquote>
-<p>这一步可选，但如果不选择，后文<code>pnpm</code>需替换为<code>npm</code></p>
-</blockquote>
-<p>pnpm像npm一样也是一个包管理器，用法几乎一样。<br>
-它的优点是<strong>快、节省磁盘占用</strong><br>
-<img src="https://s3.ax1x.com/2021/02/12/yDb8zj.png" alt="pnpm与npm与yarn对比" title="pnpm与npm与yarn对比" loading="lazy"><br>
-在window下它会在项目所在驱动器中一个隐藏目录下保存所有包，这个驱动器中的所有工程都是引用这里的文件，所以，只有一份文件在磁盘中，大大减少了空间占用。<br>
-<img src="https://s3.ax1x.com/2021/02/12/yDbvtS.png" alt="我的例子" loading="lazy"></p>
-<h4 id="下载安装">下载安装</h4>
-<blockquote>
-<p>详细情况见<a href="https://pnpm.js.org/en/installation">pnpm官网安装介绍</a></p>
-</blockquote>
-<p>执行下面命令：</p>
-<pre><code class="language-shell">npm install -g pnpm
-</code></pre>
-<h4 id="注意">注意</h4>
-<p>虽然<code>pnpm</code>可以配置储存路径，但会使其他盘的包引用失效。</p>
-<h3 id="安装vuecli">安装<code>@vue/cli</code></h3>
-<p>直接</p>
-<pre><code class="language-shell">npm install -g @vue/cli
-</code></pre>
-<h2 id="新建项目">新建项目</h2>
-<p>在想要创建的工程的父目录下执行</p>
-<pre><code class="language-shell">vue create hello-world
-</code></pre>
-<p>选择<code>vue3</code><br>
-<img src="https://s3.ax1x.com/2021/02/12/yDLoqI.png" alt="vue3" loading="lazy"></p>
-<p>出现下图则新建成功<br>
-<img src="https://s3.ax1x.com/2021/02/12/yDLHdP.png" alt="成功" loading="lazy"></p>
-<h2 id="运行">运行</h2>
-<p>根据提示在浏览器打开地址<br>
-<img src="https://s3.ax1x.com/2021/02/12/yDL7Zt.png" alt="提示" loading="lazy"><br>
-<img src="https://s3.ax1x.com/2021/02/12/yDLbIf.png" alt="浏览器" loading="lazy"><br>
-<strong>成功！！！</strong></p>
 ]]></content>
     </entry>
 </feed>

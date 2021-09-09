@@ -2,25 +2,26 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>C语言教程 - for循环 | lzw-723&#39;s blog</title>
+<title>《Moe Era》 - 时代潮流中不值一提的我 | lzw-723&#39;s blog</title>
 <link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1631182110008">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="C语言教程 - for循环 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="《Moe Era》 - 时代潮流中不值一提的我 | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="C语言中的for循环非常简单。
+    <meta name="description" content="这是一个深刻的、奇妙的故事。过了一个小时，就像只过了几秒。
 
-Tutorial
-C语言中的for循环非常简单。你能用它创建一个循环—一块运行多次的代码块。
-for循环需要一个用来迭代的变量，通常命名为i。
-for循环能够做这些：
+初识
+Steam商店界面简介：
 
-用一个初始值初始化迭代器变量
-检查迭..." />
-    <meta name="keywords" content="C,教程,翻译" />
+进入可爱的东西的时代吧！这个世界什么都有，只缺少一个能够解救四个美女的英雄。这个英雄会是你吗？
+
+Steam游戏评测摘选：
+
+在游戏的结局，就像..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -102,107 +103,49 @@ for循环能够做这些：
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              C语言教程 - for循环
+              《Moe Era》 - 时代潮流中不值一提的我
             </h2>
             <div class="post-info">
               <span>
-                2021-09-05
+                2021-09-08
               </span>
               <span>
                 2 min read
               </span>
               
-                <a href="https://blog.lzw-723.xyz/tag/79EhJkn3_/" class="post-tag">
-                  # C
-                </a>
-              
-                <a href="https://blog.lzw-723.xyz/tag/ED-Tw5-vhp/" class="post-tag">
-                  # 教程
-                </a>
-              
-                <a href="https://blog.lzw-723.xyz/tag/1-Q3SKzSGk/" class="post-tag">
-                  # 翻译
-                </a>
-              
             </div>
+            
+              <img class="post-feature-image" src="https://steamuserimages-a.akamaihd.net/ugc/1679268304887720498/6B49301E62221E737317DDA6E2A74422B2A72E8A/?imw=5000&amp;imh=5000&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>C语言中的for循环非常简单。</p>
+                <p>这是一个深刻的、奇妙的故事。过了一个小时，就像只过了几秒。</p>
 <!-- more -->
-<h2 id="tutorial">Tutorial</h2>
-<p>C语言中的for循环非常简单。你能用它创建一个循环—一块运行多次的代码块。<br>
-for循环需要一个用来迭代的变量，通常命名为<code>i</code>。</p>
-<p>for循环能够做这些：</p>
-<ul>
-<li>用一个初始值初始化迭代器变量</li>
-<li>检查迭代变量是否达到最终值</li>
-<li>增加迭代变量的值</li>
-</ul>
-<p>如果想运行代码块10次，可以这样写：</p>
-<pre><code>int i;
-for (i = 0; i &lt; 10; i++) {
-    printf(&quot;%d\n&quot;, i);
-}
-</code></pre>
-<p>这段代码会打印从0到9的数字。</p>
-<p>for循环能够用来获取数组的每一个值。要计算一个数组所有值的和，可以这样使用<code>i</code>：</p>
-<pre><code>int array[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-int sum = 0;
-int i;
-
-for (i = 0; i &lt; 10; i++) {
-    sum += array[i];
-}
-
-/* 求a[0]到a[9]的和 */
-printf(&quot;Sum of the array is %d\n&quot;, sum);
-</code></pre>
-<h2 id="exercise">Exercise</h2>
-<p>计算数组array的阶乘（从array[0]乘到array[9]）。</p>
-<h2 id="tutorial-code">Tutorial Code</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-  int array[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-  int factorial = 1;
-  int i;
-
-  /* 在这里使用for循环计算阶乘*/
-
-  printf(&quot;10! is %d.\n&quot;, factorial);
-}
-</code></pre>
-<h2 id="expected-output">Expected Output</h2>
-<pre><code>10! is 3628800.
-</code></pre>
-<h2 id="solution">Solution</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-  int array[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-  int factorial = 1;
-
-  int i;
-
-  for(i=0;i&lt;10;i++){
-    factorial *= array[i];
-  }
-
-  printf(&quot;10! is %d.\n&quot;, factorial);
-}
-</code></pre>
+<h2 id="初识">初识</h2>
+<p>Steam商店界面简介：</p>
+<blockquote>
+<p>进入可爱的东西的时代吧！这个世界什么都有，只缺少一个能够解救四个美女的英雄。这个英雄会是你吗？</p>
+</blockquote>
+<p>Steam游戏评测摘选：</p>
+<blockquote>
+<p>在游戏的结局，就像是作者站在街道上对过往的行人们微笑致意；“你可千万不要再这样过下去了”。而结尾希望我们无论是去做什么，要对自己选择有意义的生活，无论平淡与否，为之改变自我，认识自我，找到自我的价值，即使平淡也是幸福的。</p>
+</blockquote>
+<blockquote>
+<p>如果你是冲着“免费‘”色情内容”“恋爱模拟”这几个标签来的，仅此而已，那就请先改变你的想法，否则你会得不到你想要的，这游戏给不了你，不如去色情分区自己买。</p>
+</blockquote>
+<blockquote>
+<p>噢上帝，你绝对不会相信我竟然在一款免费的游戏里看见了动态背景CG，以及天马行空的立绘展现方式，甚至还穿插有通过选择组合出一款属于你自己的蛋糕的创意内容。欧美游戏制作者们不拘一格的想象力让我看见了不同于日产galgame的更多可行性，这仅是我游玩半个小时的直观感受！</p>
+</blockquote>
+<blockquote>
+<p>如果我是作者，做一款表现自己的游戏大概如此，把自己想法分成好几个家伙，中间塞点福利，免费让大家认识自己。</p>
+</blockquote>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#tutorial">Tutorial</a></li>
-<li><a href="#exercise">Exercise</a></li>
-<li><a href="#tutorial-code">Tutorial Code</a></li>
-<li><a href="#expected-output">Expected Output</a></li>
-<li><a href="#solution">Solution</a></li>
+<li><a href="#%E5%88%9D%E8%AF%86">初识</a></li>
 </ul>
 </li>
 </ul>
@@ -215,9 +158,9 @@ int main() {
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-zi-fu-chuan/">
+            <a href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-for-xun-huan/">
               <h3 class="post-title">
-                C语言教程 - 字符串
+                C语言教程 - for循环
               </h3>
             </a>
           </div>
