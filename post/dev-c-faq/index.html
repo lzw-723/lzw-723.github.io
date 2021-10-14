@@ -1,0 +1,374 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dev-C++ FAQ | lzw-723&#39;s blog</title>
+<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1634217132110">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Dev-C++ FAQ | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="使用过程中的踩坑记录。
+
+什么是Dev-C++
+百度百科的dev词条描述
+
+Dev-C++是一个Windows下的C和C++程序的集成开发环境。它使用MingW32/GCC编译器，遵循C/C++标准。开发环境包括多页面窗口、工程编辑器以及调..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://blog.lzw-723.xyz">
+  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1634217132110" alt="">
+  </a>
+  <h1 class="site-title">
+    lzw-723&#39;s blog
+  </h1>
+  <p class="site-description">
+    要玩就玩得开心，这不代表我放弃
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/anime" class="menu">
+          动画
+        </a>
+      
+    
+      
+        <a href="/post/friends" class="menu">
+          友链
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/lzw-723" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/lzw-723" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Dev-C++ FAQ
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-10-08
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>使用过程中的踩坑记录。</p>
+<!-- more -->
+<h2 id="什么是dev-c">什么是Dev-C++</h2>
+<p>百度百科的<code>dev</code>词条描述</p>
+<blockquote>
+<p><code>Dev-C++</code>是一个<code>Windows</code>下的<code>C</code>和<code>C++</code>程序的<strong>集成开发环境</strong>。它使用<code>MingW32</code>/<code>GCC</code>编译器，遵循<code>C/C++</code>标准。开发环境包括多页面窗口、工程编辑器以及调试器等，在工程编辑器中集合了编辑器、编译器、连接程序和执行程序，提供高亮度语法显示的，以减少编辑错误，还有完善的调试功能，能够适合初学者与编程高手的不同需求，是<em>学习</em><code>C</code>或<code>C++</code>的首选开发工具！多国语言版中包含<strong>简繁体中文语言界面</strong>及技巧提示，还有英语、俄语、法语、德语、意大利语等二十多个国家和地区语言提供选择。</p>
+</blockquote>
+<p>百度百科的<code>Dev-C++</code>词条描述</p>
+<blockquote>
+<p><code>Dev-C++</code>（或者叫做<code>Dev-Cpp</code>）是<code>Windows</code>环境下的一个轻量级<code>C/C++</code><strong>集成开发环境</strong>（<code>IDE</code>）。它是一款<strong>自由软件</strong>，遵守<code>GPL许可协议</code>分发源代码。它集合了功能强大的源码编辑器、<code>MingW64/TDM-GCC</code>编译器、<code>GDB</code>调试器和<code>AStyle</code>格式整理器等众多自由软件，适合于在<strong>教学</strong>中供<code>C/C++</code>语言<strong>初学者</strong>使用，也适合于<em>非商业级普通开发者</em>使用。</p>
+</blockquote>
+<h2 id="为什么选择dev-c">为什么选择Dev-C++</h2>
+<p>正如百度百科中的描述，使用Dev-C++更多的是<code>C/C++</code>语言<strong>初学者</strong>。<br>
+相较于别的C语言IDE，较为完善的中文界面、简洁的视图面板、自带编译器、大量的踩坑记录、国内大师的经典教材，让Dev-C++在国内久盛不衰。</p>
+<h2 id="选择哪个dev-c">选择哪个Dev-C++</h2>
+<h3 id="有哪些版本">有哪些版本</h3>
+<table>
+<thead>
+<tr>
+<th>Dev-C++版本</th>
+<th>开发商（者）</th>
+<th>更新情况</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bloodshed Dev-C++</td>
+<td>Bloodshed公司</td>
+<td>2011年 v4.9.9.2 后停止开发</td>
+<td>蓝色经典</td>
+</tr>
+<tr>
+<td>Orwell Dev-C++</td>
+<td>独立开发者 Orwelldevcpp</td>
+<td>2016年 v5.11后停止更新</td>
+<td>TDM-GCC 4.9.2 32/64bit</td>
+</tr>
+<tr>
+<td>Banzhusoft Dev-C++</td>
+<td>国内开发者 Banzhusoft （斑竹软件）</td>
+<td>最新版本 5.15（2020年9月发布）</td>
+<td>现代化的改进、编译出错信息中文显示、代码自动格式化</td>
+</tr>
+<tr>
+<td>小熊猫Dev-C++ (原名Dev C++ 2020)</td>
+<td>国内开发者 royqh1979</td>
+<td>最新 2021年8月20日 Version 6.7.5</td>
+<td>优化改进代码补全提示、界面改善功能增强、自动链接、自带GCC集成EGE绘图库和海龟作图库及其项目模板</td>
+</tr>
+<tr>
+<td>Embarcadero Dev-C++</td>
+<td>Embarcadero公司</td>
+<td>最新 2021年1月31日 v6.3</td>
+<td>增新功能，添加了新主题，增加了多种字体，主图标更改为红色</td>
+</tr>
+</tbody>
+</table>
+<h3 id="版本演进">版本演进</h3>
+<figure data-type="image" tabindex="1"><img src="https://z3.ax1x.com/2021/10/11/5Z2lWT.png" alt="Dev-C++版本演进" title="截至2021年10月11日" loading="lazy"></figure>
+<h3 id="各版本工作界面">各版本工作界面</h3>
+<p>Banzhusoft Dev-C++<br>
+<img src="https://bkimg.cdn.bcebos.com/pic/8694a4c27d1ed21b0ef48ee18824cac451da81cb91d7?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxNTA=,g_7,xp_5,yp_5/format,f_auto" alt="Banzhusoft Dev-C++ 5.15 工作界面" title="Banzhusoft Dev-C++" loading="lazy"><br>
+小熊猫Dev-C++<br>
+<img src="https://bkimg.cdn.bcebos.com/pic/d788d43f8794a4c27d1e84ee6cbe0cd5ad6edcc49396?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxNTA=,g_7,xp_5,yp_5/format,f_auto" alt="小熊猫Dev-C++ 2020 工作界面" title="小熊猫Dev-C++" loading="lazy"><br>
+Embarcadero Dev-C++<br>
+<img src="https://z3.ax1x.com/2021/10/10/5ET3f1.png" alt="Embarcadero Dev-C++ v6.3 工作界面" title="Embarcadero Dev-C++" loading="lazy"></p>
+<h3 id="笔者推荐的版本">笔者推荐的版本</h3>
+<p>小熊猫Dev-C++和Embarcadero Dev-C++都是不错的选择，截至目前两者都在持续更新。<br>
+小熊猫Dev-C++较原版Dev-C++界面变动小，还添加了图形库方便初学者，对国人更为友好。<br>
+Embarcadero Dev-C++界面更为现代、美观，由Embarcadero公司维护，较为可靠（大概）。<br>
+笔者选择Embarcadero Dev-C++作为本文研究对象。</p>
+<h2 id="dev-c常见问题及技巧">Dev-C++常见问题及技巧</h2>
+<h3 id="新手问题">新手问题</h3>
+<h4 id="新建工程">新建工程</h4>
+<blockquote>
+<p>请在Dev-C++中将<code>工程</code>区别于<code>源代码</code></p>
+</blockquote>
+<p>文件&gt;新建&gt;项目，选择项目模板、编程语言、填写项目名称，完成。</p>
+<h4 id="dev-c工程结构">Dev-C++工程结构</h4>
+<p>一个普通工程目录下有如下文件</p>
+<pre><code>    HelloWorld.dev 项目文件，双击打开这个Dev-C++项目
+    HelloWorld.exe 编译生成的可执行文件
+    HelloWorld.layout 项目的其他配置信息（如编辑器的外观设置）
+    main.c 代码文件
+    main.o 编译中间产物
+    Makefile.win Makefile文件（Windows平台）
+</code></pre>
+<h4 id="解决输出中文乱码">解决输出中文乱码</h4>
+<p>如果你直接在Dev-C++中打印<code>你好</code>，你会得到<code>浣犲ソ</code>。<br>
+要解决这个问题，工具&gt;编译器选项&gt;编译器，勾选<code>编译时加入如下命令</code>，在下方文本框中输入<code>-fexec-charset=gbk</code>，问题解决。</p>
+<h3 id="进阶技巧">进阶技巧</h3>
+<h4 id="解决编辑器中文无法显示">解决编辑器中文无法显示</h4>
+<blockquote>
+<p>截至2021年10月14日官方还是没有修复，相关的issue积攒了五六个(╬▔皿▔)凸</p>
+</blockquote>
+<p>你可能遇到过在编辑器中输入中文取消选中后文字隐形的情况，不要着急，急也没用。<br>
+工具&gt;编辑器选项&gt;显示&gt;编辑器字体，取消勾选底部的<code>ID 27071 translation missing</code>，中文正常显示。</p>
+<h4 id="为程序添加图标">为程序添加图标</h4>
+<blockquote>
+<p>图标文件仅支持<code>ico</code>格式，可以使用在线转换网站转换图片文件到*.ico文件。</p>
+</blockquote>
+<p>项目&gt;项目属性&gt;普通，图标&gt;库——可以使用自带的图标，图标&gt;浏览——可以使用自定义的图标。</p>
+<h4 id="为程序添加资源">为程序添加资源</h4>
+<h4 id="选32位还是64位">选32位还是64位</h4>
+<p>64位的程序仅支持在64位的平台上执行，而32位的程序在32位和64位的平台上都能执行。<br>
+不过32位的程序在64位平台有最大使用内存等限制。<br>
+请根据你的目标平台选择。</p>
+<h4 id="隐藏控制台黑窗口">隐藏控制台黑窗口</h4>
+<p>项目&gt;项目属性&gt;编译器&gt;定制&gt;连接器&gt;不产生控制台窗口，选择Yes。</p>
+<h4 id="添加第三方库">添加第三方库</h4>
+<h5 id="常见绘图库">常见绘图库</h5>
+<h4 id="什么是win32程序">什么是win32程序</h4>
+<h2 id="参考资料">参考资料</h2>
+<p>[1]<a href="https://baike.baidu.com/item/dev/8534609">dev（计算机语言C/C++开发工具）_百度百科</a><br>
+[2]<a href="https://baike.baidu.com/item/Dev-C%2B%2B/4461658">Dev-C++_百度百科</a></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFdev-c">什么是Dev-C++</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9dev-c">为什么选择Dev-C++</a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E5%93%AA%E4%B8%AAdev-c">选择哪个Dev-C++</a>
+<ul>
+<li><a href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%88%E6%9C%AC">有哪些版本</a></li>
+<li><a href="#%E7%89%88%E6%9C%AC%E6%BC%94%E8%BF%9B">版本演进</a></li>
+<li><a href="#%E5%90%84%E7%89%88%E6%9C%AC%E5%B7%A5%E4%BD%9C%E7%95%8C%E9%9D%A2">各版本工作界面</a></li>
+<li><a href="#%E7%AC%94%E8%80%85%E6%8E%A8%E8%8D%90%E7%9A%84%E7%89%88%E6%9C%AC">笔者推荐的版本</a></li>
+</ul>
+</li>
+<li><a href="#dev-c%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E6%8A%80%E5%B7%A7">Dev-C++常见问题及技巧</a>
+<ul>
+<li><a href="#%E6%96%B0%E6%89%8B%E9%97%AE%E9%A2%98">新手问题</a>
+<ul>
+<li><a href="#%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B">新建工程</a></li>
+<li><a href="#dev-c%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84">Dev-C++工程结构</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E8%BE%93%E5%87%BA%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81">解决输出中文乱码</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7">进阶技巧</a>
+<ul>
+<li><a href="#%E8%A7%A3%E5%86%B3%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%AD%E6%96%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA">解决编辑器中文无法显示</a></li>
+<li><a href="#%E4%B8%BA%E7%A8%8B%E5%BA%8F%E6%B7%BB%E5%8A%A0%E5%9B%BE%E6%A0%87">为程序添加图标</a></li>
+<li><a href="#%E4%B8%BA%E7%A8%8B%E5%BA%8F%E6%B7%BB%E5%8A%A0%E8%B5%84%E6%BA%90">为程序添加资源</a></li>
+<li><a href="#%E9%80%8932%E4%BD%8D%E8%BF%98%E6%98%AF64%E4%BD%8D">选32位还是64位</a></li>
+<li><a href="#%E9%9A%90%E8%97%8F%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%BB%91%E7%AA%97%E5%8F%A3">隐藏控制台黑窗口</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93">添加第三方库</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%81%E7%BB%98%E5%9B%BE%E5%BA%93">常见绘图库</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFwin32%E7%A8%8B%E5%BA%8F">什么是win32程序</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://blog.lzw-723.xyz/post/moe-era-ren-ying-dang-gan-jin-de-chong-fen-de-sheng-huo/">
+              <h3 class="post-title">
+                《Moe Era》 - 时代潮流中不值一提的我
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '399620a9c9195b7466cf',
+    clientSecret: '00893bb4d0569d3ccd4b718ab36d35a4a4be9f6d',
+    repo: 'lzw-723.github.io',
+    owner: 'lzw-723',
+    admin: ['lzw-723'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://blog.lzw-723.xyz/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
