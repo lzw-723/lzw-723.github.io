@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-10-14T13:16:11.110Z</updated>
+    <updated>2021-10-14T13:26:59.220Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -129,6 +129,14 @@ Embarcadero Dev-C++界面更为现代、美观，由Embarcadero公司维护，�
 <h4 id="隐藏控制台黑窗口">隐藏控制台黑窗口</h4>
 <p>项目&gt;项目属性&gt;编译器&gt;定制&gt;连接器&gt;不产生控制台窗口，选择Yes。</p>
 <h4 id="添加第三方库">添加第三方库</h4>
+<p>项目&gt;项目属性</p>
+<h5 id="添加库文件">添加库文件</h5>
+<p>进入<code>文件/目录</code><br>
+库目录——添加第三方库的.a和.dll文件目录。<br>
+包含文件目录——添加第三方库头文件目录。</p>
+<h5 id="链接库">链接库</h5>
+<p>进入<code>参数</code><br>
+在<code>链接</code>下面的文本框中添加链接参数，例如：-luuid，多个库使用空格或换行分开。</p>
 <h5 id="常见绘图库">常见绘图库</h5>
 <h4 id="什么是win32程序">什么是win32程序</h4>
 <h2 id="参考资料">参考资料</h2>

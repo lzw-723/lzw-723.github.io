@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dev-C++ FAQ | lzw-723&#39;s blog</title>
-<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1634217132110">
+<link rel="shortcut icon" href="https://blog.lzw-723.xyz/favicon.ico?v=1634218016377">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.lzw-723.xyz/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Dev-C++ FAQ | lzw-723&#39;s blog - Atom Feed" href="https://blog.lzw-723.xyz/atom.xml">
@@ -26,7 +26,7 @@ Dev-C++是一个Windows下的C和C++程序的集成开发环境。它使用MingW
       <div class="main-content">
         <div class="site-header">
   <a href="https://blog.lzw-723.xyz">
-  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1634217132110" alt="">
+  <img class="avatar" src="https://blog.lzw-723.xyz/images/avatar.png?v=1634218016377" alt="">
   </a>
   <h1 class="site-title">
     lzw-723&#39;s blog
@@ -224,6 +224,14 @@ Embarcadero Dev-C++界面更为现代、美观，由Embarcadero公司维护，�
 <h4 id="隐藏控制台黑窗口">隐藏控制台黑窗口</h4>
 <p>项目&gt;项目属性&gt;编译器&gt;定制&gt;连接器&gt;不产生控制台窗口，选择Yes。</p>
 <h4 id="添加第三方库">添加第三方库</h4>
+<p>项目&gt;项目属性</p>
+<h5 id="添加库文件">添加库文件</h5>
+<p>进入<code>文件/目录</code><br>
+库目录——添加第三方库的.a和.dll文件目录。<br>
+包含文件目录——添加第三方库头文件目录。</p>
+<h5 id="链接库">链接库</h5>
+<p>进入<code>参数</code><br>
+在<code>链接</code>下面的文本框中添加链接参数，例如：-luuid，多个库使用空格或换行分开。</p>
 <h5 id="常见绘图库">常见绘图库</h5>
 <h4 id="什么是win32程序">什么是win32程序</h4>
 <h2 id="参考资料">参考资料</h2>
@@ -263,6 +271,8 @@ Embarcadero Dev-C++界面更为现代、美观，由Embarcadero公司维护，�
 <li><a href="#%E9%9A%90%E8%97%8F%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%BB%91%E7%AA%97%E5%8F%A3">隐藏控制台黑窗口</a></li>
 <li><a href="#%E6%B7%BB%E5%8A%A0%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93">添加第三方库</a>
 <ul>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E5%BA%93%E6%96%87%E4%BB%B6">添加库文件</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5%E5%BA%93">链接库</a></li>
 <li><a href="#%E5%B8%B8%E8%A7%81%E7%BB%98%E5%9B%BE%E5%BA%93">常见绘图库</a></li>
 </ul>
 </li>
