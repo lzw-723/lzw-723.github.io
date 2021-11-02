@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.lzw-723.xyz</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-10-14T13:26:59.220Z</updated>
+    <updated>2021-11-02T07:33:29.292Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.lzw-723.xyz"/>
     <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
@@ -10,6 +10,111 @@
     <logo>https://blog.lzw-723.xyz/images/avatar.png</logo>
     <icon>https://blog.lzw-723.xyz/favicon.ico</icon>
     <rights>All rights reserved 2021, lzw-723&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[C语言教程 - while循环]]></title>
+        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-while-xun-huan/</id>
+        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-while-xun-huan/">
+        </link>
+        <updated>2021-11-02T07:31:38.000Z</updated>
+        <summary type="html"><![CDATA[<p>while循环与for循环很像，但功能更少。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>while循环与for循环很像，但功能更少。</p>
+<h2 id="-more-tutorial"><!-- more --><br>
+Tutorial</h2>
+<p>while循环与for循环很像，但功能更少。只要条件为真while循环会一直执行代码块。例如下面的代码会执行十次：</p>
+<pre><code>int n = 0;
+while (n &lt; 10) {
+    n++;
+}
+</code></pre>
+<p>while循环会一直执行只要判断为真（即非零值）：</p>
+<pre><code>while (1) {
+   /* 做某事 */
+}
+</code></pre>
+<h3 id="循环指令">循环指令</h3>
+<p>在C语言中有两个重要的循环指令在所有的循环类型起作用——<code>break</code>和<code>continue</code>指令。</p>
+<p>在循环10次后<code>break</code>指令停止循环，尽管从条件来这个while循环判断永远不会结束：</p>
+<pre><code>int n = 0;
+while (1) {
+    n++;
+    if (n == 10) {
+        break;
+    }
+}
+</code></pre>
+<p>在下面的代码中，<code>continue</code>指令使<code>printf</code>命令被跳过，所以只有偶数被打印出来：</p>
+<pre><code>int n = 0;
+while (n &lt; 10) {
+    n++;
+
+    /* 检查n是否为奇数 */
+    if (n % 2 == 1) {
+        /* 回到while代码块的开头 */
+        continue;
+    }
+
+    /* 只有当n是偶数时，才能执行到这行代码 */
+    printf(&quot;The number %d is even.\n&quot;, n);
+}
+</code></pre>
+<h2 id="exercise">Exercise</h2>
+<p><code>array</code>变量是一个10个数字组成的序列。在while循环中，你必须写两个<code>if</code>判断，<br>
+它们以如下方式改变循环的流程（不改变<code>printf</code>命令）：</p>
+<ul>
+<li>如果当前数字小于5，不打印。</li>
+<li>如果当前数字大于10，不打印并停止循环。</li>
+</ul>
+<p>请注意：如果不推进迭代器变量<code>i</code>并使用<code>continue</code>指令，你将陷入死循环。</p>
+<h2 id="tutorial-code">Tutorial Code</h2>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int array[] = {1, 7, 4, 5, 9, 3, 5, 11, 6, 3, 4};
+    int i = 0;
+
+    while (i &lt; 10) {
+        /* 在这里写你的代码 */
+
+        printf(&quot;%d\n&quot;, array[i]);
+        i++;
+    }
+
+    return 0;
+}
+</code></pre>
+<h2 id="expected-output">Expected Output</h2>
+<pre><code>7
+5
+9
+5
+</code></pre>
+<h2 id="solution">Solution</h2>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int array[] = {1, 7, 4, 5, 9, 3, 5, 11, 6, 3, 4};
+    int i = 0;
+
+    while (i &lt; 10) {
+        if(array[i] &lt; 5){
+            i++;
+            continue;
+        }
+
+        if(array[i] &gt; 10){
+            break;
+        }
+
+        printf(&quot;%d\n&quot;, array[i]);
+        i++;
+    }
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Dev-C++ FAQ]]></title>
         <id>https://blog.lzw-723.xyz/post/dev-c-faq/</id>
@@ -889,57 +994,6 @@ int main() {
   return 0;
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C语言教程 - 目录]]></title>
-        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-mu-lu/</id>
-        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-mu-lu/">
-        </link>
-        <updated>2021-08-06T00:55:20.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>本教程是笔者对<a href="https://github.com/ronreiter/interactive-tutorials/blob/master/tutorials/learn-c.org/">learn-c.org</a>的翻译，详见<a href="https://github.com/ronreiter/interactive-tutorials/pull/611">Added learn-c.org Chinese translation</a>，转载后交互式内容缺失，可以前往<a href="https://www.learn-c.org/zh/">learn-c.org 中文版</a>查看。</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>本教程是笔者对<a href="https://github.com/ronreiter/interactive-tutorials/blob/master/tutorials/learn-c.org/">learn-c.org</a>的翻译，详见<a href="https://github.com/ronreiter/interactive-tutorials/pull/611">Added learn-c.org Chinese translation</a>，转载后交互式内容缺失，可以前往<a href="https://www.learn-c.org/zh/">learn-c.org 中文版</a>查看。</p>
-</blockquote>
-<!-- more -->
-<h2 id="欢迎">欢迎</h2>
-<p>欢迎来到learn-c.org的免费交互式C语言教程。</p>
-<p>这个网站都是为每个希望学习C语言的人准备的，无论你是否是一个有经验的程序员。</p>
-<p>不需要下载任何东西——只需点击你想开始的章节，然后按照指示操作。祝您好运!</p>
-<p>learn-c.org仍在建设中——如果你想贡献教程，请点击下方的<code>贡献教程</code>。</p>
-<h3 id="基础学习">基础学习</h3>
-<ul>
-<li><a href="../c-yu-yan-jiao-cheng-ni-hao-shi-jie">你好，世界!</a></li>
-<li><a href="../c-yu-yan-jiao-cheng-bian-liang-he-lei-xing">变量和类型</a></li>
-<li><a href="../c-yu-yan-jiao-cheng-shu-zu">数组</a></li>
-<li><a href="../c-yu-yan-jiao-cheng-duo-wei-shu-zu">多维数组</a></li>
-<li><a href="../c-yu-yan-jiao-cheng-tiao-jian-yu-ju">条件语句</a></li>
-<li><a href="../c-yu-yan-jiao-cheng-zi-fu-chuan">字符串</a></li>
-<li><a href="../c-yu-yan-jiao-cheng-for-xun-huan">for循环</a></li>
-<li>[[While loops]]</li>
-<li>[[Functions]]</li>
-<li>[[Static]]</li>
-</ul>
-<h3 id="进阶内容">进阶内容</h3>
-<ul>
-<li>[[Pointers]]</li>
-<li>[[Structures]]</li>
-<li>[[Function arguments by reference]]</li>
-<li>[[Dynamic allocation]]</li>
-<li>[[Arrays and Pointers]]</li>
-<li>[[Recursion]]</li>
-<li>[[Linked lists]]</li>
-<li>[[Binary trees]]</li>
-<li>[[Unions]]</li>
-<li>[[Pointer Arithmetics]]</li>
-<li>[[Function Pointers]]</li>
-<li>[[Bitmasks]]</li>
-</ul>
-<h3 id="贡献教程">贡献教程</h3>
-<p>在此阅读更多信息：[[Contributing Tutorials]]</p>
 ]]></content>
     </entry>
 </feed>
