@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.lzw-723.xyz</id>
+    <id>https://lzw-723.github.io</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-11-02T09:28:22.266Z</updated>
+    <updated>2021-11-15T09:35:31.725Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.lzw-723.xyz"/>
-    <link rel="self" href="https://blog.lzw-723.xyz/atom.xml"/>
+    <link rel="alternate" href="https://lzw-723.github.io"/>
+    <link rel="self" href="https://lzw-723.github.io/atom.xml"/>
     <subtitle>要玩就玩得开心，这不代表我放弃</subtitle>
-    <logo>https://blog.lzw-723.xyz/images/avatar.png</logo>
-    <icon>https://blog.lzw-723.xyz/favicon.ico</icon>
+    <logo>https://lzw-723.github.io/images/avatar.png</logo>
+    <icon>https://lzw-723.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, lzw-723&apos;s blog</rights>
     <entry>
         <title type="html"><![CDATA[C语言教程 - while循环]]></title>
-        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-while-xun-huan/</id>
-        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-while-xun-huan/">
+        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-while-xun-huan/</id>
+        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-while-xun-huan/">
         </link>
         <updated>2021-11-02T07:31:38.000Z</updated>
         <summary type="html"><![CDATA[<p>while循环与for循环很像，但功能更少。</p>
@@ -117,8 +117,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[Dev-C++ FAQ]]></title>
-        <id>https://blog.lzw-723.xyz/post/dev-c-faq/</id>
-        <link href="https://blog.lzw-723.xyz/post/dev-c-faq/">
+        <id>https://lzw-723.github.io/post/dev-c-faq/</id>
+        <link href="https://lzw-723.github.io/post/dev-c-faq/">
         </link>
         <updated>2021-10-08T14:30:11.000Z</updated>
         <summary type="html"><![CDATA[<p>使用过程中的踩坑记录。</p>
@@ -251,8 +251,8 @@ Embarcadero Dev-C++界面更为现代、美观，由Embarcadero公司维护，�
     </entry>
     <entry>
         <title type="html"><![CDATA[《Moe Era》 - 时代潮流中不值一提的我]]></title>
-        <id>https://blog.lzw-723.xyz/post/moe-era-ren-ying-dang-gan-jin-de-chong-fen-de-sheng-huo/</id>
-        <link href="https://blog.lzw-723.xyz/post/moe-era-ren-ying-dang-gan-jin-de-chong-fen-de-sheng-huo/">
+        <id>https://lzw-723.github.io/post/moe-era-ren-ying-dang-gan-jin-de-chong-fen-de-sheng-huo/</id>
+        <link href="https://lzw-723.github.io/post/moe-era-ren-ying-dang-gan-jin-de-chong-fen-de-sheng-huo/">
         </link>
         <updated>2021-09-08T11:43:47.000Z</updated>
         <summary type="html"><![CDATA[<p>这是一个深刻的、奇妙的故事。过了一个小时，就像只过了几秒。</p>
@@ -329,8 +329,8 @@ Embarcadero Dev-C++界面更为现代、美观，由Embarcadero公司维护，�
     </entry>
     <entry>
         <title type="html"><![CDATA[C语言教程 - for循环]]></title>
-        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-for-xun-huan/</id>
-        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-for-xun-huan/">
+        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-for-xun-huan/</id>
+        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-for-xun-huan/">
         </link>
         <updated>2021-09-04T22:51:28.000Z</updated>
         <summary type="html"><![CDATA[<p>C语言中的for循环非常简单。</p>
@@ -403,8 +403,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[C语言教程 - 字符串]]></title>
-        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-zi-fu-chuan/</id>
-        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-zi-fu-chuan/">
+        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-zi-fu-chuan/</id>
+        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-zi-fu-chuan/">
         </link>
         <updated>2021-08-24T05:36:19.000Z</updated>
         <summary type="html"><![CDATA[<p>C语言中的字符串实际上是字符数组。</p>
@@ -511,8 +511,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[C语言教程 - 条件语句]]></title>
-        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-tiao-jian-yu-ju/</id>
-        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-tiao-jian-yu-ju/">
+        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-tiao-jian-yu-ju/</id>
+        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-tiao-jian-yu-ju/">
         </link>
         <updated>2021-08-06T07:43:55.000Z</updated>
         <summary type="html"><![CDATA[<p>生活中我们必须做出决定。要根据自己的需要来做出决定，程序也是如此。</p>
@@ -648,8 +648,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[C语言教程 - 多维数组]]></title>
-        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-duo-wei-shu-zu/</id>
-        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-duo-wei-shu-zu/">
+        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-duo-wei-shu-zu/</id>
+        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-duo-wei-shu-zu/">
         </link>
         <updated>2021-08-06T03:19:14.000Z</updated>
         <summary type="html"><![CDATA[<p>C语言可以创建和使用多维数组。</p>
@@ -783,8 +783,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[C语言教程 - 数组]]></title>
-        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-shu-zu/</id>
-        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-shu-zu/">
+        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-shu-zu/</id>
+        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-shu-zu/">
         </link>
         <updated>2021-08-06T01:55:39.000Z</updated>
         <summary type="html"><![CDATA[<p>数组是一种特殊的变量，它可以在同一个变量名下容纳多个值，并以索引的形式组织起来。</p>
@@ -864,8 +864,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[C语言教程 - 变量和类型]]></title>
-        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-bian-liang-he-lei-xing/</id>
-        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-bian-liang-he-lei-xing/">
+        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-bian-liang-he-lei-xing/</id>
+        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-bian-liang-he-lei-xing/">
         </link>
         <updated>2021-08-06T01:46:08.000Z</updated>
         <summary type="html"><![CDATA[<p>C语言有很多种类型的变量，但只有几个基本类型。</p>
@@ -941,8 +941,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[C语言教程 - 你好，世界！]]></title>
-        <id>https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-ni-hao-shi-jie/</id>
-        <link href="https://blog.lzw-723.xyz/post/c-yu-yan-jiao-cheng-ni-hao-shi-jie/">
+        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-ni-hao-shi-jie/</id>
+        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-ni-hao-shi-jie/">
         </link>
         <updated>2021-08-06T01:06:56.000Z</updated>
         <summary type="html"><![CDATA[<p>虽然C语言被认为 &quot;难学&quot;，实际上C语言是一种非常简单的语言，功能强大。</p>
