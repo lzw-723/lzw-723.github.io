@@ -2,24 +2,21 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>C语言教程 - 变量和类型 | lzw-723&#39;s blog</title>
+<title>扩充巴科斯范式(ABNF)初识 | lzw-723&#39;s blog</title>
 <link rel="shortcut icon" href="https://lzw-723.github.io/favicon.ico?v=1638870732408">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lzw-723.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="C语言教程 - 变量和类型 | lzw-723&#39;s blog - Atom Feed" href="https://lzw-723.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="扩充巴科斯范式(ABNF)初识 | lzw-723&#39;s blog - Atom Feed" href="https://lzw-723.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="C语言有很多种类型的变量，但只有几个基本类型。
+    <meta name="description" content="巴科斯范式是以美国人巴科斯(Backus)和丹麦人诺尔(Naur)的名字命名的一种形式化的语法表示方法，用来描述语法的一种形式体系，是一种典型的元语言。
 
-Tutorial
-数据类型
-C语言有很多种类型的变量，但只有几个基本类型。
-
-整数——可以是正数或负数的整数。使用char、int、short、long或long long来定义。
-无符号整..." />
-    <meta name="keywords" content="C,教程,翻译" />
+起步
+一个ABNF规范是一些推导规则的集合，书写为：
+规则 = 定义;注释CR LF..." />
+    <meta name="keywords" content="教程,笔记" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -101,115 +98,76 @@ C语言有很多种类型的变量，但只有几个基本类型。
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              C语言教程 - 变量和类型
+              扩充巴科斯范式(ABNF)初识
             </h2>
             <div class="post-info">
               <span>
-                2021-08-06
+                2021-12-07
               </span>
               <span>
-                3 min read
+                2 min read
               </span>
-              
-                <a href="https://lzw-723.github.io/tag/79EhJkn3_/" class="post-tag">
-                  # C
-                </a>
               
                 <a href="https://lzw-723.github.io/tag/ED-Tw5-vhp/" class="post-tag">
                   # 教程
                 </a>
               
-                <a href="https://lzw-723.github.io/tag/1-Q3SKzSGk/" class="post-tag">
-                  # 翻译
+                <a href="https://lzw-723.github.io/tag/ol7l837c1/" class="post-tag">
+                  # 笔记
                 </a>
               
             </div>
             
+              <img class="post-feature-image" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftxtold-2.book118.com%2F2018%2F0627%2Fbook175319%2F175318481.jpg&amp;refer=http%3A%2F%2Ftxtold-2.book118.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg" alt="">
+            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>C语言有很多种类型的变量，但只有几个基本类型。</p>
+                <p><strong>巴科斯范式</strong>是以美国人巴科斯(Backus)和丹麦人诺尔(Naur)的名字命名的一种形式化的语法表示方法，用来描述语法的一种形式体系，是一种典型的<strong>元语言</strong>。</p>
 <!-- more -->
-<h2 id="tutorial">Tutorial</h2>
-<h3 id="数据类型">数据类型</h3>
-<p>C语言有很多种类型的变量，但只有几个基本类型。</p>
+<h2 id="起步">起步</h2>
+<p>一个ABNF规范是一些推导规则的集合，书写为：</p>
+<pre><code class="language-abnf">规则 = 定义;注释CR LF
+</code></pre>
+<p>其中：</p>
 <ul>
-<li>整数——可以是正数或负数的整数。使用<code>char</code>、<code>int</code>、<code>short</code>、<code>long</code>或<code>long long</code>来定义。</li>
-<li>无符号整数——只能是正数的整数。使用<code>unsigned char</code>、<code>unsigned int</code>、<code>unsigned short</code>、<code>unsigned long</code>或<code>unsigned long long</code>定义。</li>
-<li>浮点数——实数（带小数的数字）。使用<code>float</code>和<code>double</code>来定义。</li>
-<li>结构——将在后面的结构部分解释。</li>
+<li><code>规则</code>是不区分大小写的非最终符号</li>
+<li><code>定义</code>由定义该规则的一系列符号组成</li>
+<li><code>注释</code>用于记录</li>
+<li><code>CR LF</code>(回车、换行)用来结束</li>
 </ul>
-<p>不同类型的变量定义了它们的界限。一个<code>char</code>的范围只能从-128到127，而一个<code>long</code>的范围可以从-2,147,483,648到2,147,483,647（<code>long</code>和其他数字数据类型在不同的计算机上可能有另一个范围，例如——在64位计算机上从-9,223,372,036,854,775,808到9,223,372,036,854,775,807）。</p>
-<p>请注意，C语言<em>没有</em>布尔类型。通常情况下，它是用下面的符号定义的。</p>
-<pre><code>#define BOOL char
-#define FALSE 0
-#define TRUE 1
-</code></pre>
-<p>C语言使用字符数组来定义字符串，将在<code>字符串</code>部分进行解释。</p>
-<h3 id="定义变量">定义变量</h3>
-<p>通常使用<code>int</code>类型定义数字，它是一个<code>字</code>大小的整数，也就是程序的编译机器的默认数字大小。<br>
-在今天的大多数计算机上，它是一个32位的数字，这意味着数字的范围可以从-2,147,483,648到2,147,483,647。</p>
-<p>为了定义变量<code>foo</code>和<code>bar</code>，需要使用以下语法。</p>
-<pre><code>int foo;
-int bar = 1;
-</code></pre>
-<p>变量<code>foo</code>可以使用，但由于没有初始化它，我们不知道里面有什么。变量<code>bar</code>装着数字1。</p>
-<p>现在，可以做一些数学运算。<br>
-假设<code>a</code>、<code>b</code>、<code>c</code>、<code>d</code>和<code>e</code>是变量，可以简单地使用加、减和乘法运算符 在下面的代码中，给<code>a</code>分配一个新值：</p>
-<pre><code>int a = 0, b = 1, c = 2, d = 3, e = 4;
-a = b - c + d * e;
-printf(&quot;%d&quot;, a); /* will print 1-2+3*4 = 11 */
-</code></pre>
-<h2 id="exercise">Exercise</h2>
-<p>在下一个练习中，你将创建一个程序，打印出数字<code>a</code>、<code>b</code>和<code>c</code>的和。</p>
-<h2 id="tutorial-code">Tutorial Code</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-  int a = 3;
-  float b = 4.5;
-  double c = 5.25;
-  float sum;
-
-  /* 你的代码放在这里 */
-
-  printf(&quot;The sum of a, b, and c is %f.&quot;, sum);
-  return 0;
-}
-</code></pre>
-<h2 id="expected-output">Expected Output</h2>
-<pre><code>The sum of a, b, and c is 12.750000.
-</code></pre>
-<h2 id="solution">Solution</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-  int a = 3;
-  float b = 4.5;
-  double c = 5.25;
-  float sum;
-
-  sum = a + b + c;
-
-  printf(&quot;The sum of a, b, and c is %f.&quot;, sum);
-  return 0;
-}
-</code></pre>
+<h3 id="规则名">规则名</h3>
+<p>大小写不敏感</p>
+<blockquote>
+<p>规则名字是不区分大小写的: <code>&lt;rulename&gt;</code>, <code>&lt;Rulename&gt;</code>, <code>&lt;RULENAME&gt;</code>和<code>&lt;rUlENamE&gt;</code>都指的是同一个规则。规则名字由一个字母以及后续的多个<em>字母</em>、<em>数字</em>和<em>连字符</em>(<em>减号</em>)组成。</p>
+</blockquote>
+<p>尖括号非必须</p>
+<blockquote>
+<p>用尖括号(<code>&lt;</code>、<code>&gt;</code>)包围规则名并不是必需的(同<code>BNF</code>)，但是它们可以用来在文中方便识别出规则名。</p>
+</blockquote>
+<h3 id="最终值">最终值</h3>
+<p>最终值由一个或多个数值字符指定。</p>
+<p>数值字符可按下面的方式指定：先是一个百分号<code>%</code>，紧跟着基数（<code>b</code>=<em>二进制</em>, <code>d</code> = <em>十进制</em>, <code>x</code> = <em>十六进制</em>），再其后是这个数值或数值串（用<code>.</code>来指示串联）。例如：<code>回车</code>可以用十进制的<code>%d13</code>或十六进制的<code>%x0D</code>来指定，而<code>回车换行</code>则可以用<code>%d13.10</code>来指定。</p>
+<p>字面文本是通过包含在在双引号<code>&quot;</code>中字符串来指定的。这些字符串是不区分大小写的，使用的字符集是<br>
+<strong>(US-)ASCII</strong>。所以字符串abc将匹配<code>abc</code>,<code>Abc</code>,<code>aBc</code>,<code>abC</code>,<code>ABc</code>,<code>AbC</code>,<code>aBC</code>和<code>ABC</code>。对于区分大小写的匹配，必须定义明确的字符，例如:若要匹配<code>aBc</code>，定义必须是<code>%d97</code> <code>%d66</code> <code>%d99</code>。</p>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%89%A9%E5%85%85%E5%B7%B4%E7%A7%91%E6%96%AF%E8%8C%83%E5%BC%8F">扩充巴科斯范式 - 维基百科，自由的百科全书</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/22460835">从零开始的 JSON 库教程（一）：启程</a></li>
+<li><a href="https://www.ietf.org/rfc/rfc5234.txt">RFC 5234: Augmented BNF for Syntax Specifications: ABNF</a></li>
+</ol>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#tutorial">Tutorial</a>
+<li><a href="#%E8%B5%B7%E6%AD%A5">起步</a>
 <ul>
-<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a></li>
-<li><a href="#%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F">定义变量</a></li>
+<li><a href="#%E8%A7%84%E5%88%99%E5%90%8D">规则名</a></li>
+<li><a href="#%E6%9C%80%E7%BB%88%E5%80%BC">最终值</a></li>
 </ul>
 </li>
-<li><a href="#exercise">Exercise</a></li>
-<li><a href="#tutorial-code">Tutorial Code</a></li>
-<li><a href="#expected-output">Expected Output</a></li>
-<li><a href="#solution">Solution</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 </li>
 </ul>
@@ -222,9 +180,9 @@ int main() {
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-ni-hao-shi-jie/">
+            <a href="https://lzw-723.github.io/post/yi-5-fen-zhong-ru-men-nim-bian-cheng-yu-yan/">
               <h3 class="post-title">
-                C语言教程 - 你好，世界！
+                【译】5分钟入门Nim编程语言
               </h3>
             </a>
           </div>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lzw-723.github.io</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-12-07T08:58:01.742Z</updated>
+    <updated>2021-12-07T09:52:14.493Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lzw-723.github.io"/>
     <link rel="self" href="https://lzw-723.github.io/atom.xml"/>
@@ -10,6 +10,49 @@
     <logo>https://lzw-723.github.io/images/avatar.png</logo>
     <icon>https://lzw-723.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, lzw-723&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[扩充巴科斯范式(ABNF)初识]]></title>
+        <id>https://lzw-723.github.io/post/kuo-chong-ba-ke-si-fan-shi-abnfchu-shi/</id>
+        <link href="https://lzw-723.github.io/post/kuo-chong-ba-ke-si-fan-shi-abnfchu-shi/">
+        </link>
+        <updated>2021-12-07T08:29:32.000Z</updated>
+        <summary type="html"><![CDATA[<p><strong>巴科斯范式</strong>是以美国人巴科斯(Backus)和丹麦人诺尔(Naur)的名字命名的一种形式化的语法表示方法，用来描述语法的一种形式体系，是一种典型的<strong>元语言</strong>。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><strong>巴科斯范式</strong>是以美国人巴科斯(Backus)和丹麦人诺尔(Naur)的名字命名的一种形式化的语法表示方法，用来描述语法的一种形式体系，是一种典型的<strong>元语言</strong>。</p>
+<!-- more -->
+<h2 id="起步">起步</h2>
+<p>一个ABNF规范是一些推导规则的集合，书写为：</p>
+<pre><code class="language-abnf">规则 = 定义;注释CR LF
+</code></pre>
+<p>其中：</p>
+<ul>
+<li><code>规则</code>是不区分大小写的非最终符号</li>
+<li><code>定义</code>由定义该规则的一系列符号组成</li>
+<li><code>注释</code>用于记录</li>
+<li><code>CR LF</code>(回车、换行)用来结束</li>
+</ul>
+<h3 id="规则名">规则名</h3>
+<p>大小写不敏感</p>
+<blockquote>
+<p>规则名字是不区分大小写的: <code>&lt;rulename&gt;</code>, <code>&lt;Rulename&gt;</code>, <code>&lt;RULENAME&gt;</code>和<code>&lt;rUlENamE&gt;</code>都指的是同一个规则。规则名字由一个字母以及后续的多个<em>字母</em>、<em>数字</em>和<em>连字符</em>(<em>减号</em>)组成。</p>
+</blockquote>
+<p>尖括号非必须</p>
+<blockquote>
+<p>用尖括号(<code>&lt;</code>、<code>&gt;</code>)包围规则名并不是必需的(同<code>BNF</code>)，但是它们可以用来在文中方便识别出规则名。</p>
+</blockquote>
+<h3 id="最终值">最终值</h3>
+<p>最终值由一个或多个数值字符指定。</p>
+<p>数值字符可按下面的方式指定：先是一个百分号<code>%</code>，紧跟着基数（<code>b</code>=<em>二进制</em>, <code>d</code> = <em>十进制</em>, <code>x</code> = <em>十六进制</em>），再其后是这个数值或数值串（用<code>.</code>来指示串联）。例如：<code>回车</code>可以用十进制的<code>%d13</code>或十六进制的<code>%x0D</code>来指定，而<code>回车换行</code>则可以用<code>%d13.10</code>来指定。</p>
+<p>字面文本是通过包含在在双引号<code>&quot;</code>中字符串来指定的。这些字符串是不区分大小写的，使用的字符集是<br>
+<strong>(US-)ASCII</strong>。所以字符串abc将匹配<code>abc</code>,<code>Abc</code>,<code>aBc</code>,<code>abC</code>,<code>ABc</code>,<code>AbC</code>,<code>aBC</code>和<code>ABC</code>。对于区分大小写的匹配，必须定义明确的字符，例如:若要匹配<code>aBc</code>，定义必须是<code>%d97</code> <code>%d66</code> <code>%d99</code>。</p>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%89%A9%E5%85%85%E5%B7%B4%E7%A7%91%E6%96%AF%E8%8C%83%E5%BC%8F">扩充巴科斯范式 - 维基百科，自由的百科全书</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/22460835">从零开始的 JSON 库教程（一）：启程</a></li>
+<li><a href="https://www.ietf.org/rfc/rfc5234.txt">RFC 5234: Augmented BNF for Syntax Specifications: ABNF</a></li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【译】5分钟入门Nim编程语言]]></title>
         <id>https://lzw-723.github.io/post/yi-5-fen-zhong-ru-men-nim-bian-cheng-yu-yan/</id>
@@ -1082,87 +1125,6 @@ int main() {
 	}
 
 	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C语言教程 - 数组]]></title>
-        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-shu-zu/</id>
-        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-shu-zu/">
-        </link>
-        <updated>2021-08-06T01:55:39.000Z</updated>
-        <summary type="html"><![CDATA[<p>数组是一种特殊的变量，它可以在同一个变量名下容纳多个值，并以索引的形式组织起来。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>数组是一种特殊的变量，它可以在同一个变量名下容纳多个值，并以索引的形式组织起来。</p>
-<!-- more -->
-<h2 id="tutorial">Tutorial</h2>
-<p>数组是一种特殊的变量，它可以在同一个变量名下容纳多个值，并以索引的形式组织起来。<br>
-数组的定义采用了非常简单的语法：</p>
-<pre><code>/* 定义了一个由10个整数组成的数组 */
-int numbers[10];
-</code></pre>
-<p>从数组中访问一个数字也是用同样的语法完成的。<br>
-请注意，C语言中的数组是以零开头的，这意味着如果定义了一个大小为10的数组，那么数组单元0到9（包括）都被定义了。<br>
-<code>numbers[10]</code>不存在。</p>
-<pre><code>int numbers[10];
-
-/* 填充该数组 */
-numbers[0] = 10;
-numbers[1] = 20;
-numbers[2] = 30;
-numbers[3] = 40;
-numbers[4] = 50;
-numbers[5] = 60;
-numbers[6] = 70;
-
-/* 打印数组中的第7个数字，其索引为6 */
-printf(&quot;The 7th number in the array is %d&quot;, numbers[6]);
-</code></pre>
-<p>数组只能有一种类型的变量，因为它们被实现为计算机内存中的一个数值序列。<br>
-正因如此，访问一个特定的数组单元是非常高效的。</p>
-<h2 id="exercise">Exercise</h2>
-<ul>
-<li>下面的代码不能编译，因为缺少<code>grades</code>变量。</li>
-<li>其中一个成绩缺失。你能定义它，使平均成绩为85分吗？</li>
-</ul>
-<h2 id="tutorial-code">Tutorial Code</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-  /* TODO：在这里定义成绩变量 */
-  int average;
-
-  grades[0] = 80;
-  /* TODO：定义缺失的成绩，以使平均分达到85。 */
-  grades[2] = 90;
-
-  average = (grades[0] + grades[1] + grades[2]) / 3;
-  printf(&quot;The average of the 3 grades is: %d&quot;, average);
-
-  return 0;
-}
-</code></pre>
-<h2 id="expected-output">Expected Output</h2>
-<pre><code>The average of the 3 grades is: 85
-</code></pre>
-<h2 id="solution">Solution</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-  /* TODO：在这里定义成绩变量 */
-  int grades[3];
-  int average;
-
-  grades[0] = 80;
-  /* TODO：定义缺失的成绩，以使平均分达到85。 */
-  grades[1] = 85;
-  grades[2] = 90;
-
-  average = (grades[0] + grades[1] + grades[2]) / 3;
-  printf(&quot;The average of the 3 grades is: %d&quot;, average);
-
-  return 0;
 }
 </code></pre>
 ]]></content>
