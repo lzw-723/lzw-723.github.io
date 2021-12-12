@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lzw-723.github.io</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2021-12-11T09:38:51.823Z</updated>
+    <updated>2021-12-12T02:10:52.885Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lzw-723.github.io"/>
     <link rel="self" href="https://lzw-723.github.io/atom.xml"/>
@@ -44,14 +44,242 @@
 </blockquote>
 <h3 id="最终值">最终值</h3>
 <p>最终值为一个或多个数值字符。</p>
-<p>数值字符可按下面的方式指定：先是一个百分号<code>%</code>，紧跟着基数（<code>b</code>=<em>二进制</em>, <code>d</code> = <em>十进制</em>, <code>x</code> = <em>十六进制</em>），再其后是这个数值或数值串（用<code>.</code>来指示串联）。例如：<code>回车</code>可以用十进制的<code>%d13</code>或十六进制的<code>%x0D</code>来指定，而<code>回车换行</code>则可以用<code>%d13.10</code>来指定。</p>
+<p>数值字符可按下面的方式指定：先是一个百分号<code>%</code>，紧跟着基数(<code>b</code>=<em>二进制</em>, <code>d</code> = <em>十进制</em>, <code>x</code> = <em>十六进制</em>)，再其后是这个数值或数值串(用<code>.</code>来指示串联)。例如：<code>回车</code>可以用十进制的<code>%d13</code>或十六进制的<code>%x0D</code>来指定，而<code>回车换行</code>则可以用<code>%d13.10</code>来指定。</p>
 <p>字面文本通过包含在在双引号<code>&quot;</code>中字符串指定。这些字符串不区分大小写，使用 <strong>(US-)ASCII</strong>字符集。所以字符串<code>abc</code>将匹配<code>abc</code>、<code>Abc</code>、<code>aBc</code>、<code>abC</code>、<code>ABc</code>、<code>AbC</code>、<code>aBC</code>和<code>ABC</code>。<br>
 区分大小写的匹配必须定义明确的字符，例如:若要匹配<code>aBc</code>，定义必须是<code>%d97</code> <code>%d66</code> <code>%d99</code>。</p>
+<h3 id="操作符">操作符</h3>
+<h4 id="空白字符">空白字符</h4>
+<p>空白字符被用来分隔定义中的各个元素:要使空格被识别为分割符则必须明确的包含它。</p>
+<h4 id="串联">串联</h4>
+<pre><code class="language-abnf">规则1规则2
+</code></pre>
+<p>规则可以通过列出一系列的规则名来定义。</p>
+<p>要匹配字符串<code>aba</code>可以使用下列规则:</p>
+<pre><code class="language-abnf">foo = %x61 ; a
+bar = %x62 ; b
+mumble = foo bar foo
+</code></pre>
+<h4 id="选择">选择 /</h4>
+<pre><code class="language-abnf">规则1 / 规则2
+</code></pre>
+<p>一个规则可以通过用斜杠(<code>/</code>)分隔的可供选择的子规则列表来定义。</p>
+<p>要接受规则<foo>或规则<bar>可构造如下规则:</p>
+<pre><code class="language-abnf">foobar = foo / bar
+</code></pre>
+<h4 id="增量选择">增量选择 =/</h4>
+<pre><code class="language-abnf">规则1 =/ 规则2
+</code></pre>
+<p>可以通过在规则名和定义之间使用<code>=/</code>来向一个规则增加补充选择。</p>
+<p>规则</p>
+<pre><code class="language-abnf">ruleset = alt1 / alt2 / alt3 / alt4 / alt5
+</code></pre>
+<p>等价于</p>
+<pre><code class="language-abnf">ruleset = alt1 / alt2
+ruleset =/ alt3
+ruleset =/ alt4 / alt5
+</code></pre>
+<h4 id="值范围c-">值范围%c##-##</h4>
+<pre><code class="language-abnf">%c##-##
+</code></pre>
+<p>数值范围可以通过使用连字符(<code>-</code>)来指定。</p>
+<p>规则</p>
+<pre><code class="language-abnf">OCTAL = &quot;0&quot; / &quot;1&quot; / &quot;2&quot; / &quot;3&quot; / &quot;4&quot; / &quot;5&quot; / &quot;6&quot; / &quot;7&quot;
+</code></pre>
+<p>等价于</p>
+<pre><code class="language-abnf">OCTAL = %x30-37
+</code></pre>
+<h4 id="序列组合">序列组合 ()</h4>
+<pre><code class="language-abnf">(规则1规则2)
+</code></pre>
+<p>在定义中，元素可以放置在圆括号中来将规则组合起来，该组合视为单个元素。</p>
+<p>要匹配<code>elem foobar snafoo</code>或<code>elem tarfoo snafoo</code>可以构造下列规则:</p>
+<pre><code class="language-abnf">group = elem (foobar / tarfoo) snafoo
+</code></pre>
+<p>要匹配<code>elem foobar</code>或<code>tarfoo snafoo</code>可以构造下列规则:</p>
+<pre><code class="language-abnf">group = elem foobar / tarfoo snafoo
+group = (elem foobar) / (tarfoo snafoo)
+</code></pre>
+<h4 id="不定量重复mn">不定量重复m*n</h4>
+<p>元素前面的星号<code>*</code>表示重复，其完整形式如下：</p>
+<pre><code class="language-abnf">m*n规则
+</code></pre>
+<p>要表示一个元素的重复，就要使用<code>&lt;m&gt;*&lt;n&gt;</code>元素形式。可选的<code>&lt;m&gt;</code>给出要包含的元素的最小数目，默认为0；可选的<n>给出要包含的元素的最大数目，默认为无穷大。</p>
+<p>例子：</p>
+<pre><code class="language-abnf">*元素 ; 表示零个或更多元素
+1*元素 ; 表示一个或更多元素
+2*4元素 ; 表示两个至四个元素
+</code></pre>
+<h4 id="定量重复n">定量重复n</h4>
+<pre><code class="language-abnf">n规则
+</code></pre>
+<p>要表示特定数目的元素可使用形式<code>&lt;n&gt;</code>元素，相当于用不定量重复形式表示的<code>&lt;n&gt;*&lt;n&gt;</code>元素。</p>
+<p>使用<code>2DIGIT</code>得到两个数字，使用<code>3DIGIT</code>得到三个数字。(<code>DIGIT</code>在下面的核心规则中定义，也见例子中的zip-code)。</p>
+<h4 id="可选序列">可选序列[]</h4>
+<pre><code class="language-abnf">[规则]
+</code></pre>
+<p>要表示可选元素，下列构造等价:</p>
+<pre><code class="language-abnf">[foobar snafoo]
+*1(foobar snafoo)
+0*1(foobar snafoo)
+</code></pre>
+<h4 id="注释">注释;</h4>
+<pre><code class="language-abnf">;注释
+</code></pre>
+<p>注释从一个分号(<code>;</code>)开始，并持续到此行的结束。</p>
+<h4 id="操作符优先级">操作符优先级</h4>
+<p>下面的操作符给出了从高(结合最紧密)到低(结合最松散)的优先级:</p>
+<ol>
+<li>规则名、最终值</li>
+<li>注释;</li>
+<li>值范围%c##-##</li>
+<li>重复*</li>
+<li>组合 ()、可选[]</li>
+<li>串联</li>
+<li>选择 /</li>
+</ol>
+<blockquote>
+<p>选择操作符与串联一起使用会造成混淆，因此建议使用组合来确保串联组的明确。</p>
+</blockquote>
+<p>例如：</p>
+<pre><code class="language-abnf">我们 = 你 我/他 她
+</code></pre>
+<p>会产生下面两种歧义：</p>
+<pre><code class="language-abnf">(你 我)/(他 她)
+(你) (我/他) (她)
+</code></pre>
+<p>所以，使用组合来确保不会产生歧义：</p>
+<pre><code class="language-abnf">(你 我)/(他 她)
+</code></pre>
+<h3 id="核心规则">核心规则</h3>
+<p>核心规则定义于 ABNF 标准中。</p>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>形式定义</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALPHA</td>
+<td>%x41-5A / %x61-7A</td>
+<td>大写和小写 ASCII 字母(A-Z, a-z)</td>
+</tr>
+<tr>
+<td>DIGIT</td>
+<td>%x30-39</td>
+<td>数字(0-9)</td>
+</tr>
+<tr>
+<td>HEXDIG</td>
+<td>DIGIT / &quot;A&quot; / &quot;B&quot; / &quot;C&quot; / &quot;D&quot; / &quot;E&quot; / &quot;F&quot;</td>
+<td>十六进制数字(0-9, A-F, a-f)</td>
+</tr>
+<tr>
+<td>DQUOTE</td>
+<td>%x22</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>SP</td>
+<td>%x20</td>
+<td>空格</td>
+</tr>
+<tr>
+<td>HTAB</td>
+<td>%x09</td>
+<td>横向制表符</td>
+</tr>
+<tr>
+<td>WSP</td>
+<td>SP / HTAB</td>
+<td>空格或横向制表符</td>
+</tr>
+<tr>
+<td>LWSP</td>
+<td>*(WSP / CRLF WSP)</td>
+<td>直线空白(晚于换行)</td>
+</tr>
+<tr>
+<td>VCHAR</td>
+<td>%x21-7E</td>
+<td>可见(打印)字符</td>
+</tr>
+<tr>
+<td>CHAR</td>
+<td>%x01-7F</td>
+<td>任何 7 - 位 US-ASCII 字符，不包括 NUL(%x00)</td>
+</tr>
+<tr>
+<td>OCTET</td>
+<td>%x00-FF</td>
+<td>8 位数据</td>
+</tr>
+<tr>
+<td>CTL</td>
+<td>%x00-1F / %x7F</td>
+<td>控制字符</td>
+</tr>
+<tr>
+<td>CR</td>
+<td>%x0D</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>LF</td>
+<td>%x0A</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>CRLF</td>
+<td>CR LF</td>
+<td>互联网标准换行</td>
+</tr>
+<tr>
+<td>BIT</td>
+<td>&quot;0&quot; / &quot;1&quot;</td>
+<td>二进制数字</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="实践">实践</h2>
+<h3 id="电子邮箱地址">电子邮箱地址</h3>
+<pre><code class="language-abnf">email = 1*( atext / &quot;.&quot; ) &quot;@&quot; label *( &quot;.&quot; label ) label = let-dig [ [ ldh-str ] let-dig ]
+</code></pre>
+<h3 id="json">JSON</h3>
+<pre><code class="language-abnf">// 语法树的跟【Root是系统内置，必须定义Root作为语法根节点，没有定义会报错】
+Root = Value?;
+// 字符串
+Text : &quot;\&quot;&quot;@ = &quot;\&quot;([^\&quot;\\]|\\.)*\&quot;&quot;;
+// 整型数值
+Number : &quot;[0-9]&quot; = &quot;0x[0-9a-fA-F]+&quot; | &quot;[0-9]+(%.[0-9]+)?&quot;;
+// 空
+Null [53,155,185] = &lt;null&gt;;
+// bool
+Bool = &lt;true&gt; | &lt;false&gt;;
+// Json值
+Value = Text | Bool | Number | Null | Array | Object;
+// 数组
+Array = '['@ (Value ArrayValuePair*)? ']';
+// Array元素
+ArrayValuePair = ','@ Value;
+// 映射表
+Object = '{'@ (ObjectValue ObjectValuePair*)? '}';
+// 键
+ObjectKey = Text;
+// 键值对
+ObjectValue = ObjectKey ':'@ Value;
+// Object元素
+ObjectValuePair = ','@ ObjectValue;
+</code></pre>
 <h2 id="参考资料">参考资料</h2>
 <ol>
 <li><a href="https://zh.wikipedia.org/wiki/%E6%89%A9%E5%85%85%E5%B7%B4%E7%A7%91%E6%96%AF%E8%8C%83%E5%BC%8F">扩充巴科斯范式 - 维基百科，自由的百科全书</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/22460835">从零开始的 JSON 库教程（一）：启程</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/22460835">从零开始的 JSON 库教程(一)：启程</a></li>
 <li><a href="https://www.ietf.org/rfc/rfc5234.txt">RFC 5234: Augmented BNF for Syntax Specifications: ABNF</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/364844806">从零开始设计一门属于自己的开发语言</a></li>
 </ol>
 ]]></content>
     </entry>
