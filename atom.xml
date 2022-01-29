@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lzw-723.github.io</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2022-01-26T13:59:20.556Z</updated>
+    <updated>2022-01-29T02:59:23.316Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lzw-723.github.io"/>
     <link rel="self" href="https://lzw-723.github.io/atom.xml"/>
@@ -10,6 +10,147 @@
     <logo>https://lzw-723.github.io/images/avatar.png</logo>
     <icon>https://lzw-723.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, lzw-723&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Lojban基础教程 - 字母]]></title>
+        <id>https://lzw-723.github.io/post/lojban-ji-chu-jiao-cheng-zi-mu/</id>
+        <link href="https://lzw-723.github.io/post/lojban-ji-chu-jiao-cheng-zi-mu/">
+        </link>
+        <updated>2022-01-28T11:55:12.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="字母">字母</h2>
+<p>逻辑语使用除了<code>h</code>、<code>q</code>、<code>w</code>外的23个拉丁字母，另外，在字母表内有三个特殊符号<code>'</code>、<code>,</code>、<code>.</code>，其地位与其他拉丁字母是等同的。除了字母表内的符号外，<strong>逻辑语在行文中不使用标点符号和其他符号</strong>。</p>
+<p>逻辑语字母表：<br>
+辅音（常用<em>C</em>表示）：<strong><code>b</code>  <code>c</code>  <code>d</code>  <code>f</code>  <code>g</code> <code>j</code>  <code>k</code>  <code>l</code>  <code>m</code>  <code>n</code>  <code>p</code>  <code>r</code>  <code>s</code>  <code>t</code>  <code>v</code>  <code>x</code>  <code>z</code></strong><br>
+元音（常用<em>V</em>表示）：<strong><code>a</code>  <code>e</code>  <code>i</code>  <code>o</code>  <code>u</code>  <code>y</code></strong><br>
+特殊符号（既不是辅音也不是元音）：<strong><code>,</code> <code>.</code>  <code>'</code></strong></p>
+<blockquote>
+<p><em>一音一符原则：在任何情况下，每个字母的读音是不变的，读音与字母存在一对一关系。</em></p>
+</blockquote>
+<p>逻辑语还有一些二合字母（两个字母共同组成一个音），其中有双辅音和双元音。</p>
+<h2 id="元音">元音</h2>
+<blockquote>
+<p>逻辑语内任何元音开头的词前都要加<code>.</code>，无例外，且这个点在词典内是不会写出来的</p>
+</blockquote>
+<h3 id="元音字母">元音字母</h3>
+<p>元音字母是指语言里起着发声作用的字母。<br>
+逻辑语一共有六个元音字母。</p>
+<table>
+<thead>
+<tr>
+<th>元音字母</th>
+<th>发音</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>啊（汉语拼音 a）</td>
+</tr>
+<tr>
+<td>e</td>
+<td>这个读音汉语拼音里没有,类似于英语单词 get 里 e 的发音。</td>
+</tr>
+<tr>
+<td>i</td>
+<td>咦（汉语拼音 i）</td>
+</tr>
+<tr>
+<td>o</td>
+<td>喔（汉语拼音 o）</td>
+</tr>
+<tr>
+<td>u</td>
+<td>呜（汉语拼音 u）</td>
+</tr>
+<tr>
+<td>y</td>
+<td>呃（汉语拼音 e,这是一个需要弱读的元音，总之放松口腔，轻轻吐气发音足矣）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="复合元音">复合元音</h3>
+<p>两个元音可以组合在一起发出一个音，这就成了复合元音。</p>
+<table>
+<thead>
+<tr>
+<th>复合元音</th>
+<th>发音</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ai</td>
+<td>爱（汉语拼音 ai）</td>
+</tr>
+<tr>
+<td>au</td>
+<td>奥（汉语拼音 ao）</td>
+</tr>
+<tr>
+<td>ei</td>
+<td>诶（汉语拼音 ei）</td>
+</tr>
+<tr>
+<td>oi</td>
+<td>类似英语单词 boy 里 oy 的发音。</td>
+</tr>
+<tr>
+<td>ia</td>
+<td>呀（汉语拼音 ya）</td>
+</tr>
+<tr>
+<td>ie</td>
+<td>夜（汉语拼音 ye）</td>
+</tr>
+<tr>
+<td>iu</td>
+<td>优（汉语 you）</td>
+</tr>
+<tr>
+<td>ua</td>
+<td>哇（汉语拼音 wa）</td>
+</tr>
+<tr>
+<td>ue</td>
+<td>威（汉语拼音 wei）</td>
+</tr>
+<tr>
+<td>uo</td>
+<td>喔（汉语拼音 wo）</td>
+</tr>
+<tr>
+<td>ui</td>
+<td>类似英语单词 we 的发音</td>
+</tr>
+</tbody>
+</table>
+<h4 id="双元音">双元音</h4>
+<table>
+<thead>
+<tr>
+<th>双元音</th>
+<th>发音</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ii</td>
+<td>衣（汉语拼音 yi）</td>
+</tr>
+<tr>
+<td>uu</td>
+<td>乌（汉语拼音 wu）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="辅音字母">辅音字母</h2>
+<p>大多数逻辑语的辅音和英语类似,不过也有几个例外:</p>
+<p>g 哥的声母（汉语拼音 g）<br>
+c 西的声母（汉语拼音 x）<br>
+j 师的声母（汉语拼音 sh，也有点近似于 zh，个人理解这两种读音都是可以接受的）<br>
+x 喝的声母（汉语拼音 h）<br>
+在汉语和英语中常见的发音 j,在逻辑语种写做 dj（这里请大家先记住，后面学习用得着）</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[扩充巴科斯范式(ABNF)初识]]></title>
         <id>https://lzw-723.github.io/post/kuo-chong-ba-ke-si-fan-shi-abnfchu-shi/</id>
@@ -1220,141 +1361,6 @@ int main() {
     guessNumber(500);
     guessNumber(600);
     guessNumber(555);
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C语言教程 - 多维数组]]></title>
-        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-duo-wei-shu-zu/</id>
-        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-duo-wei-shu-zu/">
-        </link>
-        <updated>2021-08-06T03:19:14.000Z</updated>
-        <summary type="html"><![CDATA[<p>C语言可以创建和使用多维数组。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>C语言可以创建和使用多维数组。</p>
-<!-- more -->
-<h2 id="tutorial">Tutorial</h2>
-<p>在前一节<a href="https://www.learn-c.org/zh/%E6%95%B0%E7%BB%84">数组</a>教程中讲解了如何使用数组。这些数组都是一维的，但C语言可以创建和使用多维数组。下面是一个多维数组声明的一般形式。</p>
-<pre><code>type name[size1][size2]...[sizeN];
-</code></pre>
-<p>这里有一个基本示例参考——</p>
-<pre><code>int foo[1][2][3];
-</code></pre>
-<p>也可以这样——</p>
-<pre><code>char vowels[1][5] = {
-	{'a', 'e', 'i', 'o', 'u'}
-};
-</code></pre>
-<h3 id="二维数组">二维数组</h3>
-<p>二维数组是最简单的多维数组。一个二维数组差不多是一个一维数组的列表。要声明一个大小为[ x ][ y ]的二维整数数组，你可以这样写——</p>
-<pre><code>type arrayName [x][y];
-</code></pre>
-<p>其中<strong>type</strong>可以是C语言的任何数据类型（int, char, long, long long, double, 等等），<strong>arrayName</strong>是一个有效的C语言标识符，或变量。一个二维数组可以被认为是一个表，它有[ x ]行和[ y ]列。可以这样想象一个包含三行四列的二维数组a——</p>
-<figure data-type="image" tabindex="1"><img src="https://www.tutorialspoint.com/cprogramming/images/two_dimensional_arrays.jpg" alt="Table 1A" loading="lazy"></figure>
-<p>像这样，数组a中的每个元素都由**a[i][j]**形式的元素名来识别，其中'a'是数组的名称，'i'和'j'是独一无二的索引，合起来也就是'a'中的一个元素的意思。</p>
-<p>其实，不需要把[ x ]值真的放进去，因为如果这样做——</p>
-<pre><code>char vowels[][5] = {
-	{'A', 'E', 'I', 'O', 'U'},
-	{'a', 'e', 'i', 'o', 'u'}
-};
-</code></pre>
-<p>编译器已经知道有两个 &quot;维度&quot;，但是，<strong>需要</strong>一个[ y ]值！! 编译器很聪明，但是它<em>不会知道</em>你在维度中使用了多少个整数、字符、浮点数，或者其他。请牢记这一点。</p>
-<h3 id="初始化二维数组">初始化二维数组</h3>
-<p>多维数组中可以为每一行指定[]内的值。下面是一个3行4列的数组。为了方便，你可以不写3，不填写行数，它仍然可以工作。</p>
-<pre><code>int a[3][4] = {  
-   {0, 1, 2, 3} ,   /*  初始化索引为0的行 */
-   {4, 5, 6, 7} ,   /*  初始化索引为1的行 */
-   {8, 9, 10, 11}   /*  初始化索引为2的行 */
-};
-</code></pre>
-<p>里面的大括号表示想要的行，是可选的。下面的初始化效果与前面的例子相同——</p>
-<pre><code>int a[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11};
-</code></pre>
-<h3 id="访问二维数组中的元素">访问二维数组中的元素</h3>
-<p>通过使用下标来访问二维数组中的元素，即使用数组的行索引和列索引。例如——</p>
-<pre><code>int val = a[2][3];
-</code></pre>
-<p>上述语句将从数组中取出第3行第4个元素。</p>
-<h2 id="exercise">Exercise</h2>
-<p>尝试找出五名学生数学和物理两门学科的平均分。使用一个名为<code>grades</code>的二维数组去完成。数学对应的分数将被存储在第一行（<code>grades[0]</code>），物理对应的分数将被存储在第二行（<code>grades[1]</code>）。完成以下剩余步骤，执行这个程序。</p>
-<ul>
-<li>将成绩声明为一个二维整数数组</li>
-<li>通过指定终止条件来完成for循环</li>
-<li>计算各科的平均分</li>
-</ul>
-<h2 id="tutorial-code">Tutorial Code</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-	/* TODO：在此声明成绩二维数组 */
-	float average;
-	int i;
-	int j;
-
-	grades[0][0] = 80;
-	grades[0][1] = 70;
-	grades[0][2] = 65;
-	grades[0][3] = 89;
-	grades[0][4] = 90;
-
-	grades[1][0] = 85;
-	grades[1][1] = 80;
-	grades[1][2] = 80;
-	grades[1][3] = 82;
-	grades[1][4] = 87;
-
-	/* TODO：通过指定终止条件来完成for循环 */
-	for (i = 0; i &lt; ; i++) {
-		average = 0;
-		for (j = 0; j &lt; ; j++) {
-			average += grades[i][j];
-		}
-
-		/* TODO：计算学科i的平均分 */
-		printf(&quot;The average marks obtained in subject %d is: %.2f\n&quot;, i, average);
-	}
-
-	return 0;
-}
-</code></pre>
-<h2 id="expected-output">Expected Output</h2>
-<pre><code>The average marks obtained in subject 0 is: 78.80
-The average marks obtained in subject 1 is: 82.80
-</code></pre>
-<h2 id="solution">Solution</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-	int grades[2][5];
-	float average;
-	int i;
-	int j;
-
-	grades[0][0] = 80;
-	grades[0][1] = 70;
-	grades[0][2] = 65;
-	grades[0][3] = 89;
-	grades[0][4] = 90;
-
-	grades[1][0] = 85;
-	grades[1][1] = 80;
-	grades[1][2] = 80;
-	grades[1][3] = 82;
-	grades[1][4] = 87;
-
-	for (i = 0; i &lt; 2; i++) {
-		average = 0;
-		
-		for (j = 0; j &lt; 5; j++) {
-			average += grades[i][j];
-		}
-
-		average /= 5.0;
-		printf(&quot;The average marks obtained in subject %d is: %.2f\n&quot;, i, average);
-	}
-
-	return 0;
 }
 </code></pre>
 ]]></content>
