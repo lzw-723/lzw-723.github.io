@@ -2,22 +2,46 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>C语言教程 - while循环 | lzw-723&#39;s blog</title>
+<title>Lojban教程 - 逻辑语学习中常见专有名词列表 | lzw-723&#39;s blog</title>
 <link rel="shortcut icon" href="https://lzw-723.github.io/favicon.ico?v=1643429177973">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lzw-723.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="C语言教程 - while循环 | lzw-723&#39;s blog - Atom Feed" href="https://lzw-723.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Lojban教程 - 逻辑语学习中常见专有名词列表 | lzw-723&#39;s blog - Atom Feed" href="https://lzw-723.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="while循环与for循环很像，但功能更少。
+    <meta name="description" content="转载修改自【发布】【逻辑语常用术语的汉语专有名词列表V1.1】
 
-Tutorial
-while循环与for循环很像，但功能更少。只要条件为真while循环会一直执行代码块。例如下面的代码会执行十次：
-int n = 0;
-while (n &lt; 10) ..." />
-    <meta name="keywords" content="C,教程,翻译" />
+
+
+
+常见逻辑语术语
+术语语言类型
+汉语专有名词
+
+
+
+
+valsi
+逻辑语
+词
+
+
+brivla
+逻辑语
+谓词
+
+
+gismu
+逻辑语
+根词
+
+
+lujvo
+逻辑语
+合成词..." />
+    <meta name="keywords" content="转载,Lojban" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -99,147 +123,162 @@ while (n &lt; 10) ..." />
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              C语言教程 - while循环
+              Lojban教程 - 逻辑语学习中常见专有名词列表
             </h2>
             <div class="post-info">
               <span>
-                2021-11-02
+                2022-01-29
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
-                <a href="https://lzw-723.github.io/tag/79EhJkn3_/" class="post-tag">
-                  # C
+                <a href="https://lzw-723.github.io/tag/x_Hpe8Lsg4/" class="post-tag">
+                  # 转载
                 </a>
               
-                <a href="https://lzw-723.github.io/tag/ED-Tw5-vhp/" class="post-tag">
-                  # 教程
-                </a>
-              
-                <a href="https://lzw-723.github.io/tag/1-Q3SKzSGk/" class="post-tag">
-                  # 翻译
+                <a href="https://lzw-723.github.io/tag/X37RE875R/" class="post-tag">
+                  # Lojban
                 </a>
               
             </div>
             
+              <img class="post-feature-image" src="https://img1.baidu.com/it/u=3019888520,139315585&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=500&amp;h=351" alt="">
+            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>while循环与for循环很像，但功能更少。</p>
-<h2 id="-more-tutorial"><!-- more --><br>
-Tutorial</h2>
-<p>while循环与for循环很像，但功能更少。只要条件为真while循环会一直执行代码块。例如下面的代码会执行十次：</p>
-<pre><code>int n = 0;
-while (n &lt; 10) {
-    n++;
-}
-</code></pre>
-<p>while循环会一直执行只要判断为真（即非零值）：</p>
-<pre><code>while (1) {
-   /* 做某事 */
-}
-</code></pre>
-<h3 id="循环指令">循环指令</h3>
-<p>在C语言中有两个重要的循环指令在所有的循环类型起作用——<code>break</code>和<code>continue</code>指令。</p>
-<p>在循环10次后<code>break</code>指令停止循环，尽管从条件来这个while循环判断永远不会结束：</p>
-<pre><code>int n = 0;
-while (1) {
-    n++;
-    if (n == 10) {
-        break;
-    }
-}
-</code></pre>
-<p>在下面的代码中，<code>continue</code>指令使<code>printf</code>命令被跳过，所以只有偶数被打印出来：</p>
-<pre><code>int n = 0;
-while (n &lt; 10) {
-    n++;
-
-    /* 检查n是否为奇数 */
-    if (n % 2 == 1) {
-        /* 回到while代码块的开头 */
-        continue;
-    }
-
-    /* 只有当n是偶数时，才能执行到这行代码 */
-    printf(&quot;The number %d is even.\n&quot;, n);
-}
-</code></pre>
-<h2 id="exercise">Exercise</h2>
-<p><code>array</code>变量是一个10个数字组成的序列。在while循环中，你必须写两个<code>if</code>判断，<br>
-它们以如下方式改变循环的流程（不改变<code>printf</code>命令）：</p>
-<ul>
-<li>如果当前数字小于5，不打印。</li>
-<li>如果当前数字大于10，不打印并停止循环。</li>
-</ul>
-<p>请注意：如果不推进迭代器变量<code>i</code>并使用<code>continue</code>指令，你将陷入死循环。</p>
-<h2 id="tutorial-code">Tutorial Code</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-    int array[] = {1, 7, 4, 5, 9, 3, 5, 11, 6, 3, 4};
-    int i = 0;
-
-    while (i &lt; 10) {
-        /* 在这里写你的代码 */
-
-        printf(&quot;%d\n&quot;, array[i]);
-        i++;
-    }
-
-    return 0;
-}
-</code></pre>
-<h2 id="expected-output">Expected Output</h2>
-<pre><code>7
-5
-9
-5
-</code></pre>
-<h2 id="solution">Solution</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-    int array[] = {1, 7, 4, 5, 9, 3, 5, 11, 6, 3, 4};
-    int i = 0;
-
-    while (i &lt; 10) {
-        if(array[i] &lt; 5){
-            i++;
-            continue;
-        }
-
-        if(array[i] &gt; 10){
-            break;
-        }
-
-        printf(&quot;%d\n&quot;, array[i]);
-        i++;
-    }
-
-    return 0;
-}
-</code></pre>
+                <p>转载修改自<a href="https://tieba.baidu.com/p/2875387082">【发布】【逻辑语常用术语的汉语专有名词列表V1.1】</a></p>
+<!-- more -->
+<table>
+<thead>
+<tr>
+<th>常见逻辑语术语</th>
+<th>术语语言类型</th>
+<th>汉语专有名词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>valsi</td>
+<td>逻辑语</td>
+<td>词</td>
+</tr>
+<tr>
+<td>brivla</td>
+<td>逻辑语</td>
+<td>谓词</td>
+</tr>
+<tr>
+<td>gismu</td>
+<td>逻辑语</td>
+<td>根词</td>
+</tr>
+<tr>
+<td>lujvo</td>
+<td>逻辑语</td>
+<td>合成词</td>
+</tr>
+<tr>
+<td>fu'ivla</td>
+<td>逻辑语</td>
+<td>借词</td>
+</tr>
+<tr>
+<td>cmene</td>
+<td>逻辑语</td>
+<td>名字词</td>
+</tr>
+<tr>
+<td>selma'o</td>
+<td>逻辑语</td>
+<td>结构词类</td>
+</tr>
+<tr>
+<td>cmavo</td>
+<td>逻辑语</td>
+<td>结构词</td>
+</tr>
+<tr>
+<td>indicators</td>
+<td>英语</td>
+<td>态度指示词</td>
+</tr>
+<tr>
+<td>discursives</td>
+<td>英语</td>
+<td>转折词</td>
+</tr>
+<tr>
+<td>connectives</td>
+<td>英语</td>
+<td>连词</td>
+</tr>
+<tr>
+<td>modals</td>
+<td>英语</td>
+<td>介词</td>
+</tr>
+<tr>
+<td>terminator</td>
+<td>英语</td>
+<td>终止词</td>
+</tr>
+<tr>
+<td>rafsi</td>
+<td>逻辑语</td>
+<td>词缀</td>
+</tr>
+<tr>
+<td>tanru</td>
+<td>逻辑语</td>
+<td>词组</td>
+</tr>
+<tr>
+<td>jufra</td>
+<td>逻辑语</td>
+<td>句</td>
+</tr>
+<tr>
+<td>bridi</td>
+<td>逻辑语</td>
+<td>谓句</td>
+</tr>
+<tr>
+<td>selbri</td>
+<td>逻辑语</td>
+<td>谓语</td>
+</tr>
+<tr>
+<td>place structure</td>
+<td>英语</td>
+<td>位结构</td>
+</tr>
+<tr>
+<td>sumti</td>
+<td>逻辑语</td>
+<td>项</td>
+</tr>
+<tr>
+<td>sumti</td>
+<td>逻辑语</td>
+<td>项标签</td>
+</tr>
+<tr>
+<td>abstraction</td>
+<td>英语</td>
+<td>谓词子句</td>
+</tr>
+<tr>
+<td>relative clause</td>
+<td>英语</td>
+<td>定语从句</td>
+</tr>
+</tbody>
+</table>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#-more-tutorial"><!-- more --><br>
-Tutorial</a>
-<ul>
-<li><a href="#%E5%BE%AA%E7%8E%AF%E6%8C%87%E4%BB%A4">循环指令</a></li>
-</ul>
-</li>
-<li><a href="#exercise">Exercise</a></li>
-<li><a href="#tutorial-code">Tutorial Code</a></li>
-<li><a href="#expected-output">Expected Output</a></li>
-<li><a href="#solution">Solution</a></li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>
@@ -248,9 +287,9 @@ Tutorial</a>
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://lzw-723.github.io/post/dev-c-faq/">
+            <a href="https://lzw-723.github.io/post/lojban-ji-chu-jiao-cheng-zi-mu/">
               <h3 class="post-title">
-                Dev-C++ FAQ
+                Lojban基础教程 - 字母
               </h3>
             </a>
           </div>

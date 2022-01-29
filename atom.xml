@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lzw-723.github.io</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2022-01-29T03:14:07.232Z</updated>
+    <updated>2022-01-29T04:06:21.448Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lzw-723.github.io"/>
     <link rel="self" href="https://lzw-723.github.io/atom.xml"/>
@@ -10,6 +10,144 @@
     <logo>https://lzw-723.github.io/images/avatar.png</logo>
     <icon>https://lzw-723.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, lzw-723&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Lojban教程 - 逻辑语学习中常见专有名词列表]]></title>
+        <id>https://lzw-723.github.io/post/lojban-jiao-cheng-luo-ji-yu-xue-xi-zhong-chang-jian-zhuan-you-ming-ci-lie-biao/</id>
+        <link href="https://lzw-723.github.io/post/lojban-jiao-cheng-luo-ji-yu-xue-xi-zhong-chang-jian-zhuan-you-ming-ci-lie-biao/">
+        </link>
+        <updated>2022-01-29T03:28:28.000Z</updated>
+        <summary type="html"><![CDATA[<p>转载修改自<a href="https://tieba.baidu.com/p/2875387082">【发布】【逻辑语常用术语的汉语专有名词列表V1.1】</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>转载修改自<a href="https://tieba.baidu.com/p/2875387082">【发布】【逻辑语常用术语的汉语专有名词列表V1.1】</a></p>
+<!-- more -->
+<table>
+<thead>
+<tr>
+<th>常见逻辑语术语</th>
+<th>术语语言类型</th>
+<th>汉语专有名词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>valsi</td>
+<td>逻辑语</td>
+<td>词</td>
+</tr>
+<tr>
+<td>brivla</td>
+<td>逻辑语</td>
+<td>谓词</td>
+</tr>
+<tr>
+<td>gismu</td>
+<td>逻辑语</td>
+<td>根词</td>
+</tr>
+<tr>
+<td>lujvo</td>
+<td>逻辑语</td>
+<td>合成词</td>
+</tr>
+<tr>
+<td>fu'ivla</td>
+<td>逻辑语</td>
+<td>借词</td>
+</tr>
+<tr>
+<td>cmene</td>
+<td>逻辑语</td>
+<td>名字词</td>
+</tr>
+<tr>
+<td>selma'o</td>
+<td>逻辑语</td>
+<td>结构词类</td>
+</tr>
+<tr>
+<td>cmavo</td>
+<td>逻辑语</td>
+<td>结构词</td>
+</tr>
+<tr>
+<td>indicators</td>
+<td>英语</td>
+<td>态度指示词</td>
+</tr>
+<tr>
+<td>discursives</td>
+<td>英语</td>
+<td>转折词</td>
+</tr>
+<tr>
+<td>connectives</td>
+<td>英语</td>
+<td>连词</td>
+</tr>
+<tr>
+<td>modals</td>
+<td>英语</td>
+<td>介词</td>
+</tr>
+<tr>
+<td>terminator</td>
+<td>英语</td>
+<td>终止词</td>
+</tr>
+<tr>
+<td>rafsi</td>
+<td>逻辑语</td>
+<td>词缀</td>
+</tr>
+<tr>
+<td>tanru</td>
+<td>逻辑语</td>
+<td>词组</td>
+</tr>
+<tr>
+<td>jufra</td>
+<td>逻辑语</td>
+<td>句</td>
+</tr>
+<tr>
+<td>bridi</td>
+<td>逻辑语</td>
+<td>谓句</td>
+</tr>
+<tr>
+<td>selbri</td>
+<td>逻辑语</td>
+<td>谓语</td>
+</tr>
+<tr>
+<td>place structure</td>
+<td>英语</td>
+<td>位结构</td>
+</tr>
+<tr>
+<td>sumti</td>
+<td>逻辑语</td>
+<td>项</td>
+</tr>
+<tr>
+<td>sumti</td>
+<td>逻辑语</td>
+<td>项标签</td>
+</tr>
+<tr>
+<td>abstraction</td>
+<td>英语</td>
+<td>谓词子句</td>
+</tr>
+<tr>
+<td>relative clause</td>
+<td>英语</td>
+<td>定语从句</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Lojban基础教程 - 字母]]></title>
         <id>https://lzw-723.github.io/post/lojban-ji-chu-jiao-cheng-zi-mu/</id>
@@ -142,13 +280,54 @@
 </tr>
 </tbody>
 </table>
-<h2 id="辅音字母">辅音字母</h2>
-<p>大多数逻辑语的辅音和英语类似,不过也有几个例外:</p>
-<p>g 哥的声母（汉语拼音 g）<br>
-c 西的声母（汉语拼音 x）<br>
-j 师的声母（汉语拼音 sh，也有点近似于 zh，个人理解这两种读音都是可以接受的）<br>
-x 喝的声母（汉语拼音 h）<br>
-在汉语和英语中常见的发音 j,在逻辑语种写做 dj（这里请大家先记住，后面学习用得着）</p>
+<h2 id="辅音">辅音</h2>
+<p>大多数逻辑语的辅音和英语类似，<br>
+不过也有几个例外:</p>
+<table>
+<thead>
+<tr>
+<th>辅音字母</th>
+<th>发音</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>g</td>
+<td>哥的声母（汉语拼音 g）</td>
+</tr>
+<tr>
+<td>c</td>
+<td>西的声母（汉语拼音 x）</td>
+</tr>
+<tr>
+<td>j</td>
+<td>师的声母（汉语拼音 sh）</td>
+</tr>
+<tr>
+<td>x</td>
+<td>喝的声母（汉语拼音 h）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="双辅音">双辅音</h3>
+<table>
+<thead>
+<tr>
+<th>辅音字母</th>
+<th>发音</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tc</td>
+<td><strong>ch</strong>ip</td>
+</tr>
+<tr>
+<td>dj</td>
+<td><strong>j</strong>ump、在汉语和英语中常见的发音 j</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
     </entry>
     <entry>
@@ -1224,143 +1403,6 @@ int main() {
   strncat(name,last_name,20);
   printf(&quot;%s\n&quot;,name);
   return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C语言教程 - 条件语句]]></title>
-        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-tiao-jian-yu-ju/</id>
-        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-tiao-jian-yu-ju/">
-        </link>
-        <updated>2021-08-06T07:43:55.000Z</updated>
-        <summary type="html"><![CDATA[<p>生活中我们必须做出决定。要根据自己的需要来做出决定，程序也是如此。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>生活中我们必须做出决定。要根据自己的需要来做出决定，程序也是如此。</p>
-<!-- more -->
-<h2 id="tutorial">Tutorial</h2>
-<h3 id="决策">决策</h3>
-<p>生活中我们必须做出决定。要根据自己的需要来做出决定，程序也是如此。</p>
-<p>下面是C语言中决策结构的一般形式。</p>
-<pre><code>int target = 10;
-if (target == 10) {
-    printf(&quot;Target is equal to 10&quot;);
-}
-</code></pre>
-<h3 id="if语句"><code>if</code>语句</h3>
-<p><code>if</code>语句检查一个表达式是<code>真</code>还是<code>假</code>，并根据结果执行不同的代码。</p>
-<p>使用了<code>==</code>运算符判断两个变量是否相等，就像上面的例子一样。</p>
-<p>也可以用不等式运算符来判断。例如——</p>
-<pre><code>int foo = 1;
-int bar = 2;
-
-if (foo &lt; bar) {
-    printf(&quot;foo is smaller than bar.&quot;);
-}
-
-if (foo &gt; bar) {
-    printf(&quot;foo is greater than bar.&quot;);
-}
-</code></pre>
-<p>使用<code>else</code>关键字在表达式为<code>false</code>时退出代码。</p>
-<pre><code>int foo = 1;
-int bar = 2;
-
-if (foo &lt; bar) {
-    printf(&quot;foo is smaller than bar.&quot;);
-} else {
-    printf(&quot;foo is greater than bar.&quot;);
-}
-</code></pre>
-<p>有两个以上的结果可供选择的情况下，可以将多个<code>if</code> <code>else</code>语句<code>连锁</code>。</p>
-<pre><code>int foo = 1;
-int bar = 2;
-
-if (foo &lt; bar) {
-    printf(&quot;foo is smaller than bar.&quot;);
-} else if (foo == bar) {
-    printf(&quot;foo is equal to bar.&quot;);
-} else {
-    printf(&quot;foo is greater than bar.&quot;);
-}
-</code></pre>
-<p>也可以嵌套<code>if</code> <code>else</code>语句。</p>
-<pre><code>int peanuts_eaten = 22;
-int peanuts_in_jar = 100;
-int max_peanut_limit = 50;
-
-if (peanuts_in_jar &gt; 80) {
-    if (peanuts_eaten &lt; max_peanut_limit) {
-        printf(&quot;Take as many peanuts as you want!\n&quot;);
-    }
-} else {
-    if (peanuts_eaten &gt; peanuts_in_jar) {
-        printf(&quot;You can't have anymore peanuts!\n&quot;);
-    }
-    else {
-        printf(&quot;Alright, just one more peanut.\n&quot;);
-    }
-}
-</code></pre>
-<p>两个或多个表达式可以使用逻辑运算符检查是否都为<code>真</code>，或是否其中一个为<code>真</code>。使用AND运算符<code>&amp;&amp;</code>检查两个表达式是否都为<code>真</code>。使用OR运算符<code>||</code>检查是否至少有一个表达式为<code>真</code>。</p>
-<pre><code>int foo = 1;
-int bar = 2;
-int moo = 3;
-
-if (foo &lt; bar &amp;&amp; moo &gt; bar) {
-    printf(&quot;foo is smaller than bar AND moo is larger than bar.&quot;);
-}
-
-if (foo &lt; bar || moo &gt; bar) {
-    printf(&quot;foo is smaller than bar OR moo is larger than bar.&quot;);
-}
-</code></pre>
-<p>NOT运算符<code>!</code>类似：</p>
-<pre><code>int target = 9;
-if (target != 10) {
-    printf(&quot;Target is not equal to 10&quot;);
-}
-</code></pre>
-<h2 id="exercise">Exercise</h2>
-<p>练习，在<code>guessNumber</code>函数中构建一个<code>if</code>语句，检查数字<code>guess</code>是否等于555。如果是，在该函数内用<code>printf</code>打印出 &quot;正确。你猜对了！&quot;。如果<code>guess</code>小于555，用<code>printf</code>打印出 &quot;你猜的低了&quot;。如果<code>guess</code>大于555，用<code>printf</code>打印出 &quot;你猜的高了&quot;。</p>
-<ul>
-<li><strong>重要</strong>：不要忘记在要打印的字符串末尾添加一个换行符<code>\n</code>。</li>
-</ul>
-<h2 id="tutorial-code">Tutorial Code</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-void guessNumber(int guess) {
-    // TODO：在这里写代码
-}
-
-int main() {
-    guessNumber(500);
-    guessNumber(600);
-    guessNumber(555);
-}
-</code></pre>
-<h2 id="expected-output">Expected Output</h2>
-<p>Your guess is too low.<br>
-Your guess is too high.<br>
-Correct. You guessed it!</p>
-<h2 id="solution">Solution</h2>
-<pre><code>#include &lt;stdio.h&gt;
-
-void guessNumber(int guess) {
-    // TODO：在这里写代码
-    if (guess &lt; 555) {
-        printf(&quot;Your guess is too low.\n&quot;);
-    } else if (guess &gt; 555) {
-        printf(&quot;Your guess is too high.\n&quot;);
-    } else {
-        printf(&quot;Correct. You guessed it!\n&quot;);
-    }
-}
-
-int main() {
-    guessNumber(500);
-    guessNumber(600);
-    guessNumber(555);
 }
 </code></pre>
 ]]></content>
