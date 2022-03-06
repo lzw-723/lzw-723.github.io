@@ -1,0 +1,373 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>raylib基础学习 | lzw-723&#39;s blog</title>
+<link rel="shortcut icon" href="https://lzw-723.github.io/favicon.ico?v=1646533609176">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://lzw-723.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="raylib基础学习 | lzw-723&#39;s blog - Atom Feed" href="https://lzw-723.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="raylib 是一个跨平台、易用的图形库，围绕OpenGL 1.1、2.1、3.3和OpenGL ES 2.0构建。
+
+尽管它是用C语言编写的，却有超过50种不同语言的绑定。本教程将使用C语言。
+更确切地说，是C99。
+#include &..." />
+    <meta name="keywords" content="转载,游戏,C,笔记" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://lzw-723.github.io">
+  <img class="avatar" src="https://lzw-723.github.io/images/avatar.png?v=1646533609176" alt="">
+  </a>
+  <h1 class="site-title">
+    lzw-723&#39;s blog
+  </h1>
+  <p class="site-description">
+    要玩就玩得开心，这不代表我放弃
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/anime" class="menu">
+          动画
+        </a>
+      
+    
+      
+        <a href="/post/friends" class="menu">
+          友链
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/lzw-723" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/lzw-723" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              raylib基础学习
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-03-06
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://lzw-723.github.io/tag/x_Hpe8Lsg4/" class="post-tag">
+                  # 转载
+                </a>
+              
+                <a href="https://lzw-723.github.io/tag/A2GIYiz3K/" class="post-tag">
+                  # 游戏
+                </a>
+              
+                <a href="https://lzw-723.github.io/tag/79EhJkn3_/" class="post-tag">
+                  # C
+                </a>
+              
+                <a href="https://lzw-723.github.io/tag/ol7l837c1/" class="post-tag">
+                  # 笔记
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://img.itch.zone/aW1nLzIxNTI4MzAucG5n/360x286%23c/R5lnru.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><strong>raylib</strong> 是一个跨平台、易用的图形库，围绕OpenGL 1.1、2.1、3.3和OpenGL ES 2.0构建。</p>
+<!-- more -->
+<p>尽管它是用C语言编写的，却有超过50种不同语言的绑定。本教程将使用C语言。<br>
+更确切地说，是C99。</p>
+<pre><code class="language-c">#include &lt;raylib.h&gt;
+
+int main(void)
+{
+    const int screenWidth = 800;
+    const int screenHeight = 450;
+
+    // 在初始化raylib之前，可以设置配置标志
+    SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT);
+
+    // raylib并不要求我们存储任何实例结构
+    // 目前raylib一次只能处理一个窗口
+    InitWindow(screenWidth, screenHeight, &quot;MyWindow&quot;);
+
+    // 设置我们的游戏以每秒60帧的速度运行
+    SetTargetFPS(60);
+
+    // 设置一个关闭窗口的键。
+    //可以是0，表示没有键
+    SetExitKey(KEY_DELETE);
+
+    // raylib定义了两种类型的相机。Camera3D和Camera2D
+    // Camera是Camera3D的一个类型化定义
+    Camera camera = {
+            .position = {0.0f, 0.0f, 0.0f},
+            .target   = {0.0f, 0.0f, 1.0f},
+            .up       = {0.0f, 1.0f, 0.0f},
+            .fovy     = 70.0f,
+            .type     = CAMERA_PERSPECTIVE
+    };
+
+
+    // raylib支持加载各种不同的文件格式的模型、动画、图像和声音。
+    Model myModel = LoadModel(&quot;my_model.obj&quot;);
+    Font someFont = LoadFont(&quot;some_font.ttf&quot;);
+
+    // 创建一个100x100的渲染纹理
+    RenderTexture renderTexture = LoadRenderTexture(100, 100);
+
+    // WindowShouldClose方法检查用户是否正在关闭窗口。
+    // 可能用的是快捷方式、窗口控制或之前设置的关闭窗口键
+    while (!WindowShouldClose())
+    {
+
+        // BeginDrawing方法要在任何绘图操作之前被调用。
+        BeginDrawing();
+        {
+
+            // 为背景设定某种颜色
+            ClearBackground(BLACK);
+
+            if (IsKeyDown(KEY_SPACE))
+                DrawCircle(400, 400, 30, GREEN);
+
+            // 简单地绘制文本
+            DrawText(&quot;Congrats! You created your first window!&quot;,
+                     190, // x
+                     200, // y
+                     20,  // 字体大小
+                     LIGHTGRAY
+            );
+
+            // 大多数函数都有几个版本
+            // 通常后缀为Ex, Pro, V
+            // 或者是Rec、Wires（仅适用于3D）、Lines（仅适用于2D）。
+            DrawTextEx(someFont,
+                       &quot;Text in another font&quot;,
+                       (Vector2) {10, 10},
+                       20, // 字体大小
+                       2,  // 间距
+                       LIGHTGRAY);
+
+            // 绘制3D时需要，有2D的等价方法
+            BeginMode3D(camera);
+            {
+
+                DrawCube((Vector3) {0.0f, 0.0f, 3.0f},
+                         1.0f, 1.0f, 1.0f, RED);
+
+                // 绘图时的白色色调将保持原来的颜色
+                DrawModel(myModel, (Vector3) {0.0f, 0.0f, 3.0f},
+                          1.0f, // 缩放
+                          WHITE);
+
+            }
+            // 结束3D模式，这样就可以再次普通绘图
+            EndMode3D();
+
+            // 开始在渲染纹理上绘图
+            BeginTextureMode(renderTexture);
+            {
+
+                // 它的行为与刚才调用的`BeginDrawing()`方法相同
+
+                ClearBackground(RAYWHITE);
+
+                BeginMode3D(camera);
+                {
+
+                    DrawGrid(10, // Slices
+                             1.0f // 间距
+                    );
+
+                }
+                EndMode3D();
+
+            }
+            EndTextureMode();
+
+            // 渲染有Texture2D字段的纹理
+            DrawTexture(renderTexture.texture, 40, 378, BLUE);
+
+        }
+        EndDrawing();
+    }
+
+    // 卸载已载入的对象
+    UnloadFont(someFont);
+    UnloadModel(myModel);
+
+    // 关闭窗口和OpenGL上下文
+    CloseWindow();
+
+    return 0;
+}
+
+</code></pre>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p>raylib有一些<a href="https://www.raylib.com/examples.html">不错的例子</a><br>
+如果你不喜欢C语言你也可以看看<a href="https://github.com/raysan5/raylib/blob/master/BINDINGS.md">raylib的其他语言绑定</a></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%BB%B6%E4%BC%B8%E9%98%85%E8%AF%BB">延伸阅读</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://lzw-723.github.io/post/lojban-jiao-cheng-luo-ji-yu-xue-xi-zhong-chang-jian-zhuan-you-ming-ci-lie-biao/">
+              <h3 class="post-title">
+                Lojban教程 - 逻辑语学习中常见专有名词列表
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '399620a9c9195b7466cf',
+    clientSecret: '00893bb4d0569d3ccd4b718ab36d35a4a4be9f6d',
+    repo: 'lzw-723.github.io',
+    owner: 'lzw-723',
+    admin: ['lzw-723'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://lzw-723.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

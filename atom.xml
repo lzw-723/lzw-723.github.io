@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lzw-723.github.io</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2022-01-29T04:07:28.591Z</updated>
+    <updated>2022-03-06T02:26:52.393Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lzw-723.github.io"/>
     <link rel="self" href="https://lzw-723.github.io/atom.xml"/>
@@ -10,6 +10,150 @@
     <logo>https://lzw-723.github.io/images/avatar.png</logo>
     <icon>https://lzw-723.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, lzw-723&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[raylib基础学习]]></title>
+        <id>https://lzw-723.github.io/post/raylib-ji-chu-xue-xi/</id>
+        <link href="https://lzw-723.github.io/post/raylib-ji-chu-xue-xi/">
+        </link>
+        <updated>2022-03-06T02:24:49.000Z</updated>
+        <summary type="html"><![CDATA[<p><strong>raylib</strong> 是一个跨平台、易用的图形库，围绕OpenGL 1.1、2.1、3.3和OpenGL ES 2.0构建。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><strong>raylib</strong> 是一个跨平台、易用的图形库，围绕OpenGL 1.1、2.1、3.3和OpenGL ES 2.0构建。</p>
+<!-- more -->
+<p>尽管它是用C语言编写的，却有超过50种不同语言的绑定。本教程将使用C语言。<br>
+更确切地说，是C99。</p>
+<pre><code class="language-c">#include &lt;raylib.h&gt;
+
+int main(void)
+{
+    const int screenWidth = 800;
+    const int screenHeight = 450;
+
+    // 在初始化raylib之前，可以设置配置标志
+    SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT);
+
+    // raylib并不要求我们存储任何实例结构
+    // 目前raylib一次只能处理一个窗口
+    InitWindow(screenWidth, screenHeight, &quot;MyWindow&quot;);
+
+    // 设置我们的游戏以每秒60帧的速度运行
+    SetTargetFPS(60);
+
+    // 设置一个关闭窗口的键。
+    //可以是0，表示没有键
+    SetExitKey(KEY_DELETE);
+
+    // raylib定义了两种类型的相机。Camera3D和Camera2D
+    // Camera是Camera3D的一个类型化定义
+    Camera camera = {
+            .position = {0.0f, 0.0f, 0.0f},
+            .target   = {0.0f, 0.0f, 1.0f},
+            .up       = {0.0f, 1.0f, 0.0f},
+            .fovy     = 70.0f,
+            .type     = CAMERA_PERSPECTIVE
+    };
+
+
+    // raylib支持加载各种不同的文件格式的模型、动画、图像和声音。
+    Model myModel = LoadModel(&quot;my_model.obj&quot;);
+    Font someFont = LoadFont(&quot;some_font.ttf&quot;);
+
+    // 创建一个100x100的渲染纹理
+    RenderTexture renderTexture = LoadRenderTexture(100, 100);
+
+    // WindowShouldClose方法检查用户是否正在关闭窗口。
+    // 可能用的是快捷方式、窗口控制或之前设置的关闭窗口键
+    while (!WindowShouldClose())
+    {
+
+        // BeginDrawing方法要在任何绘图操作之前被调用。
+        BeginDrawing();
+        {
+
+            // 为背景设定某种颜色
+            ClearBackground(BLACK);
+
+            if (IsKeyDown(KEY_SPACE))
+                DrawCircle(400, 400, 30, GREEN);
+
+            // 简单地绘制文本
+            DrawText(&quot;Congrats! You created your first window!&quot;,
+                     190, // x
+                     200, // y
+                     20,  // 字体大小
+                     LIGHTGRAY
+            );
+
+            // 大多数函数都有几个版本
+            // 通常后缀为Ex, Pro, V
+            // 或者是Rec、Wires（仅适用于3D）、Lines（仅适用于2D）。
+            DrawTextEx(someFont,
+                       &quot;Text in another font&quot;,
+                       (Vector2) {10, 10},
+                       20, // 字体大小
+                       2,  // 间距
+                       LIGHTGRAY);
+
+            // 绘制3D时需要，有2D的等价方法
+            BeginMode3D(camera);
+            {
+
+                DrawCube((Vector3) {0.0f, 0.0f, 3.0f},
+                         1.0f, 1.0f, 1.0f, RED);
+
+                // 绘图时的白色色调将保持原来的颜色
+                DrawModel(myModel, (Vector3) {0.0f, 0.0f, 3.0f},
+                          1.0f, // 缩放
+                          WHITE);
+
+            }
+            // 结束3D模式，这样就可以再次普通绘图
+            EndMode3D();
+
+            // 开始在渲染纹理上绘图
+            BeginTextureMode(renderTexture);
+            {
+
+                // 它的行为与刚才调用的`BeginDrawing()`方法相同
+
+                ClearBackground(RAYWHITE);
+
+                BeginMode3D(camera);
+                {
+
+                    DrawGrid(10, // Slices
+                             1.0f // 间距
+                    );
+
+                }
+                EndMode3D();
+
+            }
+            EndTextureMode();
+
+            // 渲染有Texture2D字段的纹理
+            DrawTexture(renderTexture.texture, 40, 378, BLUE);
+
+        }
+        EndDrawing();
+    }
+
+    // 卸载已载入的对象
+    UnloadFont(someFont);
+    UnloadModel(myModel);
+
+    // 关闭窗口和OpenGL上下文
+    CloseWindow();
+
+    return 0;
+}
+
+</code></pre>
+<h2 id="延伸阅读">延伸阅读</h2>
+<p>raylib有一些<a href="https://www.raylib.com/examples.html">不错的例子</a><br>
+如果你不喜欢C语言你也可以看看<a href="https://github.com/raysan5/raylib/blob/master/BINDINGS.md">raylib的其他语言绑定</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Lojban教程 - 逻辑语学习中常见专有名词列表]]></title>
         <id>https://lzw-723.github.io/post/lojban-jiao-cheng-luo-ji-yu-xue-xi-zhong-chang-jian-zhuan-you-ming-ci-lie-biao/</id>
@@ -1295,114 +1439,6 @@ int main() {
   }
 
   printf(&quot;10! is %d.\n&quot;, factorial);
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C语言教程 - 字符串]]></title>
-        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-zi-fu-chuan/</id>
-        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-zi-fu-chuan/">
-        </link>
-        <updated>2021-08-24T05:36:19.000Z</updated>
-        <summary type="html"><![CDATA[<p>C语言中的字符串实际上是字符数组。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>C语言中的字符串实际上是字符数组。</p>
-<h2 id="-more-tutorial"><!-- more --><br>
-Tutorial</h2>
-<h3 id="字符串的定义">字符串的定义</h3>
-<p>C语言中的字符串实际上是字符数组。尽管使用指针是C语言中的高级课题，后面会详细解释，先使用指向字符数组的指针来定义简单的字符串，方法如下：</p>
-<pre><code>char * name = &quot;John Smith&quot;;
-</code></pre>
-<p>这个方法创建了一个只能读取的字符串。<br>
-如果希望定义一个可以被操作的字符串，需要定义为一个字符数组。</p>
-<pre><code>char name[] = &quot;John Smith&quot;;
-</code></pre>
-<p>符号不同是因为它分配了一个数组变量，所以可以对它进行操作。方括号<code>[]</code>告诉编译器自动计算数组的大小。实际上是否指明大小都是一样的，字符串的长度为字符数组的大小减一。</p>
-<pre><code>char name[] = &quot;John Smith&quot;;
-/* 与下面的意思相同 */
-char name[11] = &quot;John Smith&quot;;
-</code></pre>
-<p>尽管字符串<code>John Smith</code>正好是10个字符长，但需要加一，是为了表明字符串的结束。一个特殊的char（等于0）表示字符串的结束。字符串的结尾被标记出来是因为程序不知道字符串的长度——只有编译器根据代码才知道。</p>
-<h3 id="用printf格式化字符串">用printf格式化字符串</h3>
-<p>可以使用<code>printf</code>方法将一个字符串与其他字符串一起格式化，具体方法如下：</p>
-<pre><code>char * name = &quot;John Smith&quot;;
-int age = 27;
-
-/* 打印'John Smith is 27 years old.' */
-printf(&quot;%s is %d years old.\n&quot;, name, age);
-</code></pre>
-<p>请注意，在打印字符串时，必须添加一个换行符（<code>\n</code>）来让下一个<code>printf</code>语句打印在一个新行中。</p>
-<h3 id="字符串长度">字符串长度</h3>
-<p>函数<code>strlen</code>返回作为参数传递的字符串的长度。</p>
-<pre><code>char * name = &quot;Nikhil&quot;;
-printf(&quot;%d\n&quot;,strlen(name));        
-</code></pre>
-<h3 id="比较字符串">比较字符串</h3>
-<p>函数<code>strncmp</code>对两个字符串进行比较。如果相同，返回数字0；如果不同，返回其他数字。<br>
-参数是要比较的两个字符串，以及最大比较长度。这个函数还有一个不安全的版本，叫做<code>strcmp</code>，不建议使用。例如：</p>
-<pre><code>char * name = &quot;John&quot;;
-
-if (strncmp(name, &quot;John&quot;, 4) == 0) {
-    printf(&quot;Hello, John!\n&quot;);
-} else {
-    printf(&quot;You are not John. Go away.\n&quot;);
-}
-</code></pre>
-<h3 id="字符串拼接">字符串拼接</h3>
-<p>函数<code>strncat</code>将src字符串的前n个字符添加到目标字符串中，其中n为min(n,length(src))。<br>
-传递的参数是目标字符串、源字符串和n——要增添的最大字符数。例如：</p>
-<pre><code>char dest[20]=&quot;Hello&quot;;
-char src[20]=&quot;World&quot;;
-strncat(dest,src,3);
-printf(&quot;%s\n&quot;,dest);
-strncat(dest,src,20);
-printf(&quot;%s\n&quot;,dest);
-</code></pre>
-<h2 id="exercise">Exercise</h2>
-<p>使用指针定义字符串<code>first_name</code>，其值为<code>John</code>，使用字符数组定义字符串<code>last_name</code>，其值为<code>Doe</code>。</p>
-<h2 id="tutorial-code">Tutorial Code</h2>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-int main() {
-  /* 定义first_name */
-  /* 定义last_name */
-  char name[100];
-
-  last_name[0] = 'B';
-  sprintf(name, &quot;%s %s&quot;, first_name, last_name);
-  if (strncmp(name, &quot;John Boe&quot;, 100) == 0) {
-      printf(&quot;Done!\n&quot;);
-  }
-  name[0]='\0';
-  strncat(name,first_name,4);
-  strncat(name,last_name,20);
-  printf(&quot;%s\n&quot;,name);
-  return 0;
-}
-</code></pre>
-<h2 id="expected-output">Expected Output</h2>
-<pre><code>Done!
-JohnBoe
-</code></pre>
-<h2 id="solution">Solution</h2>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-int main() {
-  char * first_name = &quot;John&quot;;
-  char last_name[] = &quot;Doe&quot;;
-  char name[100];
-
-  last_name[0] = 'B';
-  sprintf(name, &quot;%s %s&quot;, first_name, last_name);
-  if (strncmp(name, &quot;John Boe&quot;, 100) == 0) {
-      printf(&quot;Done!\n&quot;);
-  }
-  name[0]='\0';
-  strncat(name,first_name,4);
-  strncat(name,last_name,20);
-  printf(&quot;%s\n&quot;,name);
-  return 0;
 }
 </code></pre>
 ]]></content>
