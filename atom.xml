@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lzw-723.github.io</id>
     <title>lzw-723&apos;s blog</title>
-    <updated>2022-03-29T04:05:43.149Z</updated>
+    <updated>2022-08-10T06:12:32.908Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lzw-723.github.io"/>
     <link rel="self" href="https://lzw-723.github.io/atom.xml"/>
@@ -10,36 +10,6 @@
     <logo>https://lzw-723.github.io/images/avatar.png</logo>
     <icon>https://lzw-723.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, lzw-723&apos;s blog</rights>
-    <entry>
-        <title type="html"><![CDATA[UML快速入门]]></title>
-        <id>https://lzw-723.github.io/post/uml-kuai-su-ru-men/</id>
-        <link href="https://lzw-723.github.io/post/uml-kuai-su-ru-men/">
-        </link>
-        <updated>2022-03-25T12:23:42.000Z</updated>
-        <summary type="html"><![CDATA[<p>UML学习笔记</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>UML学习笔记</p>
-<!-- more -->
-<!-- drawio文件预览支持 -->
-<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
-<h2 id="uml是什么">UML是什么</h2>
-<p>统一建模语言(<code>Unified Modeling Language</code>，<code>UML</code>)是一种为面向对象系统的产品进行说明、可视化和编制文档的一种标准语言，是非专利的第三代建模和规约语言。<code>UML</code>是面向对象设计的建模工具，独立于任何具体程序设计语言。</p>
-<h2 id="uml图的种类">UML图的种类</h2>
-<p>UML模型独立于UML图存在。<br>
-UML图包括用例图、协作图、活动图、序列图、部署图、构件图、类图、状态图，是模型中信息的图形表达方式。</p>
-<h2 id="常见uml图学习">常见UML图学习</h2>
-<p>个人认为常见的UML图主要为类图、用例图、时序图几类，所以下面记录这些UML图的图例。</p>
-<h3 id="类图">类图</h3>
-<p>类图是描述系统中的类，以及各个类之间的关系的静态视图。能够让我们在正确编写代码以前对系统有一个全面的认识。类图是一种模型类型，确切地说，是一种静态模型类型。类图表示类、接口和它们之间的协作关系。<br>
-下面是单个类图的结构解释：</p>
-<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2022-03-25T14:12:13.052Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Edg/99.0.1150.46\&quot; etag=\&quot;C68DDG-zYEnzL6ZLbTHC\&quot; version=\&quot;16.0.0\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;dxOaOrbuizFFFa7mThPx\&quot; name=\&quot;第 1 页\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
-<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
-<h2 id="参考资料">参考资料</h2>
-<p>[1]. <a href="https://baike.baidu.com/item/%E7%BB%9F%E4%B8%80%E5%BB%BA%E6%A8%A1%E8%AF%AD%E8%A8%80/3160571">统一建模语言_百度百科</a><br>
-[2]. 《UML和模式应用（原书第3版）》<br>
-[3]. <a href="https://www.zhihu.com/question/407047121/answer/1432849782">用例图是什么？用什么工具绘制？ - 亿图图示的回答 - 知乎</a></p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[raylib基础学习]]></title>
         <id>https://lzw-723.github.io/post/raylib-ji-chu-xue-xi/</id>
@@ -182,6 +152,7 @@ int main(void)
 <h2 id="延伸阅读">延伸阅读</h2>
 <p>raylib有一些<a href="https://www.raylib.com/examples.html">不错的例子</a><br>
 如果你不喜欢C语言你也可以看看<a href="https://github.com/raysan5/raylib/blob/master/BINDINGS.md">raylib的其他语言绑定</a></p>
+<p>我的博客即将同步至腾讯云开发者社区，邀请大家一同入驻：https://cloud.tencent.com/developer/support-plan?invite_code=mlz8qfx2vlil</p>
 ]]></content>
     </entry>
     <entry>
@@ -1397,6 +1368,80 @@ Embarcadero Dev-C++界面更为现代、美观，由Embarcadero公司维护，�
 <li><a href="https://zh.wikipedia.org/wiki/%E7%BD%97%E4%BC%AF%E7%89%B9%C2%B7%E8%88%92%E6%9B%BC">舒曼 - 维基百科</a></li>
 <li><a href="https://music.163.com/song?id=1434268573">舒曼: 《童年情景》梦幻曲 - Piano lullaby classic (클래식 기타의 향기) - 网易云音乐</a></li>
 </ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C语言教程 - for循环]]></title>
+        <id>https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-for-xun-huan/</id>
+        <link href="https://lzw-723.github.io/post/c-yu-yan-jiao-cheng-for-xun-huan/">
+        </link>
+        <updated>2021-09-04T22:51:28.000Z</updated>
+        <summary type="html"><![CDATA[<p>C语言中的for循环非常简单。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>C语言中的for循环非常简单。</p>
+<!-- more -->
+<h2 id="tutorial">Tutorial</h2>
+<p>C语言中的for循环非常简单。你能用它创建一个循环—一块运行多次的代码块。<br>
+for循环需要一个用来迭代的变量，通常命名为<code>i</code>。</p>
+<p>for循环能够做这些：</p>
+<ul>
+<li>用一个初始值初始化迭代器变量</li>
+<li>检查迭代变量是否达到最终值</li>
+<li>增加迭代变量的值</li>
+</ul>
+<p>如果想运行代码块10次，可以这样写：</p>
+<pre><code>int i;
+for (i = 0; i &lt; 10; i++) {
+    printf(&quot;%d\n&quot;, i);
+}
+</code></pre>
+<p>这段代码会打印从0到9的数字。</p>
+<p>for循环能够用来获取数组的每一个值。要计算一个数组所有值的和，可以这样使用<code>i</code>：</p>
+<pre><code>int array[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+int sum = 0;
+int i;
+
+for (i = 0; i &lt; 10; i++) {
+    sum += array[i];
+}
+
+/* 求a[0]到a[9]的和 */
+printf(&quot;Sum of the array is %d\n&quot;, sum);
+</code></pre>
+<h2 id="exercise">Exercise</h2>
+<p>计算数组array的阶乘（从array[0]乘到array[9]）。</p>
+<h2 id="tutorial-code">Tutorial Code</h2>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+  int array[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+  int factorial = 1;
+  int i;
+
+  /* 在这里使用for循环计算阶乘*/
+
+  printf(&quot;10! is %d.\n&quot;, factorial);
+}
+</code></pre>
+<h2 id="expected-output">Expected Output</h2>
+<pre><code>10! is 3628800.
+</code></pre>
+<h2 id="solution">Solution</h2>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+  int array[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+  int factorial = 1;
+
+  int i;
+
+  for(i=0;i&lt;10;i++){
+    factorial *= array[i];
+  }
+
+  printf(&quot;10! is %d.\n&quot;, factorial);
+}
+</code></pre>
 ]]></content>
     </entry>
 </feed>
